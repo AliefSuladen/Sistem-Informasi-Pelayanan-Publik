@@ -8,7 +8,7 @@ class Modeluser extends Model
 {
     protected $table = 'user';
     protected $primaryKey = 'id_user';
-    protected $allowedFields = ['nik', 'nama_user', 'email', 'password', 'role', 'id_desa'];  // Tambahkan 'id_desa' di sini
+    protected $allowedFields = ['nik', 'nama_user', 'email', 'password', 'role', 'id_desa'];
 
     // Aturan unik untuk NIK
     protected $validationRules = [

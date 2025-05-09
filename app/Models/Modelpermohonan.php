@@ -53,7 +53,7 @@ class Modelpermohonan extends Model
             ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis', 'left')
             ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status', 'left')
             ->join('desa', 'desa.id_desa = user.id_desa', 'left')
-            ->whereIn('status_surat.status', ['Diverifikasi', 'Selesai'])
+            ->whereIn('status_surat.status', ['Diverifikasi Pihak Desa', 'Selesai'])
             ->orderBy('permohonan_surat.created_at', 'DESC')
             ->get()->getResultArray();
     }

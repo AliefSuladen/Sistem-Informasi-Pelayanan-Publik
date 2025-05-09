@@ -1,0 +1,1445 @@
+DEBUG - 2025-03-11 18:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 18:29:52 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'e-lais', 3306, '', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 18:29:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: formpengajuan]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 18:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 18:30:15 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'e-lais', 3306, '', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 18:30:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: formpengajuan]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 18:30:19 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'e-lais', 3306, '', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 18:30:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: formpengajuan]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 18:36:37 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'e-lais', 3306, '', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 18:36:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: formpengajuan]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 18:44:17 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'e-lais', 3306, '', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 18:44:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: formpengajuan]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 19:41:35 --> mysqli_sql_exception: Table 'e-lais.jenis_surat' doesn't exist in engine in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\e-lais\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\e-lais\app\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-03-11 19:41:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'e-lais.jenis_surat' doesn't exist in engine
+[Method: GET, Route: formpengajuan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 19:41:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'e-lais.jenis_surat' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jenis_surat`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jenis_surat`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 19:41:35 --> [Caused by] mysqli_sql_exception: Table 'e-lais.jenis_surat' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `jenis_surat`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `jenis_surat`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `jenis_surat`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `jenis_surat`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(32): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 19:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 19:42:02 --> mysqli_sql_exception: Table 'e-lais.user' doesn't exist in engine in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.c...', '1234')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 19:42:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'e-lais.user' doesn't exist in engine
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 19:42:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'e-lais.user' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 19:42:02 --> [Caused by] mysqli_sql_exception: Table 'e-lais.user' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 19:43:39 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'e-lais', 3306, '', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.c...', '1234')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*...', Array, false)
+#3 C:\xampp\htdocs\e-lais\app\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\e-lais\app\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.c...', '1234')
+#5 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-03-11 19:43:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 3 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 20:11:16 --> mysqli_sql_exception: Table 'skripsi.user' doesn't exist in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.c...', '1234')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:11:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.user' doesn't exist
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:11:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:11:16 --> [Caused by] mysqli_sql_exception: Table 'skripsi.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 20:19:51 --> mysqli_sql_exception: Table 'skripsi.jabatan' doesn't exist in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.c...', '1234')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:19:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.jabatan' doesn't exist
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:19:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.jabatan' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:19:51 --> [Caused by] mysqli_sql_exception: Table 'skripsi.jabatan' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 20:30:21 --> mysqli_sql_exception: Table 'skripsi.jabatan' doesn't exist in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.c...', '1234')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:30:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.jabatan' doesn't exist
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:30:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.jabatan' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:30:21 --> [Caused by] mysqli_sql_exception: Table 'skripsi.jabatan' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+ERROR - 2025-03-11 20:31:56 --> mysqli_sql_exception: Table 'skripsi.jabatan' doesn't exist in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.c...', '1234')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:31:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.jabatan' doesn't exist
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:31:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'skripsi.jabatan' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:31:56 --> [Caused by] mysqli_sql_exception: Table 'skripsi.jabatan' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = \'alief12@gmail.com\'
+AND `password` = \'1234\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user`.*, `jabatan`.`jabatan` as `role`
+FROM `user`
+LEFT JOIN `jabatan` ON `jabatan`.`id` = `user`.`role`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Models\Modelauth.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Auth.php(50): App\Models\Modelauth->login('alief12@gmail.com', '1234')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->cek_login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 20:52:17 --> mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list' in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permoho...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permoho...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permoho...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permoho...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelpermohonan.php(72): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Desa.php(27): App\Models\Modelpermohonan->getPermohonanByDesa('1')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Desa->index()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Desa))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:52:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+[Method: GET, Route: daftar-pengajuan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = :user.id_desa:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 2 APPPATH\Models\Modelpermohonan.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Desa.php(27): App\Models\Modelpermohonan->getPermohonanByDesa('1')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Desa->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Desa))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:52:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = \'1\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = \'1\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = :user.id_desa:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 4 APPPATH\Models\Modelpermohonan.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Desa.php(27): App\Models\Modelpermohonan->getPermohonanByDesa('1')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Desa->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Desa))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:52:17 --> [Caused by] mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = \'1\'
+ORDER BY `permohonan_surat`.`created_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = \'1\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = \'1\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `user`.`id_desa` = :user.id_desa:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 5 APPPATH\Models\Modelpermohonan.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Desa.php(27): App\Models\Modelpermohonan->getPermohonanByDesa('1')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Desa->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Desa))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 20:52:38 --> mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list' in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permoho...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permoho...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permoho...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permoho...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:52:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+[Method: GET, Route: daftar-pengajuan-surat]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 2 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:52:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 4 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:52:38 --> [Caused by] mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 5 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:52:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 20:54:09 --> mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list' in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permoho...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permoho...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permoho...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permoho...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:54:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+[Method: GET, Route: daftar-pengajuan-surat]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 2 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:54:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 4 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:54:09 --> [Caused by] mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 5 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:54:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-11 20:54:20 --> mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list' in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permoho...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permoho...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permoho...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permoho...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-11 20:54:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+[Method: GET, Route: daftar-pengajuan-surat]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 2 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:54:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 4 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-11 20:54:20 --> [Caused by] mysqli_sql_exception: Unknown column 'jenis_surat.surat' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN (\'Diverifikasi\',\'Selesai\')
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `user`.`id_desa`
+WHERE `status_surat`.`status` IN :status_surat.status:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 5 APPPATH\Models\Modelpermohonan.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Kecamatan.php(18): App\Models\Modelpermohonan->getAllPermohonan()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kecamatan->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:55:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:55:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-11 20:55:14 --> ErrorException: Undefined array key "id_jenis"
+[Method: GET, Route: formpengajuan]
+in APPPATH\Views\Home\v-pengajuan.php on line 43.
+ 1 APPPATH\Views\Home\v-pengajuan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Home/v-pengajuan', [], true)
+ 5 APPPATH\Controllers\Home.php(35): view('Home/v-pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-11 20:55:14 --> ErrorException: Undefined array key "id_jenis"
+[Method: GET, Route: formpengajuan]
+in APPPATH\Views\Home\v-pengajuan.php on line 43.
+ 1 APPPATH\Views\Home\v-pengajuan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Home/v-pengajuan', [], true)
+ 5 APPPATH\Controllers\Home.php(35): view('Home/v-pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-11 20:56:06 --> ErrorException: Undefined array key "id_jenis"
+[Method: GET, Route: formpengajuan]
+in APPPATH\Views\Home\v-pengajuan.php on line 43.
+ 1 APPPATH\Views\Home\v-pengajuan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Home/v-pengajuan', [], true)
+ 5 APPPATH\Controllers\Home.php(35): view('Home/v-pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:56:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-11 20:56:30 --> ErrorException: Undefined array key "id_jenis"
+[Method: GET, Route: formpengajuan]
+in APPPATH\Views\Home\v-pengajuan.php on line 43.
+ 1 APPPATH\Views\Home\v-pengajuan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Home/v-pengajuan', [], true)
+ 5 APPPATH\Controllers\Home.php(35): view('Home/v-pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 20:56:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-11 20:56:34 --> ErrorException: Undefined array key "id_jenis"
+[Method: GET, Route: formpengajuan]
+in APPPATH\Views\Home\v-pengajuan.php on line 43.
+ 1 APPPATH\Views\Home\v-pengajuan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Home/v-pengajuan', [], true)
+ 5 APPPATH\Controllers\Home.php(35): view('Home/v-pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:56:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-11 20:56:34 --> ErrorException: Undefined array key "id_jenis"
+[Method: GET, Route: formpengajuan]
+in APPPATH\Views\Home\v-pengajuan.php on line 43.
+ 1 APPPATH\Views\Home\v-pengajuan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Home\\v-pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Home/v-pengajuan', [], true)
+ 5 APPPATH\Controllers\Home.php(35): view('Home/v-pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-11 20:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-11 21:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
