@@ -1,12 +1,35 @@
 <?php
 
+function tanggalIndo($tanggal)
+{
+    $bulan = [
+        1 => 'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+    ];
+    $tanggalArray = explode('-', $tanggal);
+    $tahun = $tanggalArray[0];
+    $bulanIndo = $bulan[(int)$tanggalArray[1]];
+    $hari = $tanggalArray[2];
+    return $hari . ' ' . $bulanIndo . ' ' . $tahun;
+}
+
 $namaAnak = $permohonan['nama_anak'];
 $tempatLahir = $permohonan['tempat_lahir'];
-$tanggalLahir = date('d F Y', strtotime($permohonan['tanggal_lahir']));
+$tanggalLahir = tanggalIndo($permohonan['tanggal_lahir']);
 $namaAyah = $permohonan['nama_ayah'];
 $namaIbu = $permohonan['nama_ibu'];
-$alamat = "Desa " . $permohonan['nama_desa'] . ", Kecamatan Kabupaten Musi Banyuasin";
-$tanggalSurat = date('d F Y');
+$alamat = "Desa " . $permohonan['nama_desa'] . ", Kecamatan Lais Kabupaten Musi Banyuasin";
+$tanggalSurat = tanggalIndo(date('Y-m-d'));
 $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
 
 ?>
@@ -64,11 +87,9 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
 
 <body>
     <div class="center">
-        <img src="<?= base_url('AdminLTE/logo-muba.png') ?>" width="100">
-
-
         <h2>PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
         <h2>KECAMATAN LAIS</h2>
+        <p>Jalan Raya Palembang Sekayu KM. 80</p>
         <div class="header-line"></div>
         <h3><u>SURAT KETERANGAN KELAHIRAN</u></h3>
         <p>Nomor: <?= $nomorSurat ?></p>
@@ -104,7 +125,7 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
     <p>Demikian surat keterangan ini dibuat dengan sebenarnya untuk dipergunakan sebagaimana mestinya.</p>
 
     <div class="signature">
-        <p><?= $tanggalSurat ?></p>
+        <p>Lais, <?= $tanggalSurat ?></p>
         <p>Camat Lais</p>
         <br><br>
         <p class="bold">Muhammad Alief , S.kom</p>

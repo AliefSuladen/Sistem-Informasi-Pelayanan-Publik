@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Modelpermohonan;
 use App\Models\Modeldokumen;
+use App\Models\Modeluser;
+use App\Models\Modeldesa;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
@@ -16,17 +18,116 @@ class Admin extends BaseController
     {
         $this->Modelpermohonan = new Modelpermohonan();
         $this->Modeldokumen = new Modeldokumen();
+        $this->Modeluser = new Modeluser();
+        $this->Modeldesa = new Modeldesa();
     }
-    public function index()
+    public function kecamatan_dashboard()
     {
 
         return view('Admin/v-kec-dashboard');
     }
+    public function masyarakat_dashboard()
+    {
+
+        $id_user = session()->get('id_user');
+
+        $permohonan = $this->Modelpermohonan->getPermohonanByUser($id_user);
+
+        $data = [
+            'permohonan' => $permohonan,
+        ];
+
+        return view('Admin/v-mas-dashboard', $data);
+    }
 
     public function desa_dashboard()
     {
-        return view('Admin/v-desa-dashboard');
+        $id_desa = session()->get('id_desa');
+
+        $desa = $this->Modeldesa->getDesaById($id_desa);
+        $statistik = $this->Modelpermohonan->getStatistikByDesa($id_desa);
+        $jenisSurat = $this->Modelpermohonan->getJumlahJenisSuratByDesa($id_desa);
+
+        $data = [
+            'desa' => $desa,
+            'statistik' => $statistik,
+            'jenisSurat' => $jenisSurat,
+        ];
+
+        return view('Admin/v-desa-dashboard', $data);
     }
+
+
+    public function profil()
+    {
+        $id_user = session()->get('id_user');
+
+        $user = $this->Modeluser->getUser($id_user);
+
+        $data = [
+            'user' => $user,
+        ];
+
+        return view('Admin/v-profil', $data);
+    }
+
+    public function update_profil()
+    {
+        $id = session()->get('id_user');
+
+        // Ambil data user lama untuk keperluan perbandingan atau hapus foto lama
+        $userLama = $this->Modeluser->getUser($id);
+
+        $data = [];
+
+        // Cek dan isi field jika ada input
+        $inputFields = ['nama_user', 'email', 'pekerjaan', 'agama', 'alamat'];
+        foreach ($inputFields as $field) {
+            $value = $this->request->getPost($field);
+            if (!is_null($value) && $value !== '') {
+                $data[$field] = $value;
+            }
+        }
+
+        // Password jika diisi
+        $password = $this->request->getPost('password');
+        if (!empty($password)) {
+            $data['password'] = ($password);
+        }
+
+        // Upload foto jika ada
+        $file = $this->request->getFile('foto');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $newName = $file->getRandomName();
+            $file->move(FCPATH . 'uploads/profil/', $newName);
+            $data['foto'] = $newName;
+
+            // Hapus foto lama jika ada
+            if (!empty($userLama['foto']) && file_exists(FCPATH . 'uploads/profil/' . $userLama['foto'])) {
+                unlink(FCPATH . 'uploads/profil/' . $userLama['foto']);
+            }
+
+            // Update foto di session
+            session()->set('foto', $newName);
+        }
+
+        // Lakukan update
+        $this->Modeluser->set($data)->where('id_user', $id)->update();
+
+        // Cek apakah data berubah atau tidak
+        if ($this->Modeluser->db->affectedRows() > 0) {
+            session()->setFlashdata('success', 'Profil berhasil diperbarui.');
+        } else {
+            session()->setFlashdata('info', 'Tidak ada perubahan pada data.');
+        }
+
+        $userBaru = $this->Modeluser->getUser($id);
+        session()->set('nama_user', $userBaru['nama_user']);
+
+        return redirect()->to(base_url('profil'));
+    }
+
+
 
     public function cek_dokumen($id_permohonan)
     {

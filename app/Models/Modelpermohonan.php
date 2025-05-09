@@ -29,6 +29,7 @@ class Modelpermohonan extends Model
         'alamat_usaha',
         'modal_usaha',
         'file_surat',
+        'alasan_penolakan',
         'created_at',
         'updated_at'
     ];
@@ -76,10 +77,10 @@ class Modelpermohonan extends Model
     public function getPermohonanByUser($id_user)
     {
         return $this->db->table($this->table)
-            ->select('permohonan_surat.*, jenis_surat.surat, status_surat.status, desa.nama_desa')
+            ->select('permohonan_surat.*, user.nama_user, user.id_desa, jenis_surat.surat, status_surat.status')
+            ->join('user', 'user.id_user = permohonan_surat.id_user', 'left')
             ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis', 'left')
             ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status', 'left')
-            ->join('desa', 'desa.id_desa = permohonan_surat.id_desa', 'left')
             ->where('permohonan_surat.id_user', $id_user)
             ->orderBy('permohonan_surat.created_at', 'DESC')
             ->get()->getResultArray();
@@ -97,6 +98,29 @@ class Modelpermohonan extends Model
             ->where('permohonan_surat.id_permohonan', $id_permohonan)
             ->get()->getRowArray();
     }
+
+    public function getStatistikByDesa($id_desa)
+    {
+        return $this->db->table($this->table)
+            ->select('status_surat.status, COUNT(*) as jumlah')
+            ->join('user', 'user.id_user = permohonan_surat.id_user')
+            ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status')
+            ->where('user.id_desa', $id_desa)
+            ->groupBy('status_surat.status')
+            ->get()->getResultArray();
+    }
+    public function getJumlahJenisSuratByDesa($id_desa)
+    {
+        return $this->db->table($this->table)
+            ->select('jenis_surat.surat, COUNT(*) as total')
+            ->join('user', 'user.id_user = permohonan_surat.id_user')
+            ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis')
+            ->where('user.id_desa', $id_desa)
+            ->groupBy('permohonan_surat.id_jenis')
+            ->get()->getResultArray();
+    }
+
+
 
     // Update status permohonan
     public function updateStatus($id_permohonan, $id_status)
@@ -120,5 +144,13 @@ class Modelpermohonan extends Model
         // Format Nomor Surat (contoh: 0001/SKL/LAIS/2024)
         $tahun = date('Y');
         return sprintf("%04d", $nomorUrut) . "/SKL/LAIS/" . $tahun;
+    }
+
+    public function getFileSurat($id_permohonan)
+    {
+        return $this->db->table($this->table)
+            ->select('file_surat, id_user, id_status')
+            ->where('id_permohonan', $id_permohonan)
+            ->get()->getRowArray();
     }
 }

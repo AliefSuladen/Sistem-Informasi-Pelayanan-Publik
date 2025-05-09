@@ -9,10 +9,12 @@ class Modeljenissurat extends Model
     protected $table = 'jenis_surat';
     protected $primaryKey = 'id';
     protected $allowedFields = ['nama_jenis'];
+
     public function getAllJenisSurat()
     {
         return $this->db->table('jenis_surat')
             ->select('*')
+            ->orderBy('surat', 'ASC')
             ->get()->getResultArray();
     }
 }

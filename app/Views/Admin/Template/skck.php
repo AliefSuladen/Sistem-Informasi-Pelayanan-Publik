@@ -7,7 +7,6 @@ $statusPerkawinan = "Belum Kawin"; // Ambil dari data user jika tersedia
 $pekerjaan = "Mahasiswa"; // Ambil dari data user jika tersedia
 $alamat = "Desa " . $permohonan['nama_desa'] . ", Kabupaten Musi Banyuasin";
 $tanggalSurat = date('d F Y');
-$namaKades = "(Nama Kades)"; // Sesuaikan dengan nama Kepala Desa terkait
 
 ?>
 

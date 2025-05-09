@@ -24,7 +24,7 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table id="tabel-permohonan" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -66,16 +66,44 @@
             </div>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer clearfix">
-            <ul class="pagination pagination-sm m-0 float-right">
-                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-            </ul>
-        </div>
     </div>
     <!-- /.card -->
 </div>
+<?= $this->section('script') ?>
+<script>
+    $(document).ready(function() {
+        $('#tabel-permohonan').DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: false,
+            dom: 'Bfrtip',
+            buttons: [{
+                    extend: 'excel',
+                    title: 'Data Laporan Permohonan Surat',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Data Laporan Permohonan Surat',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                },
+                {
+                    extend: 'print',
+                    title: 'Data Laporan Permohonan Surat',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5]
+                    }
+                }
+            ],
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json'
+            }
+        });
+    });
+</script>
+<?= $this->endSection() ?>
 <?= $this->endSection() ?>

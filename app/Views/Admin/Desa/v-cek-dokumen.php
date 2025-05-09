@@ -58,15 +58,37 @@
         </div>
     </div>
 
-    <a href="<?= base_url('daftar-pengajuan'); ?>" class="btn btn-secondary">Kembali</a>
-    <!-- Tombol Terima Berkas -->
-    <?php if ($permohonan['id_status'] != 2): ?> <!-- Tombol hanya tampil jika status belum diverifikasi -->
-        <form action="<?= base_url('desa/terima-berkas/' . $permohonan['id_permohonan']) ?>" method="post">
+
+    <div class="d-flex justify-content-between align-items-start mb-3">
+        <!-- Tombol Kembali -->
+        <a href="<?= base_url('daftar-pengajuan'); ?>" class="btn btn-secondary me-2">← Kembali</a>
+
+        <!-- Tombol Terima Berkas -->
+        <?php if ($permohonan['id_status'] != 2): ?>
+            <form action="<?= base_url('desa/terima-berkas/' . $permohonan['id_permohonan']) ?>" method="post">
+                <?= csrf_field() ?>
+                <button type="submit" class="btn btn-success">✅ Terima Berkas</button>
+            </form>
+        <?php endif; ?>
+    </div>
+
+    <?php if ($permohonan['id_status'] != 2): ?>
+        <!-- Form Tolak Berkas -->
+        <form action="<?= base_url('desa/tolak-berkas/' . $permohonan['id_permohonan']) ?>" method="post">
             <?= csrf_field() ?>
-            <button type="submit" class="btn btn-success mt-3">Terima Berkas</button>
+            <input type="hidden" name="id_permohonan" value="<?= $permohonan['id_permohonan'] ?>">
+
+            <div class="form-group mb-3">
+                <label for="alasan_penolakan"><i class="fas fa-file-alt text-danger"></i> <strong>Alasan Penolakan</strong></label>
+                <textarea name="alasan_penolakan" class="form-control" rows="3" placeholder="Masukkan alasan penolakan" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-danger w-100">❌ Tolak Permohonan</button>
         </form>
     <?php else: ?>
-        <p class="text-success mt-3">Permohonan sudah diverifikasi.</p>
+        <p class="text-success mt-3">✔️ Permohonan sudah diverifikasi.</p>
     <?php endif; ?>
+
+
 </div>
 <?= $this->endSection() ?>

@@ -14,7 +14,6 @@ class Home extends BaseController
 {
     public function __construct()
     {
-        // Load model secara otomatis
         $this->Modeljenissurat = new Modeljenissurat();
         $this->Modelpermohonan = new Modelpermohonan();
         $this->Modeluser = new Modeluser();
@@ -28,9 +27,9 @@ class Home extends BaseController
 
     public function formPengajuan()
     {
-        $Modeljenissurat = new Modeljenissurat();
-        $data['jenis_surat'] = $Modeljenissurat->findAll();
-        $data['desa'] = $this->Modeldesa->findAll();
+
+        $data['jenis_surat'] = $this->Modeljenissurat->getAllJenisSurat();
+        $data['desa'] = $this->Modeldesa->getAllDesa();
 
         return view('Home/v-pengajuan', $data);
     }
@@ -43,18 +42,31 @@ class Home extends BaseController
         $email = $this->request->getPost('email');
         $id_desa = $this->request->getPost('id_desa');
         $id_jenis = $this->request->getPost('id_jenis');
+        $pekerjaan = $this->request->getPost('pekerjaan');
+        $agama = $this->request->getPost('agama');
+        $kelamin = $this->request->getPost('kelamin');
+        $alamat = $this->request->getPost('alamat');
 
         // Cek apakah NIK sudah terdaftar
-        $existingUser = $this->Modeluser->where('nik', $nik)->first();
-        if ($existingUser) {
-            session()->setFlashdata('error', 'NIK sudah terdaftar. Silakan login.');
-            return redirect()->back();
-        }
+        $existingUser = $this->Modeluser->where('email', $email)->first();
 
-        // Cek apakah email sudah terdaftar
-        $existingEmail = $this->Modeluser->where('email', $email)->first();
-        if (!$existingEmail) {
-            // Jika user baru, simpan data ke tabel user
+        if ($existingUser) {
+            // Email cocok, pastikan NIK-nya juga cocok
+            if ($existingUser['nik'] !== $nik) {
+                session()->setFlashdata('error', 'Email sudah digunakan oleh NIK lain. Silakan login.');
+                return redirect()->back()->withInput();
+            }
+
+            $id_user = $existingUser['id_user'];
+        } else {
+            // Cek jika NIK sudah dipakai user lain
+            $nikSudahAda = $this->Modeluser->cekNik($nik);
+            if ($nikSudahAda) {
+                session()->setFlashdata('error', 'NIK sudah digunakan oleh pengguna lain.');
+                return redirect()->back()->withInput();
+            }
+
+            // Buat user baru
             $newUserData = [
                 'nama_user' => $nama_user,
                 'email' => $email,
@@ -62,12 +74,15 @@ class Home extends BaseController
                 'id_desa' => $id_desa,
                 'password' => 1234,
                 'role' => 3,
+                'pekerjaan' => $pekerjaan,
+                'agama' => $agama,
+                'kelamin' => $kelamin,
+                'alamat' => $alamat,
             ];
             $this->Modeluser->insert($newUserData);
             $id_user = $this->Modeluser->insertID();
-        } else {
-            $id_user = $existingEmail['id_user'];
         }
+
 
         // Simpan data permohonan surat
         $permohonanData = [
@@ -83,6 +98,7 @@ class Home extends BaseController
         switch ($id_jenis) {
             case 1: // SKTM
                 $permohonanData['alasan_sktm'] = $this->request->getPost('alasan');
+                $permohonanData['status_perkawinan'] = $this->request->getPost('status_perkawinan');
                 break;
             case 2: // Domisili
                 $permohonanData['alamat_domisili'] = $this->request->getPost('alamat_domisili');
@@ -114,7 +130,7 @@ class Home extends BaseController
         }
 
         // Simpan permohonan ke database
-        $id_permohonan = $this->Modelpermohonan->insert($permohonanData);
+        $id_permohonan = $this->Modelpermohonan->simpanPermohonan($permohonanData);
 
         // Proses upload dokumen
         $files = $this->request->getFiles();

@@ -11,6 +11,11 @@
         <?= csrf_field(); ?>
 
         <div class="mb-3">
+            <label for="nik" class="form-label">NIK</label>
+            <input type="text" class="form-control" name="nik" pattern="\d{16}" maxlength="16" placeholder="Masukkan 16 digit NIK" required>
+        </div>
+
+        <div class="mb-3">
             <label for="nama_user" class="form-label">Nama Lengkap</label>
             <input type="text" class="form-control" name="nama_user" placeholder="Masukkan nama lengkap" required>
         </div>
@@ -18,6 +23,33 @@
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" name="email" placeholder="contoh: user@email.com" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="pekerjaan" class="form-label">Pekerjaan</label>
+            <input type="text" class="form-control" name="pekerjaan" placeholder="Masukkan pekerjaan" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="agama" class="form-label">Agama</label>
+            <select class="form-control" name="agama" required>
+                <option value="">-- Pilih Agama --</option>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Katolik">Katolik</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Buddha">Buddha</option>
+                <option value="Konghucu">Konghucu</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="kelamin" class="form-label">Jenis Kelamin</label>
+            <select class="form-control" name="kelamin" required>
+                <option value="">-- Pilih Jenis Kelamin --</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
         </div>
 
         <div class="mb-3">
@@ -31,8 +63,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="nik" class="form-label">NIK</label>
-            <input type="text" class="form-control" name="nik" pattern="\d{16}" maxlength="16" placeholder="Masukkan 16 digit NIK" required>
+            <label for="alamat" class="form-label">Alamat</label>
+            <textarea class="form-control" name="alamat" rows="3" placeholder="Masukkan alamat lengkap" required></textarea>
         </div>
 
         <div class="mb-3">
@@ -78,7 +110,17 @@
                 html = `<div class="mb-3">
                             <label for="alasan" class="form-label">Alasan</label>
                             <textarea class="form-control" name="alasan" placeholder="Masukkan alasan pengajuan" required></textarea>
-                        </div>`;
+                        </div>
+                       <div class="form-group">
+                        <label for="status_perkawinan">Status Perkawinan</label>
+                        <select name="status_perkawinan" id="status_perkawinan" class="form-control" required>
+                            <option value="">-- Pilih Status Perkawinan --</option>
+                            <option value="Belum Menikah">Belum Kawin</option>
+                            <option value="Menikah">Kawin</option>
+                            <option value="Cerai Hidup">Cerai Hidup</option>
+                            <option value="Cerai Mati">Cerai Mati</option>
+                        </select>
+                    </div>`;
                 break;
             case '2': // Surat Domisili
                 html = `<div class="mb-3">

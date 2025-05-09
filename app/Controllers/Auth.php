@@ -55,6 +55,7 @@ class Auth extends BaseController
                 session()->set('email', $cek_login['email']);
                 session()->set('id_desa', $cek_login['id_desa']);
                 session()->set('role', $cek_login['role']);
+                session()->set('foto', $cek_login['foto']);
 
 
                 switch ($cek_login['role']) {
@@ -83,6 +84,7 @@ class Auth extends BaseController
     }
     public function logout()
     {
+        session()->remove('id_user');
         session()->remove('nama_user');
         session()->remove('email');
         session()->remove('id_desa');

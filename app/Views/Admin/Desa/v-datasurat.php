@@ -3,12 +3,8 @@
 <?= $this->section('content') ?>
 <section class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-12">
-                <h1>Daftar Pengajuan Permohonan</h1>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
+
+    </div>
 </section>
 <div class="col-md-12">
     <div class="card">
@@ -24,7 +20,7 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table id="tabel-permohonan" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -50,7 +46,7 @@
                                     <td>
                                         <!-- Tombol Aksi Cek Dokumen -->
                                         <a href="<?= base_url('desa_cek-dokumen/' . $item['id_permohonan']) ?>"
-                                            class="btn <?= $item['status'] === 'Diverifikasi' ? 'btn-success' : 'btn-primary' ?> btn-sm">
+                                            class="btn btn-sm <?= ($item['status'] === 'Pending') ? 'btn-success' : 'btn-primary' ?>">
                                             Cek Dokumen
                                         </a>
                                     </td>
@@ -66,16 +62,44 @@
             </div>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer clearfix">
-            <ul class="pagination pagination-sm m-0 float-right">
-                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-            </ul>
-        </div>
     </div>
     <!-- /.card -->
 </div>
+<?= $this->section('script') ?>
+<script>
+    $(document).ready(function() {
+        $('#tabel-permohonan').DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: false,
+            dom: 'Bfrtip',
+            buttons: [{
+                    extend: 'excel',
+                    title: 'Data Laporan Permohonan Surat',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+                {
+                    extend: 'pdf',
+                    title: 'Data Laporan Permohonan Surat',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+                {
+                    extend: 'print',
+                    title: 'Data Laporan Permohonan Surat',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                }
+            ],
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json'
+            }
+        });
+    });
+</script>
+<?= $this->endSection() ?>
 <?= $this->endSection() ?>

@@ -1,0 +1,848 @@
+DEBUG - 2025-03-23 01:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 01:31:32 --> ErrorException: Undefined variable $permohonan_surat
+[Method: GET, Route: masyarakat]
+in APPPATH\Views\Admin\v-mas-dashboard.php on line 18.
+ 1 APPPATH\Views\Admin\v-mas-dashboard.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $permohonan_surat', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\v-mas-dashboard.php', 18)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\v-mas-dashboard.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Admin/v-mas-dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(28): view('Admin/v-mas-dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->masyarakat_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 01:32:22 --> ErrorException: Undefined variable $permohonan
+[Method: GET, Route: masyarakat]
+in APPPATH\Views\Admin\v-mas-dashboard.php on line 18.
+ 1 APPPATH\Views\Admin\v-mas-dashboard.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $permohonan', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\v-mas-dashboard.php', 18)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\v-mas-dashboard.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Admin/v-mas-dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(28): view('Admin/v-mas-dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->masyarakat_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 01:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:34:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:34:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:44:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:44:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:48:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 01:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:41:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:41:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:47:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-23 20:47:12 --> mysqli_sql_exception: Unknown column 'permohonan_surat.id_desa' in 'on clause' in C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\e-lais\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permoho...', 0)
+#1 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permoho...')
+#2 C:\xampp\htdocs\e-lais\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permoho...')
+#3 C:\xampp\htdocs\e-lais\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permoho...', Array, false)
+#4 C:\xampp\htdocs\e-lais\app\Models\Modelpermohonan.php(86): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\e-lais\app\Controllers\Admin.php(30): App\Models\Modelpermohonan->getPermohonanByUser('Ricky Rinaldo D...')
+#6 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(933): App\Controllers\Admin->masyarakat_dashboard()
+#7 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\e-lais\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\e-lais\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\e-lais\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\e-lais\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\e-lais\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-03-23 20:47:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'permohonan_surat.id_desa' in 'on clause'
+[Method: GET, Route: masyarakat]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = :permohonan_surat.id_user:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 2 APPPATH\Models\Modelpermohonan.php(86): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(30): App\Models\Modelpermohonan->getPermohonanByUser('Ricky Rinaldo Dedi')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->masyarakat_dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 20:47:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'permohonan_surat.id_desa' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = \'Ricky Rinaldo Dedi\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = \'Ricky Rinaldo Dedi\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = :permohonan_surat.id_user:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 4 APPPATH\Models\Modelpermohonan.php(86): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(30): App\Models\Modelpermohonan->getPermohonanByUser('Ricky Rinaldo Dedi')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->masyarakat_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 20:47:12 --> [Caused by] mysqli_sql_exception: Unknown column 'permohonan_surat.id_desa' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = \'Ricky Rinaldo Dedi\'
+ORDER BY `permohonan_surat`.`created_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = \'Ricky Rinaldo Dedi\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = \'Ricky Rinaldo Dedi\'
+ORDER BY `permohonan_surat`.`created_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `permohonan_surat`.*, `user`.`nama_user`, `user`.`id_desa`, `jenis_surat`.`surat`, `status_surat`.`status`, `desa`.`nama_desa`
+FROM `permohonan_surat`
+LEFT JOIN `user` ON `user`.`id_user` = `permohonan_surat`.`id_user`
+LEFT JOIN `jenis_surat` ON `jenis_surat`.`id_jenis` = `permohonan_surat`.`id_jenis`
+LEFT JOIN `status_surat` ON `status_surat`.`id_status` = `permohonan_surat`.`id_status`
+LEFT JOIN `desa` ON `desa`.`id_desa` = `permohonan_surat`.`id_desa`
+WHERE `permohonan_surat`.`id_user` = :permohonan_surat.id_user:
+ORDER BY `permohonan_surat`.`created_at` DESC', [...], false)
+ 5 APPPATH\Models\Modelpermohonan.php(86): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(30): App\Models\Modelpermohonan->getPermohonanByUser('Ricky Rinaldo Dedi')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->masyarakat_dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 20:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 20:49:20 --> ErrorException: Undefined array key "nama_desa"
+[Method: GET, Route: masyarakat]
+in APPPATH\Views\Admin\v-mas-dashboard.php on line 48.
+ 1 APPPATH\Views\Admin\v-mas-dashboard.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_desa"', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\v-mas-dashboard.php', 48)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\v-mas-dashboard.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Admin/v-mas-dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(36): view('Admin/v-mas-dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->masyarakat_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 20:49:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:50:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:51:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 20:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:05:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:05:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:10:08 --> ErrorException: Undefined variable $id_user
+[Method: GET, Route: masyarakat-download/1]
+in APPPATH\Controllers\Masyarakat.php on line 19.
+ 1 APPPATH\Controllers\Masyarakat.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_user', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Masyarakat.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Masyarakat->download('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masyarakat))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:17:34 --> Error: Class "App\Controllers\Options" not found
+[Method: GET, Route: masyarakat-download/1]
+in APPPATH\Controllers\Masyarakat.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Masyarakat->download('1')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masyarakat))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:17:55 --> ErrorException: mb_convert_encoding(): Unable to detect character encoding
+[Method: GET, Route: masyarakat-download/1]
+in VENDORPATH\dompdf\dompdf\src\Dompdf.php on line 497.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mb_convert_encoding(): Unable to detect character encoding', 'C:\\xampp\\htdocs\\e-lais\\vendor\\dompdf\\dompdf\\src\\Dompdf.php', 497)
+ 2 VENDORPATH\dompdf\dompdf\src\Dompdf.php(497): mb_convert_encoding('<meta charset="UTF-8">%PDF-1.7
+1 0 obj
+<< /Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R >>
+endobj
+2 0 obj
+<< /Type /Outlines /Count 0 >>
+endobj
+3 0 obj
+<< /Type /Pages
+/Kids [6 0 R
+]
+/Count 1
+/Resources <<
+/ProcSet 4 0 R
+/Font << 
+/F1 8 0 R
+/F2 9 0 R
+/F3 10 0 R
+>>
+/ExtGState << 
+/GS1 11 0 R
+/GS2 12 0 R
+>>
+>>
+/MediaBox [0.000 0.000 595.280 841.890]
+ >>
+endobj
+4 0 obj
+[/PDF /Text ]
+endobj
+5 0 obj
+<<
+/Producer (şÿ' . "\0" . 'd' . "\0" . 'o' . "\0" . 'm' . "\0" . 'p' . "\0" . 'd' . "\0" . 'f' . "\0" . ' ' . "\0" . '3' . "\0" . '.' . "\0" . '1' . "\0" . '.' . "\0" . '0' . "\0" . ' ' . "\0" . '+' . "\0" . ' ' . "\0" . 'C' . "\0" . 'P' . "\0" . 'D' . "\0" . 'F)
+/CreationDate (D:20250323205553+00\'00\')
+/ModDate (D:20250323205553+00\'00\')
+/Title (şÿ' . "\0" . 'S' . "\0" . 'u' . "\0" . 'r' . "\0" . 'a' . "\0" . 't' . "\0" . ' ' . "\0" . 'K' . "\0" . 'e' . "\0" . 't' . "\0" . 'e' . "\0" . 'r' . "\0" . 'a' . "\0" . 'n' . "\0" . 'g' . "\0" . 'a' . "\0" . 'n' . "\0" . ' ' . "\0" . 'K' . "\0" . 'e' . "\0" . 'l' . "\0" . 'a' . "\0" . 'h' . "\0" . 'i' . "\0" . 'r' . "\0" . 'a' . "\0" . 'n)
+>>
+endobj
+6 0 obj
+<< /Type /Page
+/MediaBox [0.000 0.000 595.280 841.890]
+/Parent 3 0 R
+/Contents 7 0 R
+>>
+endobj
+7 0 obj
+<< /Filter /FlateDecode
+/Length 941 >>
+stream
+xœ•VÛnÛF}×WÌc¨+îò®7:VE–àš4‚ ÈÃÈÜH¬HÚ¦H¸şû¥]êUĞÂ0×Íœ93sfåÁË€¤¡"G8³î,*p„ô
+]%¢Ğ£ÇÊø½vÏßOM×ğtŞ96«¤Wrè3~ÿ¼Ø]ŒÙëÇçıÍ@
+ÿ$VíYAH†äîğ‚¤ƒ?{” ?>ß¡xBùyÂu]ª~,B¼â0ïå‡Af\'PäöáPÀ5tÅŒùİ¤’V[s*sZ‹¿Ê(Ğó€BÇ®¯(Ëiô‡"	‡²Dß~»›Ì\'÷ÓE–|¢Yrõp—d“ÍÒ)]%‹¯I:]|øNÙgšdOÉ@^LAà
+Ïõ,€³ÉÇddÉ‚n“izˆ}¸(E˜©‘QEƒÓJò)TàY-òÑ±±`~¾Pmé­0¡}§¿}Çù‘•qˆÁ$ØYJJÿG¿e‰Ğ(WºBôÇ;ô\'}¸O2šM²É}²¸A›f“ÛäÓ/‡^YÉ;ÀUÿfL¿z!ò££ÅĞ7sSN_•¹"öö¼$Iuàµxªš1!›¥³Û‘™ŞH9Ê?ÿ¾[¾
++ÊW®W´ÔMËuÎ„çŠkÊZò+¯©¨‹!}äŠ[ºåb;¤/»gnuMón[Ğ×oo‹zH•®uƒğ×6Tb!°äõ+ÏBbT\'¡Ù*!JjŞœFÉ(¾\'6¦3ÿØJºçşêÔÿKQ\\QRê¿ÑİX8zÊ‹K²LWèÓ2´dÅ%Ú·.ßËcºãRWK a§97kz7á=Ü8‡ı¶të×ÖìÃÆ¦ğg[&7adÓRŸiºì¬‰.F!ÑKQ²-S¿“6Ñ$¥Ñ¤5ÏÅ˜1]ë-Ó5×ÜAÓ%CÍúÑà@ñ—tm‘²‹VÊ&°+İä¼å+@%??aèÍìW«K,S^´º)*ä…ŒÍV/»®åº_½æœqnõš[Ai×`÷°†6"¸ÒıĞ¦œ¼ÀF†FW·İ Ïº);¼s^lÛ6(®7×y—wğ¶˜Y¬lâ¸ÖU±)ÍßF·ıîÃ' . "\0" . 'tºì`İW„"uÍMıÆ{6y6«=Ø}Ê+FWj¶1Pø
+mª©ô¶-€yÆÛ‹ğU' . "\0" . 'ÂÊÇ·¨²‰@¹Öÿ<ô×°r¥ğÛt×àYJ	­º¸7Ì0¤²\\#ónÍUÅ9ö©Ğ?hH©Ø<U?1şgÿN‹
+endstream
+endobj
+8 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+9 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F2
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+10 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F3
+/BaseFont /Times-Roman
+/Encoding /WinAnsiEncoding
+>>
+endobj
+11 0 obj
+<< /Type /ExtGState
+/BM /Normal
+/CA 1
+>>
+endobj
+12 0 obj
+<< /Type /ExtGState
+/BM /Normal
+/ca 1
+>>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000074 00000 n 
+0000000120 00000 n 
+0000000337 00000 n 
+0000000366 00000 n 
+0000000579 00000 n 
+0000000682 00000 n 
+0000001695 00000 n 
+0000001802 00000 n 
+0000001914 00000 n 
+0000002024 00000 n 
+0000002081 00000 n 
+trailer
+<<
+/Size 13
+/Root 1 0 R
+/Info 5 0 R
+/ID[<7c5ef4c6bd00b83294ac6471f9ee0f29><7c5ef4c6bd00b83294ac6471f9ee0f29>]
+>>
+startxref
+2138
+%%EOF
+', 'UTF-8', 'auto')
+ 3 APPPATH\Controllers\Masyarakat.php(46): Dompdf\Dompdf->loadHtml('<meta charset="UTF-8">%PDF-1.7
+1 0 obj
+<< /Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R >>
+endobj
+2 0 obj
+<< /Type /Outlines /Count 0 >>
+endobj
+3 0 obj
+<< /Type /Pages
+/Kids [6 0 R
+]
+/Count 1
+/Resources <<
+/ProcSet 4 0 R
+/Font << 
+/F1 8 0 R
+/F2 9 0 R
+/F3 10 0 R
+>>
+/ExtGState << 
+/GS1 11 0 R
+/GS2 12 0 R
+>>
+>>
+/MediaBox [0.000 0.000 595.280 841.890]
+ >>
+endobj
+4 0 obj
+[/PDF /Text ]
+endobj
+5 0 obj
+<<
+/Producer (şÿ' . "\0" . 'd' . "\0" . 'o' . "\0" . 'm' . "\0" . 'p' . "\0" . 'd' . "\0" . 'f' . "\0" . ' ' . "\0" . '3' . "\0" . '.' . "\0" . '1' . "\0" . '.' . "\0" . '0' . "\0" . ' ' . "\0" . '+' . "\0" . ' ' . "\0" . 'C' . "\0" . 'P' . "\0" . 'D' . "\0" . 'F)
+/CreationDate (D:20250323205553+00\'00\')
+/ModDate (D:20250323205553+00\'00\')
+/Title (şÿ' . "\0" . 'S' . "\0" . 'u' . "\0" . 'r' . "\0" . 'a' . "\0" . 't' . "\0" . ' ' . "\0" . 'K' . "\0" . 'e' . "\0" . 't' . "\0" . 'e' . "\0" . 'r' . "\0" . 'a' . "\0" . 'n' . "\0" . 'g' . "\0" . 'a' . "\0" . 'n' . "\0" . ' ' . "\0" . 'K' . "\0" . 'e' . "\0" . 'l' . "\0" . 'a' . "\0" . 'h' . "\0" . 'i' . "\0" . 'r' . "\0" . 'a' . "\0" . 'n)
+>>
+endobj
+6 0 obj
+<< /Type /Page
+/MediaBox [0.000 0.000 595.280 841.890]
+/Parent 3 0 R
+/Contents 7 0 R
+>>
+endobj
+7 0 obj
+<< /Filter /FlateDecode
+/Length 941 >>
+stream
+xœ•VÛnÛF}×WÌc¨+îò®7:VE–àš4‚ ÈÃÈÜH¬HÚ¦H¸şû¥]êUĞÂ0×Íœ93sfåÁË€¤¡"G8³î,*p„ô
+]%¢Ğ£ÇÊø½vÏßOM×ğtŞ96«¤Wrè3~ÿ¼Ø]ŒÙëÇçıÍ@
+ÿ$VíYAH†äîğ‚¤ƒ?{” ?>ß¡xBùyÂu]ª~,B¼â0ïå‡Af\'PäöáPÀ5tÅŒùİ¤’V[s*sZ‹¿Ê(Ğó€BÇ®¯(Ëiô‡"	‡²Dß~»›Ì\'÷ÓE–|¢Yrõp—d“ÍÒ)]%‹¯I:]|øNÙgšdOÉ@^LAà
+Ïõ,€³ÉÇddÉ‚n“izˆ}¸(E˜©‘QEƒÓJò)TàY-òÑ±±`~¾Pmé­0¡}§¿}Çù‘•qˆÁ$ØYJJÿG¿e‰Ğ(WºBôÇ;ô\'}¸O2šM²É}²¸A›f“ÛäÓ/‡^YÉ;ÀUÿfL¿z!ò££ÅĞ7sSN_•¹"öö¼$Iuàµxªš1!›¥³Û‘™ŞH9Ê?ÿ¾[¾
++ÊW®W´ÔMËuÎ„çŠkÊZò+¯©¨‹!}äŠ[ºåb;¤/»gnuMón[Ğ×oo‹zH•®uƒğ×6Tb!°äõ+ÏBbT\'¡Ù*!JjŞœFÉ(¾\'6¦3ÿØJºçşêÔÿKQ\\QRê¿ÑİX8zÊ‹K²LWèÓ2´dÅ%Ú·.ßËcºãRWK a§97kz7á=Ü8‡ı¶të×ÖìÃÆ¦ğg[&7adÓRŸiºì¬‰.F!ÑKQ²-S¿“6Ñ$¥Ñ¤5ÏÅ˜1]ë-Ó5×ÜAÓ%CÍúÑà@ñ—tm‘²‹VÊ&°+İä¼å+@%??aèÍìW«K,S^´º)*ä…ŒÍV/»®åº_½æœqnõš[Ai×`÷°†6"¸ÒıĞ¦œ¼ÀF†FW·İ Ïº);¼s^lÛ6(®7×y—wğ¶˜Y¬lâ¸ÖU±)ÍßF·ıîÃ' . "\0" . 'tºì`İW„"uÍMıÆ{6y6«=Ø}Ê+FWj¶1Pø
+mª©ô¶-€yÆÛ‹ğU' . "\0" . 'ÂÊÇ·¨²‰@¹Öÿ<ô×°r¥ğÛt×àYJ	­º¸7Ì0¤²\\#ónÍUÅ9ö©Ğ?hH©Ø<U?1şgÿN‹
+endstream
+endobj
+8 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+9 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F2
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+10 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F3
+/BaseFont /Times-Roman
+/Encoding /WinAnsiEncoding
+>>
+endobj
+11 0 obj
+<< /Type /ExtGState
+/BM /Normal
+/CA 1
+>>
+endobj
+12 0 obj
+<< /Type /ExtGState
+/BM /Normal
+/ca 1
+>>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000074 00000 n 
+0000000120 00000 n 
+0000000337 00000 n 
+0000000366 00000 n 
+0000000579 00000 n 
+0000000682 00000 n 
+0000001695 00000 n 
+0000001802 00000 n 
+0000001914 00000 n 
+0000002024 00000 n 
+0000002081 00000 n 
+trailer
+<<
+/Size 13
+/Root 1 0 R
+/Info 5 0 R
+/ID[<7c5ef4c6bd00b83294ac6471f9ee0f29><7c5ef4c6bd00b83294ac6471f9ee0f29>]
+>>
+startxref
+2138
+%%EOF
+')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Masyarakat->download('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masyarakat))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:18:38 --> ErrorException: Undefined variable $filePath
+[Method: GET, Route: masyarakat-download/1]
+in APPPATH\Controllers\Masyarakat.php on line 30.
+ 1 APPPATH\Controllers\Masyarakat.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filePath', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Masyarakat.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Masyarakat->download('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masyarakat))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:18:49 --> ErrorException: Undefined variable $filePath
+[Method: GET, Route: masyarakat-download/1]
+in APPPATH\Controllers\Masyarakat.php on line 30.
+ 1 APPPATH\Controllers\Masyarakat.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filePath', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Masyarakat.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Masyarakat->download('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masyarakat))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:20:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:20:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:23:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:51:58 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: pengajuan-surat]
+in APPPATH\Controllers\Masyarakat.php on line 34.
+ 1 APPPATH\Controllers\Masyarakat.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Masyarakat.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Masyarakat->pengajuan_Surat()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masyarakat))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:53:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:53:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:53:06 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 31.
+ 1 APPPATH\Controllers\Home.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 21:53:07 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 31.
+ 1 APPPATH\Controllers\Home.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 21:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 21:55:37 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 32.
+ 1 APPPATH\Controllers\Home.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 21:55:37 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 32.
+ 1 APPPATH\Controllers\Home.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 21:57:06 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 37.
+ 1 APPPATH\Controllers\Home.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 21:57:08 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 37.
+ 1 APPPATH\Controllers\Home.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 21:57:08 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 37.
+ 1 APPPATH\Controllers\Home.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 21:58:03 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 31.
+ 1 APPPATH\Controllers\Home.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+CRITICAL - 2025-03-23 21:58:05 --> ErrorException: Undefined variable $Modeljenissurat
+[Method: GET, Route: formpengajuan]
+in APPPATH\Controllers\Home.php on line 31.
+ 1 APPPATH\Controllers\Home.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Modeljenissurat', 'C:\\xampp\\htdocs\\e-lais\\app\\Controllers\\Home.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->formPengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 21:59:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:00:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:00:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 22:02:51 --> ErrorException: Undefined variable $desa
+[Method: GET, Route: pengajuan-surat]
+in APPPATH\Views\Admin\Masyarakat\v-pengajuan-surat.php on line 35.
+ 1 APPPATH\Views\Admin\Masyarakat\v-pengajuan-surat.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $desa', 'C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\Masyarakat\\v-pengajuan-surat.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\e-lais\\app\\Views\\Admin\\Masyarakat\\v-pengajuan-surat.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Admin/Masyarakat/v-pengajuan-surat', [], true)
+ 5 APPPATH\Controllers\Masyarakat.php(35): view('Admin/Masyarakat/v-pengajuan-surat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Masyarakat->pengajuan_Surat()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Masyarakat))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\e-lais\\public\\index.php')
+DEBUG - 2025-03-23 22:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:48:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-03-23 22:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
