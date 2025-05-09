@@ -31,6 +31,16 @@ $routes->get('daftar-pengajuan-surat', 'Kecamatan::index');
 $routes->get('kecamatan_cek-dokumen/(:num)', 'Admin::cek_dokumen/$1');
 $routes->post('kecamatan-validasi-berkas', 'Admin::validasi_berkas');
 $routes->post('kecamatan-simpan-surat', 'Admin::simpan_surat');
+$routes->get('kecamatan-data-desa', 'Kecamatan::data_desa');
+$routes->get('kecamatan-data-admin', 'Kecamatan::data_admin_desa');
+$routes->post('kecamatan-add-admin', 'Kecamatan::save_admin_desa');
+$routes->get('kecamatan-jenis-surat', 'Kecamatan::data_jenis_surat');
+$routes->post('kecamatan-add-jenis-surat', 'Kecamatan::add_jenis_surat');
+$routes->post('kecamatan-delete-jenis/(:num)', 'Kecamatan::hapus_jenis_surat/$1');
+
+
+
+
 
 
 $routes->get('daftar-pengajuan', 'Desa::data_surat');

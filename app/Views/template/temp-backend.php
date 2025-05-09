@@ -103,6 +103,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+            <?php
+            $current_url = service('uri')->getSegment(1); // Misal: 'kecamatan-data-admin'
+            ?>
 
             <?php if (session()->get('role') == 'Admin Kecamatan'): // Role Admin Kecamatan 
             ?>
@@ -121,6 +124,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <i class="nav-icon fas fa-list"></i>
                   <p>Daftar Permohonan</p>
                 </a>
+              </li>
+              <!-- Manajemen Data -->
+              <li class="nav-item has-treeview <?= in_array($current_url, ['kecamatan-data-desa', 'kecamatan-data-admin', 'kecamatan-jenis-surat']) ? 'menu-open' : '' ?>">
+                <a href="#" class="nav-link <?= in_array($current_url, ['kecamatan-data-desa', 'kecamatan-data-admin']) ? 'active' : '' ?>">
+                  <i class="nav-icon fas fa-database"></i>
+                  <p>
+                    Manajemen Data
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?= base_url('kecamatan-data-desa') ?>" class="nav-link <?= $current_url == 'kecamatan-data-desa' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Data Desa</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('kecamatan-data-admin') ?>" class="nav-link <?= $current_url == 'kecamatan-data-admin' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Data Admin Desa</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('kecamatan-jenis-surat') ?>" class="nav-link <?= $current_url == 'kecamatan-jenis-surat' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Data Jenis Surat</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
             <?php endif; ?>
             <?php if (session()->get('role') == 'Admin Desa'): // Role Admin Kecamatan 

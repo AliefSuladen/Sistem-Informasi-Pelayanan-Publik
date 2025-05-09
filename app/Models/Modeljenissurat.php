@@ -7,8 +7,8 @@ use CodeIgniter\Model;
 class Modeljenissurat extends Model
 {
     protected $table = 'jenis_surat';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['nama_jenis'];
+    protected $primaryKey = 'id_jenis';
+    protected $allowedFields = ['surat'];
 
     public function getAllJenisSurat()
     {
