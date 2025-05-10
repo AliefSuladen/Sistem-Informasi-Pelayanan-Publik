@@ -1,13 +1,39 @@
 <?php
+function tanggalIndo($tanggal)
+{
+    $bulan = [
+        1 => 'Januari',
+        2 => 'Februari',
+        3 => 'Maret',
+        4 => 'April',
+        5 => 'Mei',
+        6 => 'Juni',
+        7 => 'Juli',
+        8 => 'Agustus',
+        9 => 'September',
+        10 => 'Oktober',
+        11 => 'November',
+        12 => 'Desember'
+    ];
 
-$logoPath = base_url('AdminLTE/logo-muba.png');
+    $tanggalArray = explode('-', $tanggal);
+
+    if (count($tanggalArray) === 3) {
+        return $tanggalArray[2] . ' ' . $bulan[(int)$tanggalArray[1]] . ' ' . $tanggalArray[0];
+    } else {
+        return 'Tanggal tidak valid';
+    }
+}
+
+
 $nama = $permohonan['nama_user'];
-$tempatTanggalLahir = "Palembang, 01 Januari 1990"; // Ambil dari data user jika tersedia
-$statusPerkawinan = "Belum Kawin"; // Ambil dari data user jika tersedia
-$pekerjaan = "Mahasiswa"; // Ambil dari data user jika tersedia
-$alamat = "Desa " . $permohonan['nama_desa'] . ", Kabupaten Musi Banyuasin";
-$tanggalSurat = date('d F Y');
-
+$nik = $permohonan['nik'];
+$jenisKelamin = $permohonan['kelamin'];
+$agama = $permohonan['agama'];
+$alamat = "Desa " . $permohonan['nama_desa'] . ", Kecamatan Lais, Kabupaten Musi Banyuasin";
+$tujuan = $permohonan['tujuan_skck'];
+$tanggalSurat = tanggalIndo(date('Y-m-d'));
+$nomorSurat = model('Modelpermohonan')->getNomorSuratPengantarSKCK();
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +41,7 @@ $tanggalSurat = date('d F Y');
 
 <head>
     <meta charset="UTF-8">
+    <title>Surat Pengantar SKCK</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,10 +59,6 @@ $tanggalSurat = date('d F Y');
             margin-top: 20px;
         }
 
-        .mt-1 {
-            margin-top: 10px;
-        }
-
         .signature {
             margin-top: 50px;
             text-align: right;
@@ -50,40 +73,65 @@ $tanggalSurat = date('d F Y');
             padding: 5px;
             vertical-align: top;
         }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .header img {
+            width: 90px;
+            height: auto;
+        }
+
+        .header .title {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .header-line {
+            border-bottom: 3px solid black;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
     </style>
-    <title>Surat Pengantar SKCK</title>
 </head>
 
 <body>
-    <div class="center">
-        <img src="<?= base_url('AdminLTE/logo-muba.png') ?>" width="100">
-
-
-        <h2>PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
-        <h4>KECAMATAN LAIS</h4>
-        <hr>
-        <h3><u>SURAT KETERANGAN BERKELAKUAN BAIK</u></h3>
-        <p>Nomor: ....../....../....../<?= date('Y') ?></p>
+    <div class="header">
+        <div class="title">
+            <h2>PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
+            <h2>KECAMATAN LAIS</h2>
+            <p>Jalan Raya Palembang Sekayu KM. 80</p>
+        </div>
     </div>
 
-    <p>Keuchik Desa <?= $permohonan['nama_desa'] ?> Kecamatan Kabupaten Musi Banyuasin, dengan ini menerangkan bahwa:</p>
+    <div class="header-line"></div>
+
+    <div class="center">
+        <h3><u>SURAT PENGANTAR SKCK</u></h3>
+        <p>Nomor: <?= $nomorSurat ?></p>
+    </div>
+
+    <p>Yang bertanda tangan di bawah ini, Camat Lais, Kabupaten Musi Banyuasin, dengan ini menerangkan bahwa:</p>
 
     <table>
         <tr>
             <td>Nama</td>
-            <td>: <?= $nama ?></td>
+            <td>: <b><?= $nama ?></b></td>
         </tr>
         <tr>
-            <td>Tempat/Tgl Lahir</td>
-            <td>: <?= $tempatTanggalLahir ?></td>
+            <td>NIK</td>
+            <td>: <?= $nik ?></td>
         </tr>
         <tr>
-            <td>Status Perkawinan</td>
-            <td>: <?= $statusPerkawinan ?></td>
+            <td>Jenis Kelamin</td>
+            <td>: <?= $jenisKelamin ?></td>
         </tr>
         <tr>
-            <td>Pekerjaan</td>
-            <td>: <?= $pekerjaan ?></td>
+            <td>Agama</td>
+            <td>: <?= $agama ?></td>
         </tr>
         <tr>
             <td>Alamat</td>
@@ -91,15 +139,15 @@ $tanggalSurat = date('d F Y');
         </tr>
     </table>
 
-    <p class="mt-2">Benar yang tersebut namanya di atas adalah penduduk yang berkelakuan baik, tidak pernah melakukan tindak pidana, dan tidak terlibat dalam penggunaan narkoba.</p>
+    <p class="mt-2">Adalah benar yang bersangkutan merupakan warga kami dan berkelakuan baik. Surat ini dibuat sebagai pengantar untuk pembuatan SKCK dengan tujuan: <b><?= $tujuan ?></b>.</p>
 
-    <p>Surat ini diberikan untuk dipergunakan sebagaimana mestinya.</p>
+    <p>Demikian surat pengantar ini dibuat dengan sebenarnya agar dapat digunakan sebagaimana mestinya.</p>
 
     <div class="signature">
-        <p><?= $tanggalSurat ?></p>
-        <p>Camat Lais desa'] ?></p>
+        <p>Lais, <?= $tanggalSurat ?></p>
+        <p>Camat Lais</p>
         <br><br>
-        <p class="bold">Muhammad Alief , S.kom</p>
+        <p class="bold">Muhammad Alief</p>
     </div>
 
 </body>

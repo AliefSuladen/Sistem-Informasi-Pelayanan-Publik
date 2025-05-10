@@ -14,6 +14,7 @@ $routes->get('login', 'Auth::login'); // Menampilkan form login
 $routes->post('login/process', 'Auth::cek_login'); // Proses login
 $routes->get('logout', 'Auth::logout'); // Logout user
 $routes->get('formpengajuan', 'Home::formPengajuan');
+$routes->get('tentang', 'Home::tentang');
 $routes->post('postpengajuan', 'Home::ajukanSurat');
 
 
@@ -37,6 +38,9 @@ $routes->post('kecamatan-add-admin', 'Kecamatan::save_admin_desa');
 $routes->get('kecamatan-jenis-surat', 'Kecamatan::data_jenis_surat');
 $routes->post('kecamatan-add-jenis-surat', 'Kecamatan::add_jenis_surat');
 $routes->post('kecamatan-delete-jenis/(:num)', 'Kecamatan::hapus_jenis_surat/$1');
+$routes->get('kecamatan-laporan', 'Kecamatan::laporan');
+
+
 
 
 

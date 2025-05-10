@@ -59,7 +59,46 @@ class Modelpermohonan extends Model
             ->get()->getResultArray();
     }
 
-    // Ambil permohonan berdasarkan desa
+    public function getLaporan($tahun, $bulan)
+    {
+        $builder = $this->db->table('permohonan_surat');
+        $builder->select('jenis_surat.surat as jenis_surat, COUNT(*) as total');
+        $builder->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis');
+
+        if ($tahun) {
+            $builder->where('YEAR(permohonan_surat.created_at)', $tahun);
+        }
+
+        if ($bulan) {
+            $builder->where('MONTH(permohonan_surat.created_at)', $bulan);
+        }
+
+        $builder->groupBy('permohonan_surat.id_jenis');
+
+        return $builder->get()->getResultArray();
+    }
+
+    public function getStatistikGlobal()
+    {
+        return $this->db->table($this->table)
+            ->select('status_surat.status, COUNT(*) as jumlah')
+            ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status')
+            ->groupBy('status_surat.status')
+            ->get()->getResultArray();
+    }
+
+    public function getJumlahJenisSuratGlobal()
+    {
+        return $this->db->table($this->table)
+            ->select('jenis_surat.surat, COUNT(*) as total')
+            ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis')
+            ->groupBy('permohonan_surat.id_jenis')
+            ->get()->getResultArray();
+    }
+
+
+
+
     public function getPermohonanByDesa($id_desa)
     {
         return $this->db->table($this->table)
@@ -77,7 +116,7 @@ class Modelpermohonan extends Model
     public function getPermohonanByUser($id_user)
     {
         return $this->db->table($this->table)
-            ->select('permohonan_surat.*, user.nama_user, user.id_desa, jenis_surat.surat, status_surat.status')
+            ->select('permohonan_surat.*, user.nama_user,user.nik, user.id_desa, jenis_surat.surat, status_surat.status')
             ->join('user', 'user.id_user = permohonan_surat.id_user', 'left')
             ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis', 'left')
             ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status', 'left')
@@ -86,11 +125,12 @@ class Modelpermohonan extends Model
             ->get()->getResultArray();
     }
 
+
     // Ambil permohonan berdasarkan ID
     public function getPermohonanById($id_permohonan)
     {
         return $this->db->table($this->table)
-            ->select('permohonan_surat.*, user.nama_user, user.email, jenis_surat.surat, status_surat.status, desa.nama_desa')
+            ->select('permohonan_surat.*, user.nama_user,user.nik,user.kelamin,user.agama, user.email,user.pekerjaan,user.alamat, jenis_surat.surat, status_surat.status, desa.nama_desa')
             ->join('user', 'user.id_user = permohonan_surat.id_user', 'left')
             ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis', 'left')
             ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status', 'left')
@@ -121,7 +161,6 @@ class Modelpermohonan extends Model
     }
 
 
-
     // Update status permohonan
     public function updateStatus($id_permohonan, $id_status)
     {
@@ -132,19 +171,136 @@ class Modelpermohonan extends Model
 
     public function getNomorSuratSKL()
     {
-        // Ambil nomor urut terakhir untuk jenis SKL (id_jenis = 3)
         $lastSKL = $this->where('id_jenis', 3)
             ->select('id_permohonan')
             ->orderBy('id_permohonan', 'DESC')
             ->first();
 
-        // Tentukan nomor urut berikutnya
         $nomorUrut = ($lastSKL) ? $lastSKL['id_permohonan'] + 1 : 1;
 
-        // Format Nomor Surat (contoh: 0001/SKL/LAIS/2024)
         $tahun = date('Y');
         return sprintf("%04d", $nomorUrut) . "/SKL/LAIS/" . $tahun;
     }
+    public function getNomorSuratDomisili()
+    {
+        // Ambil tahun dan bulan saat ini
+        $tahun = date('Y');
+        $bulan = date('m');
+
+        $count = $this->db->table($this->table)
+            ->where('id_jenis', 2)
+            ->where('MONTH(created_at)', $bulan)
+            ->where('YEAR(created_at)', $tahun)
+            ->countAllResults();
+        $nomorUrut = str_pad($count + 1, 3, '0', STR_PAD_LEFT);
+        $nomorSurat = $nomorUrut . '/DS/LAIS/' . $bulan . '/' . $tahun;
+
+        return $nomorSurat;
+    }
+
+    public function getNomorSuratIzinUsaha()
+    {
+        $bulanRomawi = [
+            1 => 'I',
+            'II',
+            'III',
+            'IV',
+            'V',
+            'VI',
+            'VII',
+            'VIII',
+            'IX',
+            'X',
+            'XI',
+            'XII'
+        ];
+
+        $bulan = date('n');
+        $tahun = date('Y');
+
+
+        $count = $this->where('id_jenis', 6)
+            ->where('YEAR(updated_at)', $tahun)
+            ->countAllResults();
+
+        $nomorUrut = str_pad($count + 1, 3, '0', STR_PAD_LEFT);
+        $nomor = "$nomorUrut/SIU/LAIS/{$bulanRomawi[$bulan]}/$tahun";
+
+        return $nomor;
+    }
+    public function getNomorSuratKematian()
+    {
+        $kodeSurat = '474.3';
+        $bulanRomawi = [
+            1 => 'I',
+            'II',
+            'III',
+            'IV',
+            'V',
+            'VI',
+            'VII',
+            'VIII',
+            'IX',
+            'X',
+            'XI',
+            'XII'
+        ];
+
+        $bulan = (int)date('m');
+        $tahun = date('Y');
+        $romawi = $bulanRomawi[$bulan];
+
+        // Hitung jumlah surat kematian yang sudah dibuat bulan ini
+        $builder = $this->db->table('permohonan_surat');
+        $builder->where('id_jenis', 4);
+        $builder->where('MONTH(created_at)', $bulan);
+        $builder->where('YEAR(created_at)', $tahun);
+        $jumlah = $builder->countAllResults() + 1;
+
+        // Format nomor: 474.3/[NOMOR]/LAIS/[ROMAWI]/[TAHUN]
+        return sprintf('%s/%03d/LAIS/%s/%s', $kodeSurat, $jumlah, $romawi, $tahun);
+    }
+    public function getNomorSuratKeteranganUsaha()
+    {
+        // Asumsikan id_jenis untuk Surat Keterangan Usaha adalah 5 (ubah sesuai yang kamu gunakan di DB)
+        $last = $this->where('id_jenis', 7)
+            ->select('id_permohonan')
+            ->orderBy('id_permohonan', 'DESC')
+            ->first();
+
+        $nomorUrut = ($last) ? $last['id_permohonan'] + 1 : 1;
+
+        $tahun = date('Y');
+        return sprintf("%04d", $nomorUrut) . "/SKU/LAIS/" . $tahun;
+    }
+
+    public function getNomorSuratPengantarSKCK()
+    {
+
+        $last = $this->where('id_jenis', 5)
+            ->select('id_permohonan')
+            ->orderBy('id_permohonan', 'DESC')
+            ->first();
+
+        $nomorUrut = ($last) ? $last['id_permohonan'] + 1 : 1;
+
+        $tahun = date('Y');
+        return sprintf("%04d", $nomorUrut) . "/SKCK/LAIS/" . $tahun;
+    }
+
+    public function getNomorSuratSKTM()
+    {
+        $last = $this->where('id_jenis', 1)
+            ->select('id_permohonan')
+            ->orderBy('id_permohonan', 'DESC')
+            ->first();
+
+        $nomorUrut = ($last) ? $last['id_permohonan'] + 1 : 1;
+
+        $tahun = date('Y');
+        return sprintf("%04d", $nomorUrut) . "/SKTM/LAIS/" . $tahun;
+    }
+
 
     public function getFileSurat($id_permohonan)
     {

@@ -14,6 +14,7 @@
         "ext-intl": "*",
         "ext-mbstring": "*",
         "dompdf/dompdf": "^3.1",
+        "endroid/qr-code": "^5.1",
         "laminas/laminas-escaper": "^2.14",
         "mpdf/mpdf": "^6.1",
         "psr/log": "^3.0"

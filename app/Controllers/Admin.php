@@ -12,6 +12,8 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 
 
+
+
 class Admin extends BaseController
 {
     public function __construct()
@@ -24,7 +26,15 @@ class Admin extends BaseController
     public function kecamatan_dashboard()
     {
 
-        return view('Admin/v-kec-dashboard');
+        $data = [
+            'jml_admin_desa' => $this->Modeluser->countAdminDesa(),
+            'total_permohonan'   => count($this->Modelpermohonan->getAllPermohonan()),
+            'statistik_status'   => $this->Modelpermohonan->getStatistikGlobal(),
+            'statistik_jenis'    => $this->Modelpermohonan->getJumlahJenisSuratGlobal(),
+            'permohonan_terbaru' => array_slice($this->Modelpermohonan->getAllPermohonan(), 0, 5),
+        ];
+
+        return view('Admin/v-kec-dashboard', $data);
     }
     public function masyarakat_dashboard()
     {
@@ -159,13 +169,13 @@ class Admin extends BaseController
 
         // Mapping ID Jenis Surat ke Template
         $template_path = [
-            1 => 'Admin/Template/sktm',      // Surat Keterangan Tidak Mampu
-            2 => 'Admin/Template/domisili',  // Surat Domisili
-            3 => 'Admin/Template/kelahiran', // Surat Kelahiran
-            4 => 'Admin/Template/kematian',  // Surat Kematian
-            5 => 'Admin/Template/skck',      // Surat Pengantar SKCK
-            6 => 'Admin/Template/izin_usaha', // Surat Izin Usaha
-            7 => 'Admin/Template/keterangan_usaha', // Surat Keterangan Usaha
+            1 => 'Admin/Template/sktm',
+            2 => 'Admin/Template/domisili',
+            3 => 'Admin/Template/kelahiran',
+            4 => 'Admin/Template/kematian',
+            5 => 'Admin/Template/skck',
+            6 => 'Admin/Template/izin_usaha',
+            7 => 'Admin/Template/keterangan_usaha',
         ];
 
         $id_jenis = $permohonan['id_jenis'];
@@ -195,6 +205,7 @@ class Admin extends BaseController
 
         return $this->response->setContentType('application/pdf')->setBody($output);
     }
+
 
     public function simpan_surat()
     {

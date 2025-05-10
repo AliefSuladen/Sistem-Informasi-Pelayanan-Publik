@@ -24,7 +24,10 @@ class Home extends BaseController
     {
         return view('v-home');
     }
-
+    public function tentang()
+    {
+        return view('Home/v-profil');
+    }
     public function formPengajuan()
     {
 

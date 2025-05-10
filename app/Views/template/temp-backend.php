@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Menu Kanan -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="<?= base_url('profil') ?>">
+            <a class="nav-link text-dark" href="<?= base_url('tentang') ?>">
               <i class="fas fa-user"></i> Profil
             </a>
           </li>
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Menu untuk Pengajuan Permohonan hanya untuk Admin Kecamatan -->
               <li class="nav-item">
 
-                <a href="#" class="nav-link">
+                <a href="<?= base_url('admin-kecamatan') ?>" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -126,8 +126,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <!-- Manajemen Data -->
-              <li class="nav-item has-treeview <?= in_array($current_url, ['kecamatan-data-desa', 'kecamatan-data-admin', 'kecamatan-jenis-surat']) ? 'menu-open' : '' ?>">
-                <a href="#" class="nav-link <?= in_array($current_url, ['kecamatan-data-desa', 'kecamatan-data-admin']) ? 'active' : '' ?>">
+              <li class="nav-item has-treeview <?= in_array($current_url, ['kecamatan-data-desa', 'kecamatan-data-admin', 'kecamatan-jenis-surat', 'kecamatan-laporan']) ? 'menu-open' : '' ?>">
+                <a href="#" class="nav-link ">
                   <i class="nav-icon fas fa-database"></i>
                   <p>
                     Manajemen Data
@@ -151,6 +151,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="<?= base_url('kecamatan-jenis-surat') ?>" class="nav-link <?= $current_url == 'kecamatan-jenis-surat' ? 'active' : '' ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Data Jenis Surat</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('kecamatan-laporan') ?>" class="nav-link <?= $current_url == 'kecamatan-laporan' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Laporan</p>
                     </a>
                   </li>
                 </ul>

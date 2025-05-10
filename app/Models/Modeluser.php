@@ -20,4 +20,9 @@ class Modeluser extends Model
     {
         return $this->where('id_user', $id)->first();
     }
+
+    public function countAdminDesa()
+    {
+        return $this->where('role', '2')->countAllResults();
+    }
 }

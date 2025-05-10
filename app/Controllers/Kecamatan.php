@@ -113,4 +113,19 @@ class Kecamatan extends BaseController
         session()->setFlashdata('success', 'Jenis surat berhasil dihapus.');
         return redirect()->to('kecamatan-jenis-surat');
     }
+
+    public function laporan()
+    {
+        $tahun = $this->request->getGet('tahun');
+        $bulan = $this->request->getGet('bulan');
+
+        $data = [
+            'laporan' => $this->Modelpermohonan->getLaporan($tahun, $bulan),
+            'tahun'   => $tahun,
+            'bulan'   => $bulan,
+            'jenis_surat' => $this->Modeljenissurat->getAllJenisSurat(),
+        ];
+
+        return view('Admin/Kecamatan/v-laporan', $data);
+    }
 }

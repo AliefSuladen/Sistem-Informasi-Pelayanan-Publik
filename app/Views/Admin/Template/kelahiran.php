@@ -34,8 +34,6 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 
@@ -58,10 +56,6 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
             margin-top: 20px;
         }
 
-        .mt-1 {
-            margin-top: 10px;
-        }
-
         .signature {
             margin-top: 50px;
             text-align: right;
@@ -77,8 +71,25 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
             vertical-align: top;
         }
 
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .header img {
+            width: 90px;
+            height: auto;
+        }
+
+        .header .title {
+            flex-grow: 1;
+            text-align: center;
+        }
+
         .header-line {
             border-bottom: 3px solid black;
+            margin-top: 10px;
             margin-bottom: 20px;
         }
     </style>
@@ -86,11 +97,17 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
 </head>
 
 <body>
+    <div class="header">
+        <div class="title">
+            <h2>PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
+            <h2>KECAMATAN LAIS</h2>
+            <p>Jalan Raya Palembang Sekayu KM. 80</p>
+        </div>
+    </div>
+
+    <div class="header-line"></div>
+
     <div class="center">
-        <h2>PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
-        <h2>KECAMATAN LAIS</h2>
-        <p>Jalan Raya Palembang Sekayu KM. 80</p>
-        <div class="header-line"></div>
         <h3><u>SURAT KETERANGAN KELAHIRAN</u></h3>
         <p>Nomor: <?= $nomorSurat ?></p>
     </div>
@@ -128,7 +145,7 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
         <p>Lais, <?= $tanggalSurat ?></p>
         <p>Camat Lais</p>
         <br><br>
-        <p class="bold">Muhammad Alief , S.kom</p>
+        <p class="bold">Muhammad Alief</p>
     </div>
 
 </body>

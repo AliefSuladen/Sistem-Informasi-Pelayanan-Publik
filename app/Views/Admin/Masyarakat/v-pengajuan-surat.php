@@ -102,6 +102,18 @@
                             <input type="text" class="form-control" name="nama_almarhum" required>
                         </div>
                         <div class="mb-3">
+                            <label for="nik_almarhum" class="form-label">NIK Almarhum</label>
+                            <input type="text" class="form-control" name="nik_almarhum" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="sebab_kematian" class="form-label">Sebab</label>
+                            <input type="text" class="form-control" name="sebab_kematian" required>
+                        </div>
+                            <div class="mb-3">
+                            <label for="tempat" class="form-label">Tempat</label>
+                            <input type="text" class="form-control" name="tempat" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="tgl_wafat" class="form-label">Tanggal Wafat</label>
                             <input type="date" class="form-control" name="tgl_wafat" required>
                         </div>`;
@@ -109,11 +121,10 @@
             case '5': // Surat Pengantar SKCK
                 html = `<div class="mb-3">
                             <label for="keperluan" class="form-label">Keperluan</label>
-                            <input type="text" class="form-control" name="keperluan" required>
+                            <input type="text" class="form-control" name="tujuan_skck" required>
                         </div>`;
                 break;
-            case '6': // Surat Izin Usaha
-            case '7': // Surat Keterangan Usaha
+            case '6':
                 html = `<div class="mb-3">
                             <label for="nama_usaha" class="form-label">Nama Usaha</label>
                             <input type="text" class="form-control" name="nama_usaha" required>
@@ -121,6 +132,28 @@
                         <div class="mb-3">
                             <label for="jenis_usaha" class="form-label">Jenis Usaha</label>
                             <input type="text" class="form-control" name="jenis_usaha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal_usaha" class="form-label">Modal Usaha</label>
+                            <input type="number" class="form-control" name="modal_usaha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat_usaha" class="form-label">Alamat</label>
+                            <input type="text" class="form-control" name="alamat_usaha" required>
+                        </div>`;
+                break;
+            case '7':
+                html = `<div class="mb-3">
+                            <label for="nama_usaha" class="form-label">Nama Usaha</label>
+                            <input type="text" class="form-control" name="nama_usaha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jenis_usaha" class="form-label">Jenis Usaha</label>
+                            <input type="text" class="form-control" name="jenis_usaha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat_usaha" class="form-label">Alamat</label>
+                            <input type="text" class="form-control" name="alamat_usaha" required>
                         </div>`;
                 break;
         }

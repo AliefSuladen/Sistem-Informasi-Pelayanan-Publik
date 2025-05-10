@@ -53,7 +53,6 @@ class Masyarakat extends BaseController
         switch ($id_jenis) {
             case 1: // SKTM
                 $permohonanData['alasan_sktm'] = $this->request->getPost('alasan');
-                $permohonanData['status_perkawinan'] = $this->request->getPost('status_perkawinan');
                 break;
             case 2: // Domisili
                 $permohonanData['alamat_domisili'] = $this->request->getPost('alamat_domisili');
@@ -68,19 +67,23 @@ class Masyarakat extends BaseController
             case 4: // Kematian
                 $permohonanData['nama_alm'] = $this->request->getPost('nama_almarhum');
                 $permohonanData['nik_alm'] = $this->request->getPost('nik_almarhum');
-                $permohonanData['tempat_kematian'] = $this->request->getPost('tempat_kematian');
-                $permohonanData['tanggal_kematian'] = $this->request->getPost('tanggal_wafat');
+                $permohonanData['tempat_kematian'] = $this->request->getPost('tempat');
+                $permohonanData['tanggal_kematian'] = $this->request->getPost('tgl_wafat');
                 $permohonanData['sebab_kematian'] = $this->request->getPost('sebab_kematian');
                 break;
             case 5: // SKCK
                 $permohonanData['tujuan_skck'] = $this->request->getPost('tujuan_skck');
                 break;
-            case 6: // Izin Usaha
-            case 7: // Keterangan Usaha
+            case 6:
+                $permohonanData['nama_usaha'] = $this->request->getPost('nama_usaha');
+                $permohonanData['jenis_usaha'] = $this->request->getPost('jenis_usaha');
+                $permohonanData['modal_usaha'] = $this->request->getPost('modal_usaha');
+                $permohonanData['alamat_usaha'] = $this->request->getPost('alamat_usaha');
+                break;
+            case 7:
                 $permohonanData['nama_usaha'] = $this->request->getPost('nama_usaha');
                 $permohonanData['jenis_usaha'] = $this->request->getPost('jenis_usaha');
                 $permohonanData['alamat_usaha'] = $this->request->getPost('alamat_usaha');
-                $permohonanData['modal_usaha'] = $this->request->getPost('modal_usaha');
                 break;
         }
 
