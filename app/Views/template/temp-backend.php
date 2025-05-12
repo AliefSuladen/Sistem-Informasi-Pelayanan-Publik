@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Menu Kanan -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="<?= base_url('tentang') ?>">
+            <a class="nav-link text-dark" href="<?= base_url('profil') ?>">
               <i class="fas fa-user"></i> Profil
             </a>
           </li>

@@ -28,7 +28,7 @@ class Admin extends BaseController
 
         $data = [
             'jml_admin_desa' => $this->Modeluser->countAdminDesa(),
-            'total_permohonan'   => count($this->Modelpermohonan->getAllPermohonan()),
+            'total_permohonan'   => count($this->Modelpermohonan->findAll()),
             'statistik_status'   => $this->Modelpermohonan->getStatistikGlobal(),
             'statistik_jenis'    => $this->Modelpermohonan->getJumlahJenisSuratGlobal(),
             'permohonan_terbaru' => array_slice($this->Modelpermohonan->getAllPermohonan(), 0, 5),
