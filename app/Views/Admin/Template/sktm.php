@@ -22,7 +22,7 @@ function tanggalIndo($tanggal)
         : 'Tanggal tidak valid';
 }
 
-// Data
+// Data dari controller
 $nama = $permohonan['nama_user'];
 $nik = $permohonan['nik'];
 $jenisKelamin = $permohonan['kelamin'];
@@ -32,8 +32,16 @@ $alasan = $permohonan['alasan_sktm'];
 $alamat = "Desa " . $permohonan['nama_desa'] . ", Kecamatan Lais, Kabupaten Musi Banyuasin";
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
 $nomorSurat = model('Modelpermohonan')->getNomorSuratSKTM();
-?>
 
+// Konversi logo ke base64
+$logoSrc = '';
+$logoFile = FCPATH . 'uploads/logo.jpg';
+if (file_exists($logoFile)) {
+    $logoData = file_get_contents($logoFile);
+    $logoBase64 = base64_encode($logoData);
+    $logoSrc = 'data:image/jpeg;base64,' . $logoBase64;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -45,70 +53,55 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKTM();
             font-family: Arial, sans-serif;
         }
 
-        .center {
+        .header-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .header-text {
             text-align: center;
+            flex: 1;
         }
 
-        .bold {
-            font-weight: bold;
-        }
-
-        .mt-2 {
-            margin-top: 20px;
-        }
-
-        .signature {
-            margin-top: 50px;
-            text-align: right;
-        }
-
-        .qr {
-            margin-top: 30px;
-            text-align: left;
+        .header-line {
+            border-bottom: 3px solid black;
+            margin-top: 5px;
+            margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             margin-top: 20px;
+            border-collapse: collapse;
         }
 
         td {
-            padding: 5px;
+            padding: 4px;
             vertical-align: top;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .header-line {
-            border-bottom: 3px solid black;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        img.qr-image {
-            width: 100px;
-            height: 100px;
-        }
-
-        .qr p {
-            font-size: 11px;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <h2>PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
-        <h2>KECAMATAN LAIS</h2>
-        <p>Jalan Raya Palembang Sekayu KM. 80</p>
+
+    <div style="display: table; width: 100%; border-bottom: 3px solid black; padding-bottom: 10px; margin-bottom: 20px;">
+        <div style="display: table-cell; width: 100px; vertical-align: middle;">
+            <img src="<?= $logoSrc ?>" style="width: 90px; height: auto;">
+        </div>
+        <div style="display: table-cell; text-align: center; vertical-align: middle;">
+            <h2 style="margin:0;">PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
+            <h2 style="margin:0;">KECAMATAN LAIS</h2>
+            <p style="margin:0;">Jalan Raya Palembang Sekayu KM. 80</p>
+        </div>
     </div>
 
-    <div class="header-line"></div>
-
-    <div class="center">
+    <div style="text-align:center;">
         <h3><u>SURAT KETERANGAN TIDAK MAMPU</u></h3>
         <p>Nomor: <?= $nomorSurat ?></p>
     </div>
@@ -142,19 +135,20 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratSKTM();
         </tr>
     </table>
 
-    <p class="mt-2">
+    <p style="margin-top:20px;">
         Berdasarkan pengamatan dan data yang ada, yang bersangkutan tergolong keluarga yang tidak mampu secara ekonomi.
         Surat ini diterbitkan untuk keperluan: <b><?= $alasan ?></b>.
     </p>
 
     <p>Demikian surat keterangan ini dibuat dengan sebenarnya dan dapat dipergunakan sebagaimana mestinya.</p>
 
-    <div class="signature">
+    <div style="text-align:right; margin-top:50px;">
         <p>Lais, <?= $tanggalSurat ?></p>
         <p>Camat Lais</p>
         <br><br>
-        <p class="bold">Muhammad Alief</p>
+        <p><b>Muhammad Alief</b></p>
     </div>
+
 </body>
 
 </html>

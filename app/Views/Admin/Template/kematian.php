@@ -36,6 +36,14 @@ $penyebab = $permohonan['sebab_kematian'];
 $alamat = "Desa " . $permohonan['nama_desa'] . ", Kecamatan Lais, Kabupaten Musi Banyuasin";
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
 $nomorSurat = model('Modelpermohonan')->getNomorSuratKematian();
+
+$logoSrc = '';
+$logoFile = FCPATH . 'uploads/logo.jpg';
+if (file_exists($logoFile)) {
+    $logoData = file_get_contents($logoFile);
+    $logoBase64 = base64_encode($logoData);
+    $logoSrc = 'data:image/jpeg;base64,' . $logoBase64;
+}
 ?>
 
 <!DOCTYPE html>
@@ -101,15 +109,16 @@ $nomorSurat = model('Modelpermohonan')->getNomorSuratKematian();
 </head>
 
 <body>
-    <div class="header">
-        <div class="title">
-            <h2>PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
-            <h2>KECAMATAN LAIS</h2>
-            <p>Jalan Raya Palembang Sekayu KM. 80</p>
+    <div style="display: table; width: 100%; border-bottom: 3px solid black; padding-bottom: 10px; margin-bottom: 20px;">
+        <div style="display: table-cell; width: 100px; vertical-align: middle;">
+            <img src="<?= $logoSrc ?>" style="width: 90px; height: auto;">
+        </div>
+        <div style="display: table-cell; text-align: center; vertical-align: middle;">
+            <h2 style="margin:0;">PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
+            <h2 style="margin:0;">KECAMATAN LAIS</h2>
+            <p style="margin:0;">Jalan Raya Palembang Sekayu KM. 80</p>
         </div>
     </div>
-
-    <div class="header-line"></div>
 
     <div class="center">
         <h3><u>SURAT KETERANGAN KEMATIAN</u></h3>

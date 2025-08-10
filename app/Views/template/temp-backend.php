@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </ul>
 
         <!-- Judul Aplikasi -->
-        <span class="navbar-brand font-weight-bold text-info text-dark">
+        <span class="navbar-brand font-weight-bold text-info text-dark ">
           <i class="fas fa-landmark mr-2 text-dark"></i>
           <span class="d-none d-sm-inline">Elektronik Layanan Administrasi Informasi Sistem</span>
           <span class="d-inline d-sm-none">e-LAIS</span>
