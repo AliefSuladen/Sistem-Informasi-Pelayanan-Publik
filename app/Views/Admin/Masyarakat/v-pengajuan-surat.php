@@ -60,16 +60,8 @@
 
         switch (jenisSurat) {
             case '1': // Surat Keterangan Tidak Mampu
-                html = `<div class="mb-3">
-                            <label for="alasan" class="form-label">Alasan</label>
-                            <textarea class="form-control" name="alasan" placeholder="Masukkan alasan pengajuan" required></textarea>
-                        </div>`;
                 break;
             case '2': // Surat Domisili
-                html = `<div class="mb-3">
-                            <label for="alamat_domisili" class="form-label">Alamat Domisili</label>
-                            <input type="text" class="form-control" name="alamat_domisili"  required>
-                        </div>`;
                 break;
             case '3': // Surat Kelahiran
                 html = `<div class="mb-3">
@@ -97,26 +89,63 @@
                         </div>`;
                 break;
             case '4': // Surat Kematian
-                html = `<div class="mb-3">
-                            <label for="nama_almarhum" class="form-label">Nama Almarhum</label>
+                html = `<div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nama_almarhum" class="form-label">Nama</label>
                             <input type="text" class="form-control" name="nama_almarhum" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="nik_almarhum" class="form-label">NIK Almarhum</label>
+                        <div class="col-md-6 mb-3">
+                            <label for="nik_almarhum" class="form-label">NIK</label>
                             <input type="text" class="form-control" name="nik_almarhum" required>
                         </div>
-                         <div class="mb-3">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="ttl_alm" class="form-label">Tempat Tanggal Lahir</label>
+                            <input type="text" class="form-control" name="ttl_alm" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="kelamin_alm" class="form-label">Jenis Kelamin</label>
+                            <select class="form-control" name="kelamin_alm" required>
+                                <option value="">-- Pilih --</option>
+                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="agama_alm" class="form-label">Agama</label>
+                            <input type="text" class="form-control" name="agama_alm" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="pekerjaan_alm" class="form-label">Pekerjaan</label>
+                            <input type="text" class="form-control" name="pekerjaan_alm" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="alamat_alm" class="form-label">Alamat</label>
+                        <input type="text" class="form-control" name="alamat_alm" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <label for="sebab_kematian" class="form-label">Sebab</label>
                             <input type="text" class="form-control" name="sebab_kematian" required>
                         </div>
-                            <div class="mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="tempat" class="form-label">Tempat</label>
                             <input type="text" class="form-control" name="tempat" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="tgl_wafat" class="form-label">Tanggal Wafat</label>
-                            <input type="date" class="form-control" name="tgl_wafat" required>
-                        </div>`;
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tgl_wafat" class="form-label">Tanggal Wafat</label>
+                        <input type="date" class="form-control" name="tgl_wafat" required>
+                    </div>`;
                 break;
             case '5': // Surat Pengantar SKCK
                 html = `<div class="mb-3">
@@ -124,37 +153,60 @@
                             <input type="text" class="form-control" name="tujuan_skck" required>
                         </div>`;
                 break;
-            case '6':
+            case '6': // surat kehilangan
                 html = `<div class="mb-3">
-                            <label for="nama_usaha" class="form-label">Nama Usaha</label>
-                            <input type="text" class="form-control" name="nama_usaha" required>
+                            <label for="brg_hilang" class="form-label">Barang Yang Hilang</label>
+                            <input type="text" class="form-control" name="brg_hilang" required>
                         </div>
                         <div class="mb-3">
-                            <label for="jenis_usaha" class="form-label">Jenis Usaha</label>
-                            <input type="text" class="form-control" name="jenis_usaha" required>
+                            <label for="tgl_hilang" class="form-label">Tangal Kehilangan</label>
+                            <input type="date" class="form-control" name="tgl_hilang" required>
                         </div>
                         <div class="mb-3">
-                            <label for="modal_usaha" class="form-label">Modal Usaha</label>
-                            <input type="number" class="form-control" name="modal_usaha" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="alamat_usaha" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" name="alamat_usaha" required>
+                            <label for="tempat_kehilangan" class="form-label">Tempat Hilang</label>
+                            <input type="text" class="form-control" name="tempat_kehilangan" required>
                         </div>`;
                 break;
             case '7':
                 html = `<div class="mb-3">
-                            <label for="nama_usaha" class="form-label">Nama Usaha</label>
+                            <label for="nama_usaha" class="form-label"> Usaha</label>
                             <input type="text" class="form-control" name="nama_usaha" required>
                         </div>
                         <div class="mb-3">
-                            <label for="jenis_usaha" class="form-label">Jenis Usaha</label>
-                            <input type="text" class="form-control" name="jenis_usaha" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="alamat_usaha" class="form-label">Alamat</label>
+                            <label for="alamat_usaha" class="form-label">Alamat Usaha</label>
                             <input type="text" class="form-control" name="alamat_usaha" required>
                         </div>`;
+                break;
+            case '8': //penganter pindah
+                html = `<div class="mb-3">
+                            <label for="nomor_kk" class="form-label"> Nomor Kartu Keluarga </label>
+                            <input type="text" maxlength="16" class="form-control" name="nomor_kk" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nama_kk" class="form-label"> Nama Kepala Keluarga </label>
+                            <input type="text" class="form-control" name="nama_kk" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat_tujuan" class="form-label">Alamat Tujuan Pindah</label>
+                            <input type="text" class="form-control" name="alamat_tujuan" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="desa_tujuan" class="form-label">Desa/Kelurahan</label>
+                            <input type="text" class="form-control" name="desa_tujuan" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="kec_tujuan" class="form-label">Kecamatan</label>
+                            <input type="text" class="form-control" name="kec_tujuan" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="kab_tujuan" class="form-label">Kabupaten</label>
+                            <input type="text" class="form-control" name="kab_tujuan" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="jumlah_pindah" class="form-label">Jumlah Keluarga Yang Pindah</label>
+                            <input type="text" class="form-control" name="jumlah_pindah" required>
+                        </div>
+                        `;
                 break;
         }
 

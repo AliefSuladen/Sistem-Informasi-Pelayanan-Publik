@@ -135,11 +135,6 @@
                     </div>`;
                 break;
             case '2':
-                html = `
-                    <div class="mb-3">
-                        <label class="form-label">Alamat Domisili</label>
-                        <input type="text" class="form-control" name="alamat_domisili" required>
-                    </div>`;
                 break;
             case '3':
                 html = `

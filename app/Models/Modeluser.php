@@ -8,7 +8,7 @@ class Modeluser extends Model
 {
     protected $table = 'user';
     protected $primaryKey = 'id_user';
-    protected $allowedFields = ['nik', 'nama_user', 'email', 'password', 'role', 'id_desa', 'pekerjaan', 'agama', 'kelamin', 'alamat', 'foto'];
+    protected $allowedFields = ['nik', 'nama_user', 'email', 'password', 'role', 'id_desa', 'pekerjaan', 'agama', 'kelamin', 'alamat', 'tempat_lahir', 'tgl_lahir', 'foto'];
 
     // Cek apakah NIK sudah terdaftar
     public function cekNik($nik)

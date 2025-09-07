@@ -29,7 +29,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>NIK</label>
-                            <input type="text" name="nik" value="<?= esc($user['nik']) ?>" class="form-control" readonly>
+                            <input type="numeric" name="nik" value="<?= esc($user['nik']) ?>" class="form-control" readonly>
                         </div>
                     </div>
 

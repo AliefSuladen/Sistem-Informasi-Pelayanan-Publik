@@ -3,37 +3,38 @@ function tanggalIndo($tanggal)
 {
     $bulan = [
         1 => 'Januari',
-        'Februari',
-        'Maret',
-        'April',
-        'Mei',
-        'Juni',
-        'Juli',
-        'Agustus',
-        'September',
-        'Oktober',
-        'November',
-        'Desember'
+        2 => 'Februari',
+        3 => 'Maret',
+        4 => 'April',
+        5 => 'Mei',
+        6 => 'Juni',
+        7 => 'Juli',
+        8 => 'Agustus',
+        9 => 'September',
+        10 => 'Oktober',
+        11 => 'November',
+        12 => 'Desember'
     ];
-
-    // Pastikan input dalam format 'YYYY-MM-DD'
-    if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $tanggal)) {
-        $tanggalArray = explode('-', $tanggal);
-        $tahun = $tanggalArray[0];
-        $bulanIndo = $bulan[(int)$tanggalArray[1]] ?? '';
-        $hari = $tanggalArray[2];
-        return $hari . ' ' . $bulanIndo . ' ' . $tahun;
+    $tanggalArray = explode('-', $tanggal);
+    if (count($tanggalArray) === 3) {
+        return $tanggalArray[2] . ' ' . $bulan[(int)$tanggalArray[1]] . ' ' . $tanggalArray[0];
+    } else {
+        return 'Tanggal tidak valid';
     }
-
-    // Jika tidak valid, kembalikan seperti apa adanya
-    return $tanggal;
 }
-$namaAlmarhum = $permohonan['nama_alm'];
-$nik = $permohonan['nik_alm'];
+
+$tempat_lahir = $permohonan['tempat_lahir'];
+$tgl_kematian = $permohonan['tanggal_kematian'];
+$sebab = $permohonan['sebab_kematian'];
 $tempat = $permohonan['tempat_kematian'];
-$tanggalMeninggal = tanggalIndo($permohonan['tanggal_kematian']);
-$penyebab = $permohonan['sebab_kematian'];
-$alamat = "Desa " . $permohonan['nama_desa'] . ", Kecamatan Lais, Kabupaten Musi Banyuasin";
+$tgl_lahir = $permohonan['tgl_lahir'];
+$nama = $permohonan['nama_alm'];
+$nik = $permohonan['nik_alm'];
+$jenisKelamin = $permohonan['kelamin_alm'];
+$ttl = $permohonan['ttl_alm'];
+$agama = $permohonan['agama_alm'];
+$pekerjaan = $permohonan['pekerjaan_alm'];
+$alamat = $permohonan['alamat_alm'];
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
 $nomorSurat = model('Modelpermohonan')->getNomorSuratKematian();
 
@@ -55,6 +56,8 @@ if (file_exists($logoFile)) {
     <style>
         body {
             font-family: Arial, sans-serif;
+            font-size: 12pt;
+            line-height: 1.5;
         }
 
         .center {
@@ -65,93 +68,131 @@ if (file_exists($logoFile)) {
             font-weight: bold;
         }
 
-        .mt-2 {
-            margin-top: 20px;
+        .underline {
+            text-decoration: underline;
         }
 
-        .signature {
-            margin-top: 50px;
-            text-align: right;
+        .header {
+            text-align: center;
+            border-bottom: 3px solid black;
+            padding-bottom: 5px;
+        }
+
+        .isi {
+            margin-top: 20px;
+            margin-left: 40px;
+            margin-right: 40px;
         }
 
         table {
             width: 100%;
-            margin-top: 20px;
+            margin-left: 40px;
         }
 
         td {
-            padding: 5px;
             vertical-align: top;
+            padding: 3px;
         }
 
-        .header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .header img {
-            width: 90px;
-            height: auto;
-        }
-
-        .header .title {
-            flex-grow: 1;
+        .signature {
+            margin-top: 40px;
+            margin-right: 50px;
             text-align: center;
-        }
-
-        .header-line {
-            border-bottom: 3px solid black;
-            margin-top: 10px;
-            margin-bottom: 20px;
+            float: right;
         }
     </style>
 </head>
 
 <body>
+
+    <!-- KOP SURAT -->
     <div style="display: table; width: 100%; border-bottom: 3px solid black; padding-bottom: 10px; margin-bottom: 20px;">
         <div style="display: table-cell; width: 100px; vertical-align: middle;">
-            <img src="<?= $logoSrc ?>" style="width: 90px; height: auto;">
+            <img src="<?= $logoSrc ?>" style="width: 80px; height: auto; margin-left: 20px;">
         </div>
         <div style="display: table-cell; text-align: center; vertical-align: middle;">
-            <h2 style="margin:0;">PEMERINTAH KABUPATEN MUSI BANYUASIN</h2>
-            <h2 style="margin:0;">KECAMATAN LAIS</h2>
-            <p style="margin:0;">Jalan Raya Palembang Sekayu KM. 80</p>
+            <h4 style="margin:0;">PEMERINTAH KABUPATEN MUSI BANYUASIN</h4>
+            <h4 style="margin:0;">KECAMATAN LAIS</h4>
+            <h3 style="margin:0;">DESA TELUK KIJING III</h3>
+            <p style="margin:0;">Alamat : Jl. Betung - Sekayu Km 76 Talang Duku Kode Pos 30757</p>
         </div>
     </div>
 
+    <!-- Judul Surat -->
     <div class="center">
-        <h3><u>SURAT KETERANGAN KEMATIAN</u></h3>
+        <h3 class="underline">SURAT KETERANGAN KEMATIAN</h3>
         <p>Nomor: <?= $nomorSurat ?></p>
     </div>
 
-    <p>Yang bertanda tangan di bawah ini, Camat Lais, Kabupaten Musi Banyuasin, menerangkan bahwa:</p>
+    <!-- Isi Surat -->
+    <p class="isi">Kepala Desa Teluk kijing III Kecamatan Lais Kabupeten Musi Banyuasin Provinsi Sumatera Selatan, menerangkan bahwa :</p>
 
-    <table>
+    <table style="margin-left: 60px; border-collapse: collapse; line-height: 1.2;">
         <tr>
-            <td>Nama</td>
-            <td>: <b><?= $namaAlmarhum ?></b></td>
+            <td style="width:150px;">Nama</td>
+            <td>: <?= $nama ?></td>
         </tr>
         <tr>
             <td>NIK</td>
             <td>: <?= $nik ?></td>
         </tr>
         <tr>
+            <td>Tempat Tgl. Lahir</td>
+            <td>: <?= $ttl ?></td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td>: <?= $jenisKelamin ?></td>
+        </tr>
+        <tr>
+            <td>Kewarganegaraan</td>
+            <td>: Indonesia</td>
+        </tr>
+        <tr>
+            <td>Pekerjaan</td>
+            <td>: <?= $pekerjaan ?></td>
+        </tr>
+        <tr>
+            <td>Agama</td>
+            <td>: <?= $agama ?></td>
+        </tr>
+        <tr>
             <td>Alamat</td>
             <td>: <?= $alamat ?></td>
         </tr>
     </table>
+    <p class="isi">Orang yang namanya diatas memang benar telah meninggal dunia pada :</p>
+    <table style="margin-left: 60px; border-collapse: collapse; line-height: 1.2;">
+        <tr>
+            <td style="width:150px;">Tanggal</td>
+            <td>: <?= $tgl_kematian ?></td>
+        </tr>
+        <tr>
+            <td style="width:150px;">Bertempat di</td>
+            <td>: <?= $tempat ?></td>
+        </tr>
+        <tr>
+            <td style="width:150px;">Disebabkan</td>
+            <td>: <?= $sebab ?></td>
+        </tr>
+    </table>
 
-    <p class="mt-2">Telah meninggal dunia di <b><?= $tempat ?></b> pada tanggal <b><?= $tanggalMeninggal ?></b> karena <b><?= $penyebab ?></b>.</p>
-
-    <p>Demikian surat keterangan ini dibuat dengan sebenarnya dan dapat dipergunakan sebagaimana mestinya.</p>
-
+    <!-- Tanda Tangan -->
     <div class="signature">
-        <p>Lais, <?= $tanggalSurat ?></p>
-        <p>Camat Lais</p>
+        <p>Teluk Kijing III, <?= $tanggalSurat ?></p>
+        <p>KEPALA DESA TELUK KIJING III</p>
         <br><br>
-        <p class="bold">Muhammad Alief</p>
+        <p class="bold underline">YUPANSER AHMAD, SE</p>
     </div>
+
+    <!-- QR Code (opsional) -->
+    <?php if (!empty($qrCode)): ?>
+        <div style="margin-top:50px; margin-left: 50px;">
+            <p><small>Scan QR untuk verifikasi surat ini:</small></p>
+            <img src="<?= $qrCode ?>" width="100">
+        </div>
+    <?php endif; ?>
+
 </body>
 
 </html>

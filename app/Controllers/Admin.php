@@ -10,6 +10,10 @@ use App\Models\Modeluser;
 use App\Models\Modeldesa;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Endroid\QrCode\Builder\Builder;
+use Endroid\QrCode\Writer\PngWriter;
+
+
 
 
 
@@ -157,74 +161,25 @@ class Admin extends BaseController
         return view('Admin/Kecamatan/v-cek-dokumen', $data);
     }
 
-    // public function validasi_berkas()
-    // {
-    //     $id_permohonan = $this->request->getPost('id_permohonan');
-
-    //     $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
-
-    //     if (!$permohonan) {
-    //         return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
-    //     }
-
-    //     // Mapping ID Jenis Surat ke Template
-    //     $template_path = [
-    //         1 => 'Admin/Template/sktm',
-    //         2 => 'Admin/Template/domisili',
-    //         3 => 'Admin/Template/kelahiran',
-    //         4 => 'Admin/Template/kematian',
-    //         5 => 'Admin/Template/skck',
-    //         6 => 'Admin/Template/izin_usaha',
-    //         7 => 'Admin/Template/keterangan_usaha',
-    //     ];
-
-    //     $id_jenis = $permohonan['id_jenis'];
-    //     if (!isset($template_path[$id_jenis])) {
-    //         return redirect()->back()->with('error', 'Template surat tidak ditemukan.');
-    //     }
-
-    //     $template = $template_path[$id_jenis];
-
-    //     $options = new Options();
-    //     $options->set('defaultFont', 'Arial');
-    //     $dompdf = new Dompdf($options);
-
-
-    //     $html = view($template, ['permohonan' => $permohonan]);
-    //     $dompdf->loadHtml($html);
-    //     $dompdf->setPaper('A4', 'portrait');
-    //     $dompdf->render();
-
-    //     $output = $dompdf->output();
-    //     $filename = strtoupper(str_replace(' ', '_', $permohonan['surat'])) . '_' . $permohonan['nama_user'] . '_' . time() . '.pdf';
-
-    //     file_put_contents('./uploads/dokumen/temp_' . $filename, $output);
-
-    //     session()->set('filename', $filename);
-    //     session()->set('id_permohonan', $id_permohonan);
-
-    //     return $this->response->setContentType('application/pdf')->setBody($output);
-    // }
-
     public function validasi_berkas()
     {
         $id_permohonan = $this->request->getPost('id_permohonan');
-
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
 
         if (!$permohonan) {
             return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
         }
 
-        // Mapping ID Jenis Surat ke Template
+        // Mapping template
         $template_path = [
             1 => 'Admin/Template/sktm',
             2 => 'Admin/Template/domisili',
             3 => 'Admin/Template/kelahiran',
             4 => 'Admin/Template/kematian',
             5 => 'Admin/Template/skck',
-            6 => 'Admin/Template/izin_usaha',
+            6 => 'Admin/Template/kehilangan',
             7 => 'Admin/Template/keterangan_usaha',
+            8 => 'Admin/Template/pengantar_pindah',
         ];
 
         $id_jenis = $permohonan['id_jenis'];
@@ -234,25 +189,36 @@ class Admin extends BaseController
 
         $template = $template_path[$id_jenis];
 
-        // === BACA LOGO & UBAH KE BASE64 ===
-        $logoPath = FCPATH . 'uploads/foto_camat.jpg'; // pastikan file ada di public/images/
+        // === LOGO CAMAT ===
+        $logoPath = FCPATH . 'uploads/logo.jpg';
+        $logoSrc = '';
         if (file_exists($logoPath)) {
-            $logoData = base64_encode(file_get_contents($logoPath));
-            $logoSrc = 'data:image/png;base64,' . $logoData;
-        } else {
-            $logoSrc = ''; // jika logo tidak ada
+            $logoSrc = 'data:image/jpeg;base64,' . base64_encode(file_get_contents($logoPath));
         }
 
-        // DOMPDF
+
+        $qrCodeDataUri = '';
+        $urlVerifikasi = base_url('verifikasi?id=' . $id_permohonan);
+
+        $result = Builder::create()
+            ->writer(new PngWriter())
+            ->data($urlVerifikasi)
+            ->size(120)
+            ->margin(5)
+            ->build();
+
+        $qrCodeDataUri = $result->getDataUri();
+
+        // === DOMPDF ===
         $options = new Options();
         $options->set('defaultFont', 'Arial');
-        $options->set('isRemoteEnabled', true); // supaya gambar online juga bisa
+        $options->set('isRemoteEnabled', true);
         $dompdf = new Dompdf($options);
 
-        // kirim logo ke view
         $html = view($template, [
             'permohonan' => $permohonan,
-            'logoSrc' => $logoSrc
+            'logoSrc' => $logoSrc,
+            'qrCode' => $qrCodeDataUri
         ]);
 
         $dompdf->loadHtml($html);
@@ -269,7 +235,6 @@ class Admin extends BaseController
 
         return $this->response->setContentType('application/pdf')->setBody($output);
     }
-
 
 
     public function simpan_surat()
@@ -291,5 +256,30 @@ class Admin extends BaseController
         session()->remove(['filename', 'id_permohonan']);
 
         return redirect()->to('/admin-kecamatan')->with('success', 'Surat berhasil dicetak dan disimpan.');
+    }
+
+    public function verifikasi()
+    {
+        $id_permohonan = $this->request->getGet('id');
+
+        if (!$id_permohonan) {
+            return view('Admin/verifikasi_surat', [
+                'status' => '❌ Tidak Valid',
+                'surat' => null
+            ]);
+        }
+
+        $surat = $this->Modelpermohonan->getPermohonanById($id_permohonan);
+
+        if (!$surat || empty($surat['file_surat'])) {
+            $status = '❌ Tidak Valid';
+        } else {
+            $status = '✅ Valid';
+        }
+
+        return view('Admin/verifikasi_surat', [
+            'surat' => $surat,
+            'status' => $status
+        ]);
     }
 }

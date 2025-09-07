@@ -52,10 +52,8 @@ class Masyarakat extends BaseController
         // Tambahan data berdasarkan jenis surat
         switch ($id_jenis) {
             case 1: // SKTM
-                $permohonanData['alasan_sktm'] = $this->request->getPost('alasan');
                 break;
             case 2: // Domisili
-                $permohonanData['alamat_domisili'] = $this->request->getPost('alamat_domisili');
                 break;
             case 3: // Kelahiran
                 $permohonanData['nama_anak'] = $this->request->getPost('nama_anak');
@@ -67,6 +65,11 @@ class Masyarakat extends BaseController
             case 4: // Kematian
                 $permohonanData['nama_alm'] = $this->request->getPost('nama_almarhum');
                 $permohonanData['nik_alm'] = $this->request->getPost('nik_almarhum');
+                $permohonanData['ttl_alm'] = $this->request->getPost('ttl_alm');
+                $permohonanData['kelamin_alm'] = $this->request->getPost('kelamin_alm');
+                $permohonanData['agama_alm'] = $this->request->getPost('agama_alm');
+                $permohonanData['pekerjaan_alm'] = $this->request->getPost('pekerjaan_alm');
+                $permohonanData['alamat_alm'] = $this->request->getPost('alamat_alm');
                 $permohonanData['tempat_kematian'] = $this->request->getPost('tempat');
                 $permohonanData['tanggal_kematian'] = $this->request->getPost('tgl_wafat');
                 $permohonanData['sebab_kematian'] = $this->request->getPost('sebab_kematian');
@@ -74,16 +77,24 @@ class Masyarakat extends BaseController
             case 5: // SKCK
                 $permohonanData['tujuan_skck'] = $this->request->getPost('tujuan_skck');
                 break;
-            case 6:
-                $permohonanData['nama_usaha'] = $this->request->getPost('nama_usaha');
-                $permohonanData['jenis_usaha'] = $this->request->getPost('jenis_usaha');
-                $permohonanData['modal_usaha'] = $this->request->getPost('modal_usaha');
-                $permohonanData['alamat_usaha'] = $this->request->getPost('alamat_usaha');
+            case 6: // kehilangan
+                $permohonanData['brg_hilang'] = $this->request->getPost('brg_hilang');
+                $permohonanData['tgl_hilang'] = $this->request->getPost('tgl_hilang');
+                $permohonanData['tempat_kehilangan'] = $this->request->getPost('tempat_kehilangan');
                 break;
             case 7:
                 $permohonanData['nama_usaha'] = $this->request->getPost('nama_usaha');
                 $permohonanData['jenis_usaha'] = $this->request->getPost('jenis_usaha');
                 $permohonanData['alamat_usaha'] = $this->request->getPost('alamat_usaha');
+                break;
+            case 8: //pengantar pindah
+                $permohonanData['nomor_kk'] = $this->request->getPost('nomor_kk');
+                $permohonanData['nama_kk'] = $this->request->getPost('nama_kk');
+                $permohonanData['alamat_tujuan'] = $this->request->getPost('alamat_tujuan');
+                $permohonanData['desa_tujuan'] = $this->request->getPost('desa_tujuan');
+                $permohonanData['kec_tujuan'] = $this->request->getPost('kec_tujuan');
+                $permohonanData['kab_tujuan'] = $this->request->getPost('kab_tujuan');
+                $permohonanData['jumlah_pindah'] = $this->request->getPost('jumlah_pindah');
                 break;
         }
 

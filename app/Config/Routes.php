@@ -26,7 +26,7 @@ $routes->post('update-profil', 'Admin::update_profil');
 $routes->get('masyarakat', 'Admin::masyarakat_dashboard');
 $routes->get('admin-desa', 'Admin::desa_dashboard');
 $routes->get('admin-kecamatan', 'Admin::kecamatan_dashboard');
-
+$routes->get('verifikasi', 'Admin::verifikasi');
 
 $routes->get('daftar-pengajuan-surat', 'Kecamatan::index');
 $routes->get('kecamatan_cek-dokumen/(:num)', 'Admin::cek_dokumen/$1');
@@ -39,6 +39,9 @@ $routes->get('kecamatan-jenis-surat', 'Kecamatan::data_jenis_surat');
 $routes->post('kecamatan-add-jenis-surat', 'Kecamatan::add_jenis_surat');
 $routes->post('kecamatan-delete-jenis/(:num)', 'Kecamatan::hapus_jenis_surat/$1');
 $routes->get('kecamatan-laporan', 'Kecamatan::laporan');
+
+
+
 
 
 

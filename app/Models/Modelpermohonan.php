@@ -20,14 +20,27 @@ class Modelpermohonan extends Model
         'nama_ibu',
         'nama_alm',
         'nik_alm',
+        'ttl_alm',
+        'kelamin_alm',
+        'agama_alm',
+        'pekerjaan_alm',
+        'alamat_alm',
         'tempat_kematian',
         'tanggal_kematian',
         'sebab_kematian',
         'tujuan_skck',
         'nama_usaha',
-        'jenis_usaha',
         'alamat_usaha',
-        'modal_usaha',
+        'brg_hilang',
+        'tgl_hilang',
+        'tempat_kehilangan',
+        'nomor_kk',
+        'nama_kk',
+        'alamat_tujuan',
+        'desa_tujuan',
+        'kec_tujuan',
+        'kab_tujuan',
+        'jumlah_pindah',
         'file_surat',
         'alasan_penolakan',
         'created_at',
@@ -130,7 +143,7 @@ class Modelpermohonan extends Model
     public function getPermohonanById($id_permohonan)
     {
         return $this->db->table($this->table)
-            ->select('permohonan_surat.*, user.nama_user,user.nik,user.kelamin,user.agama, user.email,user.pekerjaan,user.alamat, jenis_surat.surat, status_surat.status, desa.nama_desa')
+            ->select('permohonan_surat.*, user.nama_user,user.nik,user.kelamin,user.agama, user.email,user.pekerjaan,user.alamat,user.tempat_lahir,user.tgl_lahir, jenis_surat.surat, status_surat.status, desa.nama_desa')
             ->join('user', 'user.id_user = permohonan_surat.id_user', 'left')
             ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis', 'left')
             ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status', 'left')
@@ -181,6 +194,19 @@ class Modelpermohonan extends Model
         $tahun = date('Y');
         return sprintf("%04d", $nomorUrut) . "/SKL/LAIS/" . $tahun;
     }
+
+    public function getNomorSuratPindah()
+    {
+        $lastpindah = $this->where('id_jenis', 8)
+            ->select('id_permohonan')
+            ->orderBy('id_permohonan', 'DESC')
+            ->first();
+
+        $nomorUrut = ($lastpindah) ? $lastpindah['id_permohonan'] + 1 : 1;
+
+        $tahun = date('Y');
+        return sprintf("%04d", $nomorUrut) . "/SKP/LAIS/" . $tahun;
+    }
     public function getNomorSuratDomisili()
     {
         // Ambil tahun dan bulan saat ini
@@ -198,7 +224,7 @@ class Modelpermohonan extends Model
         return $nomorSurat;
     }
 
-    public function getNomorSuratIzinUsaha()
+    public function getNomorKehilangan()
     {
         $bulanRomawi = [
             1 => 'I',
@@ -224,7 +250,7 @@ class Modelpermohonan extends Model
             ->countAllResults();
 
         $nomorUrut = str_pad($count + 1, 3, '0', STR_PAD_LEFT);
-        $nomor = "$nomorUrut/SIU/LAIS/{$bulanRomawi[$bulan]}/$tahun";
+        $nomor = "$nomorUrut/SKH/LAIS/{$bulanRomawi[$bulan]}/$tahun";
 
         return $nomor;
     }
