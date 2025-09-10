@@ -209,7 +209,15 @@ class Admin extends BaseController
 
         $qrCodeDataUri = $result->getDataUri();
 
-        // === DOMPDF ===
+        // $result = Builder::create()
+        //     ->writer(new PngWriter())
+        //     ->data($urlVerifikasi)
+        //     ->size(120)
+        //     ->margin(5)
+        //     ->build();
+
+        // $qrCodeDataUri = $result->getDataUri();
+
         $options = new Options();
         $options->set('defaultFont', 'Arial');
         $options->set('isRemoteEnabled', true);
