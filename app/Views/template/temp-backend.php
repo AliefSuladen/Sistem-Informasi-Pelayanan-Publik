@@ -148,18 +148,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kecamatan-jenis-surat') ?>" class="nav-link <?= $current_url == 'kecamatan-jenis-surat' ? 'active' : '' ?>">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Data Jenis Surat</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
                     <a href="<?= base_url('kecamatan-laporan') ?>" class="nav-link <?= $current_url == 'kecamatan-laporan' ? 'active' : '' ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Laporan</p>
                     </a>
                   </li>
                 </ul>
+              </li>
+            <?php endif; ?>
+            <?php if (session()->get('role') == 'Kepala Desa'): // Role Admin Kecamatan 
+            ?>
+              <!-- Menu untuk Pengajuan Permohonan hanya untuk Admin Kecamatan -->
+              <li class="nav-item">
+                <a href="<?= base_url('kades') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('daftar-pengajuan-warga') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-list"></i>
+                  <p>Daftar Permohonan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('data-warga') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>Data Warga</p>
+                </a>
               </li>
             <?php endif; ?>
             <?php if (session()->get('role') == 'Admin Desa'): // Role Admin Kecamatan 
@@ -185,6 +203,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Data Warga</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?= base_url('desa-laporan') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-file-invoice"></i>
+                  <p>Laporan</p>
+                </a>
+              </li>
+
 
             <?php endif; ?>
             <?php if (session()->get('role') == 'Masyarakat'): // Role Admin Kecamatan 

@@ -64,7 +64,7 @@
 
     <div class="d-flex justify-content-between align-items-start mb-3">
         <!-- Tombol Kembali -->
-        <a href="<?= base_url('daftar-pengajuan'); ?>" class="btn btn-secondary me-2">
+        <a href="<?= base_url('masyarakat'); ?>" class="btn btn-secondary me-2">
             ← Kembali
         </a>
 

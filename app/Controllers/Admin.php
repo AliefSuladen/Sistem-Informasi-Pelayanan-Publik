@@ -70,6 +70,22 @@ class Admin extends BaseController
 
         return view('Admin/v-desa-dashboard', $data);
     }
+    public function kades_dashboard()
+    {
+        $id_desa = session()->get('id_desa');
+
+        $desa = $this->Modeldesa->getDesaById($id_desa);
+        $statistik = $this->Modelpermohonan->getStatistikByDesa($id_desa);
+        $jenisSurat = $this->Modelpermohonan->getJumlahJenisSuratByDesa($id_desa);
+
+        $data = [
+            'desa' => $desa,
+            'statistik' => $statistik,
+            'jenisSurat' => $jenisSurat,
+        ];
+
+        return view('Admin/v-kades-dashboard', $data);
+    }
 
 
     public function profil()
@@ -141,8 +157,6 @@ class Admin extends BaseController
         return redirect()->to(base_url('profil'));
     }
 
-
-
     public function cek_dokumen($id_permohonan)
     {
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
@@ -158,7 +172,7 @@ class Admin extends BaseController
             'dokumenPendukung' => $dokumenPendukung
         ];
 
-        return view('Admin/Kecamatan/v-cek-dokumen', $data);
+        return view('Admin/Desa/v-kades-cek-dokumen', $data);
     }
 
     public function validasi_berkas()
@@ -168,6 +182,17 @@ class Admin extends BaseController
 
         if (!$permohonan) {
             return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
+        }
+
+        // === GENERATE NOMOR SURAT ===
+        if (empty($permohonan['nomor_surat'])) {
+            $nomorSurat = $this->Modelpermohonan->generateNomorSurat($permohonan['id_jenis']);
+            // Simpan ke DB
+            $this->Modelpermohonan->update($id_permohonan, [
+                'nomor_surat' => $nomorSurat,
+                'status'      => 'Selesai'
+            ]);
+            $permohonan['nomor_surat'] = $nomorSurat;
         }
 
         // Mapping template
@@ -196,10 +221,8 @@ class Admin extends BaseController
             $logoSrc = 'data:image/jpeg;base64,' . base64_encode(file_get_contents($logoPath));
         }
 
-
-        $qrCodeDataUri = '';
+        // === QR CODE ===
         $urlVerifikasi = base_url('verifikasi?id=' . $id_permohonan);
-
         $result = Builder::create()
             ->writer(new PngWriter())
             ->data($urlVerifikasi)
@@ -209,24 +232,16 @@ class Admin extends BaseController
 
         $qrCodeDataUri = $result->getDataUri();
 
-        // $result = Builder::create()
-        //     ->writer(new PngWriter())
-        //     ->data($urlVerifikasi)
-        //     ->size(120)
-        //     ->margin(5)
-        //     ->build();
-
-        // $qrCodeDataUri = $result->getDataUri();
-
+        // === PDF ===
         $options = new Options();
         $options->set('defaultFont', 'Arial');
         $options->set('isRemoteEnabled', true);
-        $dompdf = new Dompdf($options);
 
+        $dompdf = new Dompdf($options);
         $html = view($template, [
             'permohonan' => $permohonan,
-            'logoSrc' => $logoSrc,
-            'qrCode' => $qrCodeDataUri
+            'logoSrc'    => $logoSrc,
+            'qrCode'     => $qrCodeDataUri
         ]);
 
         $dompdf->loadHtml($html);
@@ -263,7 +278,7 @@ class Admin extends BaseController
 
         session()->remove(['filename', 'id_permohonan']);
 
-        return redirect()->to('/admin-kecamatan')->with('success', 'Surat berhasil dicetak dan disimpan.');
+        return redirect()->to('/daftar-pengajuan-warga')->with('success', 'Surat berhasil dicetak dan disimpan.');
     }
 
     public function verifikasi()

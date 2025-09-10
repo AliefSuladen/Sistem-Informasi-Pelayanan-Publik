@@ -33,7 +33,7 @@ $barang = $permohonan['brg_hilang'];
 $tanggal = $permohonan['tgl_hilang'];
 $tempat = $permohonan['tempat_kehilangan'];
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
-$nomorSurat = model('Modelpermohonan')->getNomorKehilangan();
+
 
 $logoSrc = '';
 $logoFile = FCPATH . 'uploads/logo.jpg';
@@ -114,7 +114,7 @@ if (file_exists($logoFile)) {
     <!-- Judul Surat -->
     <div class="center">
         <h3 class="underline">SURAT KETERANGAN KEHILANGAN</h3>
-        <p>Nomor: <?= $nomorSurat ?></p>
+        <p>Nomor: <?= $permohonan['nomor_surat'] ?></p>
     </div>
 
     <!-- Isi Surat -->

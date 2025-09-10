@@ -36,7 +36,7 @@ $agama = $permohonan['agama_alm'];
 $pekerjaan = $permohonan['pekerjaan_alm'];
 $alamat = $permohonan['alamat_alm'];
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
-$nomorSurat = model('Modelpermohonan')->getNomorSuratKematian();
+
 
 $logoSrc = '';
 $logoFile = FCPATH . 'uploads/logo.jpg';
@@ -44,6 +44,14 @@ if (file_exists($logoFile)) {
     $logoData = file_get_contents($logoFile);
     $logoBase64 = base64_encode($logoData);
     $logoSrc = 'data:image/jpeg;base64,' . $logoBase64;
+}
+
+$ttdSrc = '';
+$ttdFile = FCPATH . 'uploads/TTD.png';
+if (file_exists($ttdFile)) {
+    $ttdData = file_get_contents($ttdFile);
+    $ttdBase64 = base64_encode($ttdData);
+    $ttdSrc = 'data:image/png;base64,' . $ttdBase64;
 }
 ?>
 
@@ -96,7 +104,7 @@ if (file_exists($logoFile)) {
 
         .signature {
             margin-top: 40px;
-            margin-right: 50px;
+            margin-right: 65px;
             text-align: center;
             float: right;
         }
@@ -121,7 +129,7 @@ if (file_exists($logoFile)) {
     <!-- Judul Surat -->
     <div class="center">
         <h3 class="underline">SURAT KETERANGAN KEMATIAN</h3>
-        <p>Nomor: <?= $nomorSurat ?></p>
+        <p>Nomor: <?= $permohonan['nomor_surat'] ?></p>
     </div>
 
     <!-- Isi Surat -->
@@ -177,20 +185,47 @@ if (file_exists($logoFile)) {
         </tr>
     </table>
 
-    <!-- Tanda Tangan -->
-    <div class="signature">
-        <p>Teluk Kijing III, <?= $tanggalSurat ?></p>
-        <p>KEPALA DESA TELUK KIJING III</p>
-        <br><br>
-        <p class="bold underline">YUPANSER AHMAD, SE</p>
-    </div>
-
-    <!-- QR Code (opsional) -->
-    <?php if (!empty($qrCode)): ?>
-        <div style="margin-top:50px; margin-left: 50px;">
-            <p><small>Scan QR untuk verifikasi surat ini:</small></p>
-            <img src="<?= $qrCode ?>" width="100">
+    <?php if (isset($isPreviewCamat) && $isPreviewCamat): ?>
+        <div class="signature">
+            <p>Teluk Kijing III, <?= $tanggalSurat ?></p>
+            <p>KEPALA DESA TELUK KIJING III</p>
+            <br>
+            <?php if ($ttdSrc): ?>
+                <img src="<?= $ttdSrc ?>" style="width:150px; height:auto;">
+            <?php endif; ?>
+            <p class="bold underline">YUPANSER AHMAD, SE</p>
         </div>
+
+        <div class="signature" style="text-align:center; margin-top:40px;">
+            <p>Lais, <?= $tanggalSurat ?></p>
+            <p>Nomor : <?= $nomorSuratCamat ?></p>
+            <?php if ($ttdSrc): ?>
+                <img src="<?= $ttdSrc ?>" style="width:150px; height:auto;">
+            <?php endif; ?>
+            <p class="bold underline">Risdianto, S.pd., M.M</p>
+            <p>NIP. 197705162007011007</p>
+        </div>
+        <?php if (!empty($qrCode)): ?>
+            <div style="margin-top:250px; margin-left: 10px;">
+                <img src="<?= $qrCode ?>" width="50">
+                <p>*scan untuk melihat keaslian surat</p>
+            </div>
+        <?php endif; ?>
+    <?php else: ?>
+        <div class="signature">
+            <p>Teluk Kijing III, <?= $tanggalSurat ?></p>
+            <p>KEPALA DESA TELUK KIJING III</p>
+            <?php if ($ttdSrc): ?>
+                <img src="<?= $ttdSrc ?>" style="width:150px; height:auto;">
+            <?php endif; ?>
+            <p class="bold underline">YUPANSER AHMAD, SE</p>
+        </div>
+        <?php if (!empty($qrCode)): ?>
+            <div style="margin-top:50px; margin-left: 50px;">
+                <p><small>Scan QR untuk verifikasi surat ini:</small></p>
+                <img src="<?= $qrCode ?>" width="100">
+            </div>
+        <?php endif; ?>
     <?php endif; ?>
 
 </body>

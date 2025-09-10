@@ -81,7 +81,7 @@ class Desa extends BaseController
 
         // Update status menjadi "Ditolak" (misalnya status id = 4) dan simpan alasan jika diperlukan
         $this->Modelpermohonan->update($id_permohonan, [
-            'id_status' => 4,
+            'id_status' => 6,
             'alasan_penolakan' => $alasan_penolakan,
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -105,5 +105,24 @@ class Desa extends BaseController
         ];
 
         return view('Admin/Desa/v-data-warga', $data);
+    }
+
+    public function laporan_permohonan()
+    {
+        $id_desa = session()->get('id_desa');
+        $bulan = $this->request->getGet('bulan');
+        $tahun = $this->request->getGet('tahun');
+
+        $desa = $this->Modeldesa->getDesaById($id_desa);
+        $permohonan = $this->Modelpermohonan->getLaporanSurat($id_desa, $bulan, $tahun);
+
+        $data = [
+            'desa' => $desa,
+            'permohonan' => $permohonan,
+            'bulan' => $bulan,
+            'tahun' => $tahun
+        ];
+
+        return view('Admin/Desa/v-laporan', $data);
     }
 }

@@ -7,7 +7,12 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Modelpermohonan;
 use App\Models\Modeldesa;
 use App\Models\Modeluser;
+use App\Models\Modeldokumen;
 use App\Models\Modeljenissurat;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use Endroid\QrCode\Builder\Builder;
+use Endroid\QrCode\Writer\PngWriter;
 
 class Kecamatan extends BaseController
 {
@@ -17,14 +22,163 @@ class Kecamatan extends BaseController
         $this->Modeldesa = new Modeldesa();
         $this->Modeluser = new Modeluser();
         $this->Modeljenissurat = new Modeljenissurat();
+        $this->Modeldokumen = new Modeldokumen();
     }
     public function index()
     {
+        $permohonan = $this->Modelpermohonan->getPermohonanLegalisasi();
 
-        $data['permohonan'] = $this->Modelpermohonan->getAllPermohonan();
+        $data = [
+            'permohonan' => $permohonan
+        ];
 
         return view('Admin/Kecamatan/v-datasurat', $data);
     }
+
+    public function cekDokumen($id_permohonan)
+    {
+        $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
+
+        // Ambil dokumen pendukung
+        $dokumenPendukung = $this->Modeldokumen->getDokumenByPermohonan($id_permohonan);
+
+        // Kirim ke view
+        $data = [
+            'permohonan' => $permohonan,
+            'dokumenPendukung' => $dokumenPendukung
+        ];
+
+        return view('Admin/Kecamatan/v-cek-dokumen', $data);
+    }
+
+    public function tolak_berkas()
+    {
+        $id_permohonan = $this->request->getPost('id_permohonan');
+        $alasan_penolakan = $this->request->getPost('alasan_penolakan');
+
+        if (!$id_permohonan || !$alasan_penolakan) {
+            return redirect()->back()->with('error', 'ID permohonan dan alasan penolakan wajib diisi.');
+        }
+
+        // Update status menjadi "Ditolak" (misalnya status id = 4) dan simpan alasan jika diperlukan
+        $this->Modelpermohonan->update($id_permohonan, [
+            'id_status' => 6,
+            'alasan_penolakan' => $alasan_penolakan,
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        session()->setFlashdata('success', 'Permohonan berhasil Ditolak!.');
+        return redirect()->to(base_url('daftar-pengajuan-surat'));
+    }
+
+
+    public function validasi_berkas_kecamatan()
+    {
+        $id_permohonan = $this->request->getPost('id_permohonan');
+        $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
+
+        if (!$permohonan) {
+            return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
+        }
+
+        // Ambil file PDF yang diterbitkan desa
+        $fileDesa = FCPATH . 'uploads/dokumen/' . $permohonan['file_surat'];
+        if (!file_exists($fileDesa)) {
+            return redirect()->back()->with('error', 'File surat desa tidak ditemukan.');
+        }
+
+        $nomorSuratCamat = $this->Modelpermohonan->generateNomorSuratCamat($permohonan['id_jenis']);
+
+
+        $logoPath = FCPATH . 'uploads/logo.jpg';
+        $logoSrc = file_exists($logoPath) ? 'data:image/jpeg;base64,' . base64_encode(file_get_contents($logoPath)) : '';
+
+        $ttdCamatPath = FCPATH . 'uploads/TTD_Camat.png';
+        $ttdCamatSrc = file_exists($ttdCamatPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($ttdCamatPath)) : '';
+
+        // QR Code (tetap sama)
+        $urlVerifikasi = base_url('verifikasi?id=' . $id_permohonan);
+        $result = Builder::create()
+            ->writer(new PngWriter())
+            ->data($urlVerifikasi)
+            ->size(120)
+            ->margin(5)
+            ->build();
+        $qrCodeDataUri = $result->getDataUri();
+
+        // Mapping template
+        $template_path = [
+            1 => 'Admin/Template/sktm',
+            2 => 'Admin/Template/domisili',
+            3 => 'Admin/Template/kelahiran',
+            4 => 'Admin/Template/kematian',
+            5 => 'Admin/Template/skck',
+            6 => 'Admin/Template/kehilangan',
+            7 => 'Admin/Template/keterangan_usaha',
+            8 => 'Admin/Template/pengantar_pindah',
+        ];
+
+        $id_jenis = $permohonan['id_jenis'];
+        if (!isset($template_path[$id_jenis])) {
+            return redirect()->back()->with('error', 'Template surat tidak ditemukan.');
+        }
+
+        $template = $template_path[$id_jenis];
+
+        // Generate PDF preview
+        $options = new Options();
+        $options->set('defaultFont', 'Arial');
+        $options->set('isRemoteEnabled', true);
+
+        $dompdf = new Dompdf($options);
+        $html = view($template, [
+            'permohonan'         => $permohonan,
+            'logoSrc'            => $logoSrc,
+            'qrCode'             => $qrCodeDataUri,
+            'ttdCamatSrc'        => $ttdCamatSrc,
+            'nomorSuratCamat'    => $nomorSuratCamat,
+            'isPreviewCamat'     => true, // kondisi di view template
+        ]);
+
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        $output = $dompdf->output();
+        $filename = strtoupper(str_replace(' ', '_', $permohonan['surat'])) . '_' . $permohonan['nama_user'] . '_CAMAT_' . time() . '.pdf';
+
+        file_put_contents('./uploads/dokumen/temp_' . $filename, $output);
+
+        session()->set('filename', $filename);
+        session()->set('id_permohonan', $id_permohonan);
+
+        return $this->response->setContentType('application/pdf')->setBody($output);
+    }
+
+    public function simpan_surat_kecamatan()
+    {
+        $filename = session()->get('filename');
+        $id_permohonan = session()->get('id_permohonan');
+
+        if (!$filename || !$id_permohonan) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan surat.');
+        }
+
+        rename('./uploads/dokumen/temp_' . $filename, './uploads/dokumen/' . $filename);
+
+        $this->Modelpermohonan->update($id_permohonan, [
+            'file_surat' => $filename,
+            'id_status'  => 5 // status selesai/terbit
+        ]);
+
+        session()->remove(['filename', 'id_permohonan']);
+
+        return redirect()->to('/daftar-pengajuan-surat')->with('success', 'Surat berhasil diterbitkan dan dapat diunduh masyarakat.');
+    }
+
+
+
+
 
     public function data_desa()
     {

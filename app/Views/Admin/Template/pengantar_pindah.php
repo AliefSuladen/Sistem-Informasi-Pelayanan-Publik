@@ -36,7 +36,6 @@ $kec_tujuan = $permohonan['kec_tujuan'];
 $kab_tujuan = $permohonan['kab_tujuan'];
 $jumlah_pindah = $permohonan['jumlah_pindah'];
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
-$nomorSurat = model('Modelpermohonan')->getNomorSuratPindah();
 
 // Konversi logo ke base64
 $logoSrc = '';
@@ -123,7 +122,9 @@ if (file_exists($logoFile)) {
     <div class="center">
         <h3 class="underline">SURAT PENGANTAR PINDAH</h3>
         <h3 class="underline">ANTAR KABUPATEN / KOTA DALAM SATU PROVINSI</h3>
-        <h4>Nomor: <?= $nomorSurat ?></h4>
+        <h4>
+            Nomor: <?= $permohonan['nomor_surat'] ?>
+        </h4>
     </div>
 
     <!-- Isi Surat -->

@@ -30,7 +30,6 @@ $namaAyah = $permohonan['nama_ayah'];
 $namaIbu = $permohonan['nama_ibu'];
 $alamat = "Desa " . $permohonan['nama_desa'] . ", Kecamatan Lais Kabupaten Musi Banyuasin";
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
-$nomorSurat = model('Modelpermohonan')->getNomorSuratSKL();
 
 $logoSrc = '';
 $logoFile = FCPATH . 'uploads/logo.jpg';
@@ -117,7 +116,7 @@ if (file_exists($logoFile)) {
 
     <div class="center">
         <h3><u>SURAT KETERANGAN KELAHIRAN</u></h3>
-        <p>Nomor: <?= $nomorSurat ?></p>
+        <p>Nomor: <?= $permohonan['nomor_surat'] ?></p>
     </div>
 
     <p>Yang bertanda tangan di bawah ini, Camat Lais, Kabupaten Musi Banyuasin, menerangkan bahwa:</p>

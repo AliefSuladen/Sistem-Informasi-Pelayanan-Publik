@@ -68,6 +68,9 @@ class Auth extends BaseController
                     case 'Masyarakat':
                         return redirect()->to('masyarakat');
                         break;
+                    case 'Kepala Desa':
+                        return redirect()->to('kades');
+                        break;
                     default:
                         session()->setFlashdata('pesan', 'Role tidak dikenali');
                         return redirect()->to('login');

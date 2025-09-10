@@ -3,28 +3,25 @@
 <?= $this->section('content') ?>
 <section class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-12">
-                <h1>Daftar Pengajuan Permohonan</h1>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
+        <h1>Daftar Pengajuan Legalisasi Surat</h1>
+    </div>
 </section>
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Pengajuan Permohonan</h3>
 
+<div class="col-md-12">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title">Pengajuan Legalisasi</h3>
         </div>
+
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-alert">
                 <?= session()->getFlashdata('success') ?>
             </div>
         <?php endif; ?>
-        <!-- /.card-header -->
+
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tabel-permohonan" class="table table-bordered table-hover">
+                <table id="tabel-legalisasi" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -45,58 +42,46 @@
                                     <td><?= esc($item['nama_user']) ?></td>
                                     <td><?= esc($item['surat']) ?></td>
                                     <td><?= esc($item['nama_desa']) ?></td>
-                                    <td>
-                                        <?= date('d-m-Y', strtotime($item['created_at'])) ?>
-                                    </td>
-                                    <td><?= esc($item['status']) ?></td>
+                                    <td><?= date('d-m-Y', strtotime($item['created_at'])) ?></td>
+                                    <td><span class="badge badge-warning"><?= esc($item['status']) ?></span></td>
                                     <td>
                                         <a href="<?= base_url('kecamatan_cek-dokumen/' . $item['id_permohonan']) ?>" class="btn btn-success btn-sm">
-                                            Cek Dokumen
+                                            <i class="fas fa-file-alt"></i> Cek Dokumen
                                         </a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="7">Tidak ada data pengajuan.</td>
+                                <td colspan="7" class="text-center text-muted">Tidak ada permohonan legalisasi.</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- /.card-body -->
     </div>
-    <!-- /.card -->
 </div>
+
 <?= $this->section('script') ?>
 <script>
     $(document).ready(function() {
-        $('#tabel-permohonan').DataTable({
+        $('#tabel-legalisasi').DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: false,
             dom: 'Bfrtip',
             buttons: [{
                     extend: 'excel',
-                    title: 'Data Laporan Permohonan Surat',
-                    exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5]
-                    }
+                    title: 'Data Pengajuan Legalisasi'
                 },
                 {
                     extend: 'pdf',
-                    title: 'Data Laporan Permohonan Surat',
-                    exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5]
-                    }
+                    title: 'Data Pengajuan Legalisasi'
                 },
                 {
                     extend: 'print',
-                    title: 'Data Laporan Permohonan Surat',
-                    exportOptions: {
-                        columns: [0, 1, 2, 3, 4, 5]
-                    }
+                    title: 'Data Pengajuan Legalisasi'
                 }
             ],
             language: {
@@ -106,4 +91,5 @@
     });
 </script>
 <?= $this->endSection() ?>
+
 <?= $this->endSection() ?>

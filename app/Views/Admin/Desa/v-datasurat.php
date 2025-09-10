@@ -44,12 +44,13 @@
                                     </td>
                                     <td><?= esc($item['status']) ?></td>
                                     <td>
-                                        <!-- Tombol Aksi Cek Dokumen -->
-                                        <a href="<?= base_url('desa_cek-dokumen/' . $item['id_permohonan']) ?>"
-                                            class="btn btn-sm <?= ($item['status'] === 'Pending') ? 'btn-success' : 'btn-primary' ?>">
-                                            Cek Dokumen
-                                        </a>
+                                        <?php if ($item['status'] === 'Pending'): ?>
+                                            <a href="<?= base_url('desa_cek-dokumen/' . $item['id_permohonan']) ?>" class="btn btn-sm btn-success">
+                                                Cek Dokumen
+                                            </a>
+                                        <?php endif; ?>
                                     </td>
+
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>

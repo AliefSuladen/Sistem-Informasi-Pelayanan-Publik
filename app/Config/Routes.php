@@ -27,9 +27,14 @@ $routes->get('masyarakat', 'Admin::masyarakat_dashboard');
 $routes->get('admin-desa', 'Admin::desa_dashboard');
 $routes->get('admin-kecamatan', 'Admin::kecamatan_dashboard');
 $routes->get('verifikasi', 'Admin::verifikasi');
+$routes->get('kades', 'Admin::kades_dashboard');
 
 $routes->get('daftar-pengajuan-surat', 'Kecamatan::index');
-$routes->get('kecamatan_cek-dokumen/(:num)', 'Admin::cek_dokumen/$1');
+$routes->get('kecamatan_cek-dokumen/(:num)', 'Kecamatan::cekDokumen/$1');
+$routes->post('kecamatan-tolak-berkas/(:num)', 'Kecamatan::tolak_berkas/$1');
+$routes->post('kecamatan-terima-preview', 'Kecamatan::validasi_berkas_kecamatan');
+$routes->post('kecamatan-terbitkan-surat', 'Kecamatan::simpan_surat_kecamatan');
+
 $routes->post('kecamatan-validasi-berkas', 'Admin::validasi_berkas');
 $routes->post('kecamatan-simpan-surat', 'Admin::simpan_surat');
 $routes->get('kecamatan-data-desa', 'Kecamatan::data_desa');
@@ -41,23 +46,24 @@ $routes->post('kecamatan-delete-jenis/(:num)', 'Kecamatan::hapus_jenis_surat/$1'
 $routes->get('kecamatan-laporan', 'Kecamatan::laporan');
 
 
-
-
-
-
-
-
-
-
-
 $routes->get('daftar-pengajuan', 'Desa::data_surat');
 $routes->get('data-warga', 'Desa::data_warga');
 $routes->get('desa_cek-dokumen/(:num)', 'Desa::cek_dokumen/$1');
 $routes->post('desa/terima-berkas/(:num)', 'Desa::terima_berkas/$1');
 $routes->post('desa/tolak-berkas/(:num)', 'Desa::tolak_berkas/$1');
+$routes->get('desa-laporan', 'Desa::laporan_permohonan');
+
+
+$routes->get('daftar-pengajuan-warga', 'Kades::data_surat');
+$routes->get('kades-cek-dokumen/(:num)', 'Admin::cek_dokumen/$1');
+$routes->post('kades-preview-surat', 'Admin::validasi_berkas');
+$routes->post('kades-terbitkan-surat', 'Admin::simpan_surat');
+
 
 
 $routes->get('masyarakat-download/(:num)', 'Masyarakat::download/$1');
 $routes->get('pengajuan-surat', 'Masyarakat::pengajuan_Surat');
 $routes->post('simpan-pengajuan', 'Masyarakat::simpan_Pengajuan');
 $routes->get('masyarakat-penolakan/(:num)', 'Masyarakat::detail_Penolakan/$1');
+$routes->get('masyarakat-ajukan-legalisasi/(:num)', 'Masyarakat::ajukan_legalisasi/$1');
+$routes->post('masyarakat-simpan-legalisasi', 'Masyarakat::simpan_legalisasi');

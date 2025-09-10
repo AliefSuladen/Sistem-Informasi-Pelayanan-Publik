@@ -40,26 +40,43 @@
                                     <td>
                                         <?php
                                         $badgeClass = match ($item['status']) {
-                                            'Pending' => 'badge-danger',
-                                            'Diverifikasi Pihak Desa' => 'badge-primary',
-                                            'Selesai' => 'badge-success',
-                                            'Ditolak' => 'badge-secondary',
+                                            'Pending' => 'badge-warning',
+                                            'Diverifikasi Admin Desa' => 'badge-info',
+                                            'Selesai - Surat Diterbitkan Oleh Desa' => 'badge-success',
+                                            'Menunggu Verifikasi' => 'badge-warning',
+                                            'Diverifikasi Admin Kecamatan' => 'badge-info',
+                                            'Selesai - Surat Diterbitkan Oleh Kecamatan' => 'badge-success',
+                                            'Ditolak' => 'badge-danger',
+                                            default => 'badge-secondary',
                                         };
                                         ?>
+
                                         <span class="badge <?= $badgeClass ?>"><?= esc($item['status']) ?></span>
                                     </td>
                                     <td>
-                                        <?php if ($item['status'] === 'Selesai'): ?>
-                                            <a href="<?= base_url('masyarakat-download/' . $item['id_permohonan']) ?>" class="btn btn-success btn-sm">
+                                        <?php if ($item['status'] === 'Selesai - Surat Diterbitkan Oleh Desa'): ?>
+                                            <a href="<?= base_url('masyarakat-download/' . $item['id_permohonan']) ?>" class="btn btn-success btn-sm" target="_blank">
+                                                <i class="fas fa-download"></i> Unduh Dokumen
+                                            </a>
+                                            <!-- Tombol Ajukan Legalisasi Camat -->
+                                            <a href="<?= base_url('masyarakat-ajukan-legalisasi/' . $item['id_permohonan']) ?>" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-file-signature"></i> Ajukan Legalisasi Camat
+                                            </a>
+                                        <?php endif; ?>
+
+                                        <?php if ($item['status'] === 'Selesai - Surat Diterbitkan Oleh Kecamatan'): ?>
+                                            <a href="<?= base_url('masyarakat-download/' . $item['id_permohonan']) ?>" class="btn btn-success btn-sm" target="_blank">
                                                 <i class="fas fa-download"></i> Unduh Dokumen
                                             </a>
                                         <?php endif; ?>
+
                                         <?php if ($item['status'] === 'Ditolak'): ?>
                                             <a href="<?= base_url('masyarakat-penolakan/' . $item['id_permohonan']) ?>" class="btn btn-secondary btn-sm">
-                                                <i class="fas fa-eye"> Lihat Pengajuan</i>
+                                                <i class="fas fa-eye"></i> Lihat Pengajuan
                                             </a>
                                         <?php endif; ?>
                                     </td>
+
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>

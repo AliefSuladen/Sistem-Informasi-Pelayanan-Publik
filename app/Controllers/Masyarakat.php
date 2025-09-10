@@ -150,4 +150,65 @@ class Masyarakat extends BaseController
 
         return view('Admin/Masyarakat/v-detail-penolakan', $data);
     }
+
+    public function ajukan_legalisasi($id_permohonan)
+    {
+        $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
+
+        if (!$permohonan) {
+            return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
+        }
+
+        // Ambil dokumen pendukung lama
+        $dokumenPendukung = $this->Modeldokumen->getDokumenByPermohonan($id_permohonan);
+
+        $data = [
+            'permohonan' => $permohonan,
+            'dokumenPendukung' => $dokumenPendukung
+        ];
+
+        return view('Admin/Masyarakat/v-ajukan-legalisasi', $data);
+    }
+
+    public function simpan_legalisasi()
+    {
+        $id_permohonan = $this->request->getPost('id_permohonan');
+
+        if (!$id_permohonan) {
+            return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
+        }
+
+        $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
+
+        if (!$permohonan) {
+            return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
+        }
+
+        // Ambil semua file yang diupload
+        $files = $this->request->getFiles();
+
+        if (isset($files['dokumen'])) {
+            foreach ($files['dokumen'] as $file) {
+                if ($file && $file->isValid() && !$file->hasMoved()) {
+                    $namaFile = $file->getRandomName();
+                    $file->move(FCPATH . 'uploads/dokumen/', $namaFile);
+
+                    // Simpan info dokumen ke tabel dokumen_pengajuan
+                    $this->Modeldokumen->insert([
+                        'id_permohonan' => $id_permohonan,
+                        'nama_dokumen' => $file->getClientName(),
+                        'file_dokumen' => $namaFile,
+                        'created_at' => date('Y-m-d H:i:s')
+                    ]);
+                }
+            }
+        }
+
+        // Update status permohonan ke menunggu validasi camat
+        $this->Modelpermohonan->update($id_permohonan, [
+            'id_status' => 4
+        ]);
+
+        return redirect()->to(base_url('masyarakat'))->with('success', 'Permohonan legalisasi berhasil diajukan.');
+    }
 }

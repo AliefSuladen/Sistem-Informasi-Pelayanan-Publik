@@ -30,7 +30,6 @@ $jenisKelamin = $permohonan['kelamin'];
 $agama = $permohonan['agama'];
 $pekerjaan = $permohonan['pekerjaan'];
 $tanggalSurat = tanggalIndo(date('Y-m-d'));
-$nomorSurat = model('Modelpermohonan')->getNomorSuratSKTM();
 
 // Konversi logo ke base64
 $logoSrc = '';
@@ -116,7 +115,7 @@ if (file_exists($logoFile)) {
     <!-- Judul Surat -->
     <div class="center">
         <h3 class="underline">SURAT KETERANGAN TIDAK MAMPU</h3>
-        <p>Nomor: <?= $nomorSurat ?></p>
+        <p>Nomor: <?= $permohonan['nomor_surat'] ?></p>
     </div>
 
     <!-- Isi Surat -->
