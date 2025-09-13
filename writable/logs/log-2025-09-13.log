@@ -1,0 +1,158 @@
+WARNING - 2025-09-13 13:41:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$Modeljenissurat is deprecated in APPPATH/Controllers/Home.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$Modelpermohonan is deprecated in APPPATH/Controllers/Home.php on line 18.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$Modeluser is deprecated in APPPATH/Controllers/Home.php on line 19.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$Modeldesa is deprecated in APPPATH/Controllers/Home.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Home::$Modeldokumen is deprecated in APPPATH/Controllers/Home.php on line 21.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-13 13:41:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$Modelauth is deprecated in APPPATH/Controllers/Auth.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-13 13:41:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$Modelauth is deprecated in APPPATH/Controllers/Auth.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-13 13:41:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modelpermohonan is deprecated in APPPATH/Controllers/Masyarakat.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modeldokumen is deprecated in APPPATH/Controllers/Masyarakat.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modeljenissurat is deprecated in APPPATH/Controllers/Masyarakat.php on line 18.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-13 13:41:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modelpermohonan is deprecated in APPPATH/Controllers/Masyarakat.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modeldokumen is deprecated in APPPATH/Controllers/Masyarakat.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modeljenissurat is deprecated in APPPATH/Controllers/Masyarakat.php on line 18.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-13 13:41:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modelpermohonan is deprecated in APPPATH/Controllers/Masyarakat.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modeldokumen is deprecated in APPPATH/Controllers/Masyarakat.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+WARNING - 2025-09-13 13:41:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Masyarakat::$Modeljenissurat is deprecated in APPPATH/Controllers/Masyarakat.php on line 18.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Masyarakat->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-13 13:41:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$Modelauth is deprecated in APPPATH/Controllers/Auth.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-13 13:41:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$Modelauth is deprecated in APPPATH/Controllers/Auth.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/e-lais/public/index.php')
+DEBUG - 2025-09-13 13:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 14:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 14:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 14:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 14:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 14:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 15:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

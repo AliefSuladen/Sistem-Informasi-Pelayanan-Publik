@@ -1,99 +1,22 @@
 <?php
-
 namespace App\Controllers;
-
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Modelpermohonan;
-use App\Models\Modeldokumen;
 use App\Models\Modeluser;
-use App\Models\Modeldesa;
-use Dompdf\Dompdf;
-use Dompdf\Options;
-use Endroid\QrCode\Builder\Builder;
-use Endroid\QrCode\Writer\PngWriter;
-
-
-
-
-
 
 class Admin extends BaseController
 {
     public function __construct()
     {
         $this->Modelpermohonan = new Modelpermohonan();
-        $this->Modeldokumen = new Modeldokumen();
         $this->Modeluser = new Modeluser();
-        $this->Modeldesa = new Modeldesa();
     }
-    public function kecamatan_dashboard()
-    {
-
-        $data = [
-            'jml_admin_desa' => $this->Modeluser->countAdminDesa(),
-            'total_permohonan'   => count($this->Modelpermohonan->findAll()),
-            'statistik_status'   => $this->Modelpermohonan->getStatistikGlobal(),
-            'statistik_jenis'    => $this->Modelpermohonan->getJumlahJenisSuratGlobal(),
-            'permohonan_terbaru' => array_slice($this->Modelpermohonan->getAllPermohonan(), 0, 5),
-        ];
-
-        return view('Admin/v-kec-dashboard', $data);
-    }
-    public function masyarakat_dashboard()
-    {
-
-        $id_user = session()->get('id_user');
-
-        $permohonan = $this->Modelpermohonan->getPermohonanByUser($id_user);
-
-        $data = [
-            'permohonan' => $permohonan,
-        ];
-
-        return view('Admin/v-mas-dashboard', $data);
-    }
-
-    public function desa_dashboard()
-    {
-        $id_desa = session()->get('id_desa');
-
-        $desa = $this->Modeldesa->getDesaById($id_desa);
-        $statistik = $this->Modelpermohonan->getStatistikByDesa($id_desa);
-        $jenisSurat = $this->Modelpermohonan->getJumlahJenisSuratByDesa($id_desa);
-
-        $data = [
-            'desa' => $desa,
-            'statistik' => $statistik,
-            'jenisSurat' => $jenisSurat,
-        ];
-
-        return view('Admin/v-desa-dashboard', $data);
-    }
-    public function kades_dashboard()
-    {
-        $id_desa = session()->get('id_desa');
-
-        $desa = $this->Modeldesa->getDesaById($id_desa);
-        $statistik = $this->Modelpermohonan->getStatistikByDesa($id_desa);
-        $jenisSurat = $this->Modelpermohonan->getJumlahJenisSuratByDesa($id_desa);
-
-        $data = [
-            'desa' => $desa,
-            'statistik' => $statistik,
-            'jenisSurat' => $jenisSurat,
-        ];
-
-        return view('Admin/v-kades-dashboard', $data);
-    }
-
 
     public function profil()
     {
         $id_user = session()->get('id_user');
-
         $user = $this->Modeluser->getUser($id_user);
-
         $data = [
             'user' => $user,
         ];
@@ -104,13 +27,9 @@ class Admin extends BaseController
     public function update_profil()
     {
         $id = session()->get('id_user');
-
-        // Ambil data user lama untuk keperluan perbandingan atau hapus foto lama
         $userLama = $this->Modeluser->getUser($id);
 
         $data = [];
-
-        // Cek dan isi field jika ada input
         $inputFields = ['nama_user', 'email', 'pekerjaan', 'agama', 'alamat'];
         foreach ($inputFields as $field) {
             $value = $this->request->getPost($field);
@@ -119,169 +38,36 @@ class Admin extends BaseController
             }
         }
 
-        // Password jika diisi
         $password = $this->request->getPost('password');
         if (!empty($password)) {
             $data['password'] = ($password);
         }
-
-        // Upload foto jika ada
         $file = $this->request->getFile('foto');
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $newName = $file->getRandomName();
             $file->move(FCPATH . 'uploads/profil/', $newName);
             $data['foto'] = $newName;
 
-            // Hapus foto lama jika ada
             if (!empty($userLama['foto']) && file_exists(FCPATH . 'uploads/profil/' . $userLama['foto'])) {
                 unlink(FCPATH . 'uploads/profil/' . $userLama['foto']);
             }
-
-            // Update foto di session
             session()->set('foto', $newName);
         }
 
-        // Lakukan update
         $this->Modeluser->set($data)->where('id_user', $id)->update();
 
-        // Cek apakah data berubah atau tidak
         if ($this->Modeluser->db->affectedRows() > 0) {
             session()->setFlashdata('success', 'Profil berhasil diperbarui.');
         } else {
             session()->setFlashdata('info', 'Tidak ada perubahan pada data.');
         }
-
         $userBaru = $this->Modeluser->getUser($id);
         session()->set('nama_user', $userBaru['nama_user']);
 
         return redirect()->to(base_url('profil'));
     }
 
-    public function cek_dokumen($id_permohonan)
-    {
-        $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
-
-
-        if (!$permohonan) {
-            return redirect()->back()->with('error', 'Data permohonan tidak ditemukan.');
-        }
-        $dokumenPendukung = $this->Modeldokumen->getDokumenByPermohonan($id_permohonan);
-
-        $data = [
-            'permohonan' => $permohonan,
-            'dokumenPendukung' => $dokumenPendukung
-        ];
-
-        return view('Admin/Desa/v-kades-cek-dokumen', $data);
-    }
-
-    public function validasi_berkas()
-    {
-        $id_permohonan = $this->request->getPost('id_permohonan');
-        $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
-
-        if (!$permohonan) {
-            return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
-        }
-
-        // === GENERATE NOMOR SURAT ===
-        if (empty($permohonan['nomor_surat'])) {
-            $nomorSurat = $this->Modelpermohonan->generateNomorSurat($permohonan['id_jenis']);
-            // Simpan ke DB
-            $this->Modelpermohonan->update($id_permohonan, [
-                'nomor_surat' => $nomorSurat,
-                'status'      => 'Selesai'
-            ]);
-            $permohonan['nomor_surat'] = $nomorSurat;
-        }
-
-        // Mapping template
-        $template_path = [
-            1 => 'Admin/Template/sktm',
-            2 => 'Admin/Template/domisili',
-            3 => 'Admin/Template/kelahiran',
-            4 => 'Admin/Template/kematian',
-            5 => 'Admin/Template/skck',
-            6 => 'Admin/Template/kehilangan',
-            7 => 'Admin/Template/keterangan_usaha',
-            8 => 'Admin/Template/pengantar_pindah',
-        ];
-
-        $id_jenis = $permohonan['id_jenis'];
-        if (!isset($template_path[$id_jenis])) {
-            return redirect()->back()->with('error', 'Template surat tidak ditemukan.');
-        }
-
-        $template = $template_path[$id_jenis];
-
-        // === LOGO CAMAT ===
-        $logoPath = FCPATH . 'uploads/logo.jpg';
-        $logoSrc = '';
-        if (file_exists($logoPath)) {
-            $logoSrc = 'data:image/jpeg;base64,' . base64_encode(file_get_contents($logoPath));
-        }
-
-        // === QR CODE ===
-        $urlVerifikasi = base_url('verifikasi?id=' . $id_permohonan);
-        $result = Builder::create()
-            ->writer(new PngWriter())
-            ->data($urlVerifikasi)
-            ->size(120)
-            ->margin(5)
-            ->build();
-
-        $qrCodeDataUri = $result->getDataUri();
-
-        // === PDF ===
-        $options = new Options();
-        $options->set('defaultFont', 'Arial');
-        $options->set('isRemoteEnabled', true);
-
-        $dompdf = new Dompdf($options);
-        $html = view($template, [
-            'permohonan' => $permohonan,
-            'logoSrc'    => $logoSrc,
-            'qrCode'     => $qrCodeDataUri
-        ]);
-
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'portrait');
-        $dompdf->render();
-
-        $output = $dompdf->output();
-        $filename = strtoupper(str_replace(' ', '_', $permohonan['surat'])) . '_' . $permohonan['nama_user'] . '_' . time() . '.pdf';
-
-        file_put_contents('./uploads/dokumen/temp_' . $filename, $output);
-
-        session()->set('filename', $filename);
-        session()->set('id_permohonan', $id_permohonan);
-
-        return $this->response->setContentType('application/pdf')->setBody($output);
-    }
-
-
-    public function simpan_surat()
-    {
-        $filename = session()->get('filename');
-        $id_permohonan = session()->get('id_permohonan');
-
-        if (!$filename || !$id_permohonan) {
-            return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan surat.');
-        }
-
-        rename('./uploads/dokumen/temp_' . $filename, './uploads/dokumen/' . $filename);
-
-        $this->Modelpermohonan->update($id_permohonan, [
-            'file_surat' => $filename,
-            'id_status' => 3
-        ]);
-
-        session()->remove(['filename', 'id_permohonan']);
-
-        return redirect()->to('/daftar-pengajuan-warga')->with('success', 'Surat berhasil dicetak dan disimpan.');
-    }
-
-    public function verifikasi()
+    public function verifikasi_keaslian_surat()
     {
         $id_permohonan = $this->request->getGet('id');
 
@@ -291,15 +77,12 @@ class Admin extends BaseController
                 'surat' => null
             ]);
         }
-
         $surat = $this->Modelpermohonan->getPermohonanById($id_permohonan);
-
         if (!$surat || empty($surat['file_surat'])) {
             $status = '❌ Tidak Valid';
         } else {
             $status = '✅ Valid';
         }
-
         return view('Admin/verifikasi_surat', [
             'surat' => $surat,
             'status' => $status

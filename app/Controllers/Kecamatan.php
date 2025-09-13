@@ -24,7 +24,20 @@ class Kecamatan extends BaseController
         $this->Modeljenissurat = new Modeljenissurat();
         $this->Modeldokumen = new Modeldokumen();
     }
-    public function index()
+    public function dashboard()
+    {
+
+        $data = [
+            'jml_admin_desa' => $this->Modeluser->countAdminDesa(),
+            'total_permohonan'   => count($this->Modelpermohonan->findAll()),
+            'statistik_status'   => $this->Modelpermohonan->getStatistikGlobal(),
+            'statistik_jenis'    => $this->Modelpermohonan->getJumlahJenisSuratGlobal(),
+            'permohonan_terbaru' => array_slice($this->Modelpermohonan->getAllPermohonan(), 0, 5),
+        ];
+
+        return view('Admin/v-kec-dashboard', $data);
+    }
+    public function data_permohonan()
     {
         $permohonan = $this->Modelpermohonan->getPermohonanLegalisasi();
 
@@ -35,14 +48,10 @@ class Kecamatan extends BaseController
         return view('Admin/Kecamatan/v-datasurat', $data);
     }
 
-    public function cekDokumen($id_permohonan)
+    public function cek_dokumen_permohonan($id_permohonan)
     {
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
-
-        // Ambil dokumen pendukung
         $dokumenPendukung = $this->Modeldokumen->getDokumenByPermohonan($id_permohonan);
-
-        // Kirim ke view
         $data = [
             'permohonan' => $permohonan,
             'dokumenPendukung' => $dokumenPendukung
@@ -51,7 +60,7 @@ class Kecamatan extends BaseController
         return view('Admin/Kecamatan/v-cek-dokumen', $data);
     }
 
-    public function tolak_berkas()
+    public function tolak_berkas_permohonan()
     {
         $id_permohonan = $this->request->getPost('id_permohonan');
         $alasan_penolakan = $this->request->getPost('alasan_penolakan');
@@ -59,20 +68,17 @@ class Kecamatan extends BaseController
         if (!$id_permohonan || !$alasan_penolakan) {
             return redirect()->back()->with('error', 'ID permohonan dan alasan penolakan wajib diisi.');
         }
-
-        // Update status menjadi "Ditolak" (misalnya status id = 4) dan simpan alasan jika diperlukan
         $this->Modelpermohonan->update($id_permohonan, [
             'id_status' => 6,
             'alasan_penolakan' => $alasan_penolakan,
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-
         session()->setFlashdata('success', 'Permohonan berhasil Ditolak!.');
         return redirect()->to(base_url('daftar-pengajuan-surat'));
     }
 
 
-    public function validasi_berkas_kecamatan()
+    public function create_permohonan_legalisasi()
     {
         $id_permohonan = $this->request->getPost('id_permohonan');
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
@@ -81,22 +87,17 @@ class Kecamatan extends BaseController
             return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
         }
 
-        // Ambil file PDF yang diterbitkan desa
         $fileDesa = FCPATH . 'uploads/dokumen/' . $permohonan['file_surat'];
         if (!file_exists($fileDesa)) {
             return redirect()->back()->with('error', 'File surat desa tidak ditemukan.');
         }
 
         $nomorSuratCamat = $this->Modelpermohonan->generateNomorSuratCamat($permohonan['id_jenis']);
-
-
         $logoPath = FCPATH . 'uploads/logo.jpg';
         $logoSrc = file_exists($logoPath) ? 'data:image/jpeg;base64,' . base64_encode(file_get_contents($logoPath)) : '';
 
         $ttdCamatPath = FCPATH . 'uploads/TTD_Camat.png';
         $ttdCamatSrc = file_exists($ttdCamatPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($ttdCamatPath)) : '';
-
-        // QR Code (tetap sama)
         $urlVerifikasi = base_url('verifikasi?id=' . $id_permohonan);
         $result = Builder::create()
             ->writer(new PngWriter())
@@ -106,7 +107,6 @@ class Kecamatan extends BaseController
             ->build();
         $qrCodeDataUri = $result->getDataUri();
 
-        // Mapping template
         $template_path = [
             1 => 'Admin/Template/sktm',
             2 => 'Admin/Template/domisili',
@@ -124,8 +124,6 @@ class Kecamatan extends BaseController
         }
 
         $template = $template_path[$id_jenis];
-
-        // Generate PDF preview
         $options = new Options();
         $options->set('defaultFont', 'Arial');
         $options->set('isRemoteEnabled', true);
@@ -137,7 +135,7 @@ class Kecamatan extends BaseController
             'qrCode'             => $qrCodeDataUri,
             'ttdCamatSrc'        => $ttdCamatSrc,
             'nomorSuratCamat'    => $nomorSuratCamat,
-            'isPreviewCamat'     => true, // kondisi di view template
+            'isPreviewCamat'     => true,
         ]);
 
         $dompdf->loadHtml($html);
@@ -146,16 +144,14 @@ class Kecamatan extends BaseController
 
         $output = $dompdf->output();
         $filename = strtoupper(str_replace(' ', '_', $permohonan['surat'])) . '_' . $permohonan['nama_user'] . '_CAMAT_' . time() . '.pdf';
-
         file_put_contents('./uploads/dokumen/temp_' . $filename, $output);
-
         session()->set('filename', $filename);
         session()->set('id_permohonan', $id_permohonan);
 
         return $this->response->setContentType('application/pdf')->setBody($output);
     }
 
-    public function simpan_surat_kecamatan()
+    public function terbitkan_legalisasi_surat()
     {
         $filename = session()->get('filename');
         $id_permohonan = session()->get('id_permohonan');
@@ -168,17 +164,12 @@ class Kecamatan extends BaseController
 
         $this->Modelpermohonan->update($id_permohonan, [
             'file_surat' => $filename,
-            'id_status'  => 5 // status selesai/terbit
+            'id_status'  => 5 
         ]);
 
         session()->remove(['filename', 'id_permohonan']);
-
         return redirect()->to('/daftar-pengajuan-surat')->with('success', 'Surat berhasil diterbitkan dan dapat diunduh masyarakat.');
     }
-
-
-
-
 
     public function data_desa()
     {
@@ -193,38 +184,32 @@ class Kecamatan extends BaseController
         $data['daftar_desa'] = $this->Modeldesa->getAllDesa();
         return view('Admin/Kecamatan/v-data-admin-desa', $data);
     }
-    public function save_admin_desa()
+
+    public function create_admin_desa()
     {
         $nama = $this->request->getPost('nama_user');
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
         $id_desa = $this->request->getPost('id_desa');
         $foto = $this->request->getFile('foto');
-
-        // Validasi foto wajib
         if (!$foto->isValid() || $foto->hasMoved()) {
             session()->setFlashdata('error', 'Foto profil wajib diunggah.');
             return redirect()->back()->withInput();
         }
 
-        // Cek jika email sudah digunakan
         $existing = $this->Modeluser->where('email', $email)->first();
         if ($existing) {
             session()->setFlashdata('error', 'Email sudah digunakan.');
             return redirect()->back()->withInput();
         }
-
-        // Simpan foto
         $namaFoto = $foto->getRandomName();
         $foto->move('uploads/profil', $namaFoto);
-
-        // Simpan data ke database
         $this->Modeluser->insert([
             'nama_user' => $nama,
             'email' => $email,
             'password' => $password,
             'id_desa' => $id_desa,
-            'role' => 2, // Admin Desa
+            'role' => 2,
             'foto' => $namaFoto,
         ]);
 
@@ -237,7 +222,7 @@ class Kecamatan extends BaseController
         $data['jenis_surat'] = $this->Modeljenissurat->getAllJenisSurat();
         return view('Admin/Kecamatan/v-jenis-surat', $data);
     }
-    public function add_jenis_surat()
+    public function create_jenis_surat()
     {
         $nama = $this->request->getPost('surat');
 
@@ -254,6 +239,7 @@ class Kecamatan extends BaseController
         session()->setFlashdata('success', 'Jenis surat berhasil ditambahkan.');
         return redirect()->to('kecamatan-jenis-surat');
     }
+
     public function hapus_jenis_surat($id_jenis)
     {
         $jenis = $this->Modeljenissurat->find($id_jenis);

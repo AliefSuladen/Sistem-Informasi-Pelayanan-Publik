@@ -1,12 +1,9 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Modelauth;
-
-
 
 class Auth extends BaseController
 {
@@ -24,7 +21,6 @@ class Auth extends BaseController
 
     public function cek_login()
     {
-        // Validasi input
         if ($this->validate([
             'email' => [
                 'label' => 'E-Mail',
@@ -45,8 +41,6 @@ class Auth extends BaseController
 
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
-
-
             $cek_login = $this->Modelauth->login($email, $password);
 
             if ($cek_login) {
@@ -56,7 +50,6 @@ class Auth extends BaseController
                 session()->set('id_desa', $cek_login['id_desa']);
                 session()->set('role', $cek_login['role']);
                 session()->set('foto', $cek_login['foto']);
-
 
                 switch ($cek_login['role']) {
                     case 'Admin Kecamatan':
@@ -92,9 +85,7 @@ class Auth extends BaseController
         session()->remove('email');
         session()->remove('id_desa');
         session()->remove('role');
-
         session()->remove('foto');
-
         session()->setFlashdata('pesan', 'Logout sukses!');
 
         return redirect()->to('login');

@@ -17,39 +17,38 @@ class Masyarakat extends BaseController
         $this->Modeldokumen = new Modeldokumen();
         $this->Modeljenissurat = new Modeljenissurat();
     }
-    public function download($id_permohonan)
+    public function dashboard()
     {
-        $permohonan = $this->Modelpermohonan->getFileSurat($id_permohonan);
 
-        $filePath = './uploads/dokumen/' . $permohonan['file_surat'];
+        $id_user = session()->get('id_user');
 
-        if (!file_exists(FCPATH . $filePath)) {
-            return redirect()->back()->with('error', 'File tidak ditemukan.');
-        }
+        $permohonan = $this->Modelpermohonan->getPermohonanByUser($id_user);
 
-        return redirect()->to(base_url($filePath));
+        $data = [
+            'permohonan' => $permohonan,
+        ];
+
+        return view('Admin/v-mas-dashboard', $data);
     }
-    public function pengajuan_Surat()
+
+    public function pengajuan_permohonan()
     {
         $data['jenis_surat'] = $this->Modeljenissurat->getAllJenisSurat();
         return view('Admin/Masyarakat/v-pengajuan-surat', $data);
     }
 
-    public function simpan_pengajuan()
+    public function simpan_pengajuan_permohonan()
     {
         $id_user  = session()->get('id_user');
         $id_jenis = $this->request->getPost('id_jenis');
-
-        // Data dasar permohonan
         $permohonanData = [
             'id_user'    => $id_user,
             'id_jenis'   => $id_jenis,
-            'id_status'  => 1, // Status awal: diajukan
+            'id_status'  => 1, 
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
 
-        // Tambahan data berdasarkan jenis surat
         switch ($id_jenis) {
             case 1: // SKTM
                 break;
@@ -97,12 +96,8 @@ class Masyarakat extends BaseController
                 $permohonanData['jumlah_pindah'] = $this->request->getPost('jumlah_pindah');
                 break;
         }
-
-        // Simpan ke database
         $this->Modelpermohonan->insert($permohonanData);
         $id_permohonan = $this->Modelpermohonan->insertID();
-
-        // Proses upload dokumen
         $files = $this->request->getFiles();
         $uploadPath = 'uploads/dokumen/';
         $allowedTypes = ['pdf', 'jpg', 'jpeg', 'png'];
@@ -131,16 +126,14 @@ class Masyarakat extends BaseController
         session()->setFlashdata('success', 'Pengajuan surat berhasil diajukan.');
         return redirect()->to('masyarakat');
     }
+
     public function detail_Penolakan($id_permohonan)
     {
-        // Ambil data permohonan berdasarkan ID permohonan
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
 
         if (!$permohonan) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Permohonan tidak ditemukan.');
         }
-
-        // Ambil dokumen pendukung berdasarkan ID permohonan
         $dokumenPendukung = $this->Modeldokumen->getDokumenByPermohonan($id_permohonan);
 
         $data = [
@@ -151,15 +144,13 @@ class Masyarakat extends BaseController
         return view('Admin/Masyarakat/v-detail-penolakan', $data);
     }
 
-    public function ajukan_legalisasi($id_permohonan)
+    public function ajukan_permohonan_legalisasi($id_permohonan)
     {
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
 
         if (!$permohonan) {
             return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
         }
-
-        // Ambil dokumen pendukung lama
         $dokumenPendukung = $this->Modeldokumen->getDokumenByPermohonan($id_permohonan);
 
         $data = [
@@ -170,7 +161,7 @@ class Masyarakat extends BaseController
         return view('Admin/Masyarakat/v-ajukan-legalisasi', $data);
     }
 
-    public function simpan_legalisasi()
+    public function simpan_permohonan_legalisasi()
     {
         $id_permohonan = $this->request->getPost('id_permohonan');
 
@@ -183,8 +174,6 @@ class Masyarakat extends BaseController
         if (!$permohonan) {
             return redirect()->back()->with('error', 'Permohonan tidak ditemukan.');
         }
-
-        // Ambil semua file yang diupload
         $files = $this->request->getFiles();
 
         if (isset($files['dokumen'])) {
@@ -210,5 +199,17 @@ class Masyarakat extends BaseController
         ]);
 
         return redirect()->to(base_url('masyarakat'))->with('success', 'Permohonan legalisasi berhasil diajukan.');
+    }
+
+    public function download_surat($id_permohonan)
+    {
+        $permohonan = $this->Modelpermohonan->getFileSurat($id_permohonan);
+
+        $filePath = './uploads/dokumen/' . $permohonan['file_surat'];
+
+        if (!file_exists(FCPATH . $filePath)) {
+            return redirect()->back()->with('error', 'File tidak ditemukan.');
+        }
+        return redirect()->to(base_url($filePath));
     }
 }

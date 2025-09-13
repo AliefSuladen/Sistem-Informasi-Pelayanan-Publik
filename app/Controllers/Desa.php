@@ -20,8 +20,24 @@ class Desa extends BaseController
         $this->Modeldesa = new Modeldesa();
     }
 
+    public function dashboard()
+    {
+        $id_desa = session()->get('id_desa');
 
-    public function data_surat()
+        $desa = $this->Modeldesa->getDesaById($id_desa);
+        $statistik = $this->Modelpermohonan->getStatistikByDesa($id_desa);
+        $jenisSurat = $this->Modelpermohonan->getJumlahJenisSuratByDesa($id_desa);
+
+        $data = [
+            'desa' => $desa,
+            'statistik' => $statistik,
+            'jenisSurat' => $jenisSurat,
+        ];
+
+        return view('Admin/v-desa-dashboard', $data);
+    }
+
+    public function data_permohonan()
     {
 
         $id_desa = session()->get('id_desa');
@@ -35,18 +51,13 @@ class Desa extends BaseController
         return view('Admin/Desa/v-datasurat', $data);
     }
 
-    public function cek_dokumen($id_permohonan)
+    public function cek_dokumen_permohonan($id_permohonan)
     {
-        // Ambil data permohonan berdasarkan ID permohonan
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
-
         if (!$permohonan) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Permohonan tidak ditemukan.');
         }
-
-        // Ambil dokumen pendukung berdasarkan ID permohonan
         $dokumenPendukung = $this->Modeldokumen->getDokumenByPermohonan($id_permohonan);
-
         $data = [
             'permohonan' => $permohonan,
             'dokumenPendukung' => $dokumenPendukung
@@ -55,22 +66,18 @@ class Desa extends BaseController
         return view('Admin/Desa/v-cek-dokumen', $data);
     }
 
-    public function terima_berkas($id_permohonan)
+    public function terima_berkas_permohonan($id_permohonan)
     {
-        // Cek apakah permohonan ada
         $permohonan = $this->Modelpermohonan->getPermohonanById($id_permohonan);
-
         if (!$permohonan) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Permohonan tidak ditemukan.');
         }
-
-        // Ubah status permohonan menjadi Diverifikasi (misalnya id_status = 2)
-        $this->Modelpermohonan->updateStatus($id_permohonan, 2); // Asumsikan id_status 2 adalah 'Diverifikasi'
+        $this->Modelpermohonan->updateStatus($id_permohonan, 2);
         session()->setFlashdata('success', 'Permohonan berhasil diverifikasi.');
         return redirect()->to(base_url('daftar-pengajuan'));
     }
 
-    public function tolak_berkas()
+    public function tolak_berkas_permohonan()
     {
         $id_permohonan = $this->request->getPost('id_permohonan');
         $alasan_penolakan = $this->request->getPost('alasan_penolakan');
@@ -78,14 +85,11 @@ class Desa extends BaseController
         if (!$id_permohonan || !$alasan_penolakan) {
             return redirect()->back()->with('error', 'ID permohonan dan alasan penolakan wajib diisi.');
         }
-
-        // Update status menjadi "Ditolak" (misalnya status id = 4) dan simpan alasan jika diperlukan
         $this->Modelpermohonan->update($id_permohonan, [
             'id_status' => 6,
             'alasan_penolakan' => $alasan_penolakan,
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-
         session()->setFlashdata('success', 'Permohonan berhasil Ditolak!.');
         return redirect()->to(base_url('daftar-pengajuan'));
     }
@@ -98,7 +102,6 @@ class Desa extends BaseController
             ->where('id_desa', $id_desa)
             ->where('role', 3)
             ->findAll();
-
         $data = [
             'warga' => $warga,
             'nama_desa' => $desa['nama_desa'] ?? 'Desa Tidak Diketahui',
@@ -122,7 +125,6 @@ class Desa extends BaseController
             'bulan' => $bulan,
             'tahun' => $tahun
         ];
-
         return view('Admin/Desa/v-laporan', $data);
     }
 }

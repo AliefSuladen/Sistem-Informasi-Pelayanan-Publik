@@ -10,60 +10,49 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('home', 'Home::index');
 
-$routes->get('login', 'Auth::login'); // Menampilkan form login
-$routes->post('login/process', 'Auth::cek_login'); // Proses login
-$routes->get('logout', 'Auth::logout'); // Logout user
+$routes->get('login', 'Auth::login');
+$routes->post('login/process', 'Auth::cek_login');
+$routes->get('logout', 'Auth::logout');
 $routes->get('formpengajuan', 'Home::formPengajuan');
 $routes->get('tentang', 'Home::tentang');
 $routes->post('postpengajuan', 'Home::ajukanSurat');
 
-
 $routes->get('profil', 'Admin::profil');
 $routes->post('update-profil', 'Admin::update_profil');
+$routes->get('verifikasi', 'Admin::verifikasi_keaslian_surat');
 
+$routes->get('masyarakat', 'Masyarakat::dashboard');
+$routes->get('pengajuan-surat', 'Masyarakat::pengajuan_permohonan');
+$routes->post('simpan-pengajuan', 'Masyarakat::simpan_pengajuan_permohonan');
+$routes->get('masyarakat-penolakan/(:num)', 'Masyarakat::detail_Penolakan/$1');
+$routes->get('masyarakat-ajukan-legalisasi/(:num)', 'Masyarakat::ajukan_permohonan_legalisasi/$1');
+$routes->post('masyarakat-simpan-legalisasi', 'Masyarakat::simpan_permohonan_legalisasi');
+$routes->get('masyarakat-download/(:num)', 'Masyarakat::download_surat/$1');
 
-
-$routes->get('masyarakat', 'Admin::masyarakat_dashboard');
-$routes->get('admin-desa', 'Admin::desa_dashboard');
-$routes->get('admin-kecamatan', 'Admin::kecamatan_dashboard');
-$routes->get('verifikasi', 'Admin::verifikasi');
-$routes->get('kades', 'Admin::kades_dashboard');
-
-$routes->get('daftar-pengajuan-surat', 'Kecamatan::index');
-$routes->get('kecamatan_cek-dokumen/(:num)', 'Kecamatan::cekDokumen/$1');
-$routes->post('kecamatan-tolak-berkas/(:num)', 'Kecamatan::tolak_berkas/$1');
-$routes->post('kecamatan-terima-preview', 'Kecamatan::validasi_berkas_kecamatan');
-$routes->post('kecamatan-terbitkan-surat', 'Kecamatan::simpan_surat_kecamatan');
-
-$routes->post('kecamatan-validasi-berkas', 'Admin::validasi_berkas');
-$routes->post('kecamatan-simpan-surat', 'Admin::simpan_surat');
-$routes->get('kecamatan-data-desa', 'Kecamatan::data_desa');
-$routes->get('kecamatan-data-admin', 'Kecamatan::data_admin_desa');
-$routes->post('kecamatan-add-admin', 'Kecamatan::save_admin_desa');
-$routes->get('kecamatan-jenis-surat', 'Kecamatan::data_jenis_surat');
-$routes->post('kecamatan-add-jenis-surat', 'Kecamatan::add_jenis_surat');
-$routes->post('kecamatan-delete-jenis/(:num)', 'Kecamatan::hapus_jenis_surat/$1');
-$routes->get('kecamatan-laporan', 'Kecamatan::laporan');
-
-
-$routes->get('daftar-pengajuan', 'Desa::data_surat');
+$routes->get('admin-desa', 'Desa::dashboard');
+$routes->get('daftar-pengajuan', 'Desa::data_permohonan');
+$routes->get('desa_cek-dokumen/(:num)', 'Desa::cek_dokumen_permohonan/$1');
+$routes->post('desa/terima-berkas/(:num)', 'Desa::terima_berkas_permohonan/$1');
+$routes->post('desa/tolak-berkas/(:num)', 'Desa::tolak_berkas_permohonan/$1');
 $routes->get('data-warga', 'Desa::data_warga');
-$routes->get('desa_cek-dokumen/(:num)', 'Desa::cek_dokumen/$1');
-$routes->post('desa/terima-berkas/(:num)', 'Desa::terima_berkas/$1');
-$routes->post('desa/tolak-berkas/(:num)', 'Desa::tolak_berkas/$1');
 $routes->get('desa-laporan', 'Desa::laporan_permohonan');
 
+$routes->get('kades', 'Kades::dashboard');
+$routes->get('daftar-pengajuan-warga', 'Kades::data_permohonan');
+$routes->get('kades-cek-dokumen/(:num)', 'Kades::cek_dokumen_permohonan/$1');
+$routes->post('kades-preview-surat', 'Kades::create_permohonan_surat');
+$routes->post('kades-terbitkan-surat', 'Kades::terbitkan_surat');
 
-$routes->get('daftar-pengajuan-warga', 'Kades::data_surat');
-$routes->get('kades-cek-dokumen/(:num)', 'Admin::cek_dokumen/$1');
-$routes->post('kades-preview-surat', 'Admin::validasi_berkas');
-$routes->post('kades-terbitkan-surat', 'Admin::simpan_surat');
-
-
-
-$routes->get('masyarakat-download/(:num)', 'Masyarakat::download/$1');
-$routes->get('pengajuan-surat', 'Masyarakat::pengajuan_Surat');
-$routes->post('simpan-pengajuan', 'Masyarakat::simpan_Pengajuan');
-$routes->get('masyarakat-penolakan/(:num)', 'Masyarakat::detail_Penolakan/$1');
-$routes->get('masyarakat-ajukan-legalisasi/(:num)', 'Masyarakat::ajukan_legalisasi/$1');
-$routes->post('masyarakat-simpan-legalisasi', 'Masyarakat::simpan_legalisasi');
+$routes->get('admin-kecamatan', 'Kecamatan::dashboard');
+$routes->get('daftar-pengajuan-surat', 'Kecamatan::data_permohonan');
+$routes->get('kecamatan_cek-dokumen/(:num)', 'Kecamatan::cek_dokumen_permohonan/$1');
+$routes->post('kecamatan-tolak-berkas/(:num)', 'Kecamatan::tolak_berkas_permohonan/$1');
+$routes->post('kecamatan-terima-preview', 'Kecamatan::create_permohonan_legalisasi');
+$routes->post('kecamatan-terbitkan-surat', 'Kecamatan::terbitkan_legalisasi_surat');
+$routes->get('kecamatan-data-desa', 'Kecamatan::data_desa');
+$routes->get('kecamatan-data-admin', 'Kecamatan::data_admin_desa');
+$routes->post('kecamatan-add-admin', 'Kecamatan::create_admin_desa');
+$routes->get('kecamatan-jenis-surat', 'Kecamatan::data_jenis_surat');
+$routes->post('kecamatan-add-jenis-surat', 'Kecamatan::create_jenis_surat');
+$routes->post('kecamatan-delete-jenis/(:num)', 'Kecamatan::hapus_jenis_surat/$1');
+$routes->get('kecamatan-laporan', 'Kecamatan::laporan');
