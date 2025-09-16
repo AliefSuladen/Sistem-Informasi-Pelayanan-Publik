@@ -1,96 +1,134 @@
 <?= $this->extend('template/temp-frontend') ?>
 <?= $this->section('content') ?>
-
-<!-- Carousel -->
-<div id="bannerCarousel" class="carousel slide mb-5 shadow rounded-lg overflow-hidden" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#bannerCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#bannerCarousel" data-slide-to="1"></li>
-        <li data-target="#bannerCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="<?= base_url('uploads/banner/banner1.jpg') ?>" class="d-block w-100" alt="Banner 1" style="height: 480px; object-fit: cover;">
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url('uploads/banner/banner2.jpg') ?>" class="d-block w-100" alt="Banner 2" style="height: 480px; object-fit: cover;">
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url('uploads/banner/banner3.jpg') ?>" class="d-block w-100" alt="Banner 3" style="height: 480px; object-fit: cover;">
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon bg-secondary rounded-circle p-2" aria-hidden="true"></span>
-        <span class="sr-only">Sebelumnya</span>
-    </a>
-    <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon bg-secondary rounded-circle p-2" aria-hidden="true"></span>
-        <span class="sr-only">Berikutnya</span>
-    </a>
-</div>
-
-<!-- Jumbotron -->
-<div class="jumbotron bg-white p-5 shadow rounded-lg">
-    <h1 class="display-5 font-weight-bold text-dark">Selamat Datang di <span class="text-primary">E-LAIS</span></h1>
-    <p class="lead text-muted">Layanan Administrasi Surat Online <strong>Kecamatan Lais, Musi Banyuasin</strong></p>
-    <hr class="my-3">
-    <p class="text-secondary">Gunakan platform ini untuk mengajukan berbagai jenis surat secara cepat dan mudah tanpa harus datang ke kantor kecamatan.</p>
-    <a class="btn btn-outline-primary btn-lg" href="<?= base_url('formpengajuan') ?>" role="button">
-        <i class="fas fa-envelope-open-text mr-2"></i>Ajukan Surat
-    </a>
-</div>
-
-<!-- Sambutan Camat -->
-<div class="row mb-5">
-    <div class="col-md-3 text-center">
-        <img src="<?= base_url('uploads/foto_camat.jpg') ?>" alt="Foto Camat" class="img-thumbnail rounded-circle shadow-sm" style="width: 200px; height: 220px; object-fit: cover;">
-        <h6 class="mt-3 font-weight-bold text-dark mb-0">Zukar, Skm., M.SI</h6>
-        <p class="text-muted small">PLT CAMAT LAIS</p>
-    </div>
-    <div class="col-md-9">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title font-weight-bold text-dark">Sambutan Camat</h5>
-                <p class="card-text text-justify text-secondary" style="line-height: 1.7;">
-                    Assalamu'alaikum Warahmatullahi Wabarakatuh.<br><br>
-                    Selamat datang di website layanan administrasi surat online Kecamatan Lais, Kabupaten Musi Banyuasin. Dengan hadirnya platform E-LAIS ini, kami berkomitmen untuk memberikan pelayanan yang cepat, transparan, dan mudah dijangkau oleh seluruh masyarakat. Semoga layanan ini dapat membantu mempercepat urusan administrasi tanpa harus datang langsung ke kantor kecamatan.
-                    <br><br>
-                    Wassalamu’alaikum Warahmatullahi Wabarakatuh.
-                </p>
+<section style="background: linear-gradient(135deg, #0A3D62, #1B5E20); padding: 50px 0;">
+    <div id="bannerCarousel" class="carousel slide mx-auto mb-4 shadow rounded overflow-hidden"
+        data-ride="carousel" style="max-width: 1500px;">
+        <ol class="carousel-indicators">
+            <li data-target="#bannerCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#bannerCarousel" data-slide-to="1"></li>
+            <li data-target="#bannerCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="<?= base_url('uploads/banner/banner1.jpg') ?>"
+                    class="d-block w-100 banner-img" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url('uploads/banner/banner2.jpg') ?>"
+                    class="d-block w-100 banner-img" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url('uploads/banner/banner3.jpg') ?>"
+                    class="d-block w-100 banner-img" alt="Banner 3">
             </div>
         </div>
+        <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon bg-secondary rounded-circle p-2" aria-hidden="true"></span>
+            <span class="sr-only">Sebelumnya</span>
+        </a>
+        <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon bg-secondary rounded-circle p-2" aria-hidden="true"></span>
+            <span class="sr-only">Berikutnya</span>
+        </a>
     </div>
-</div>
 
-<!-- Kartu Informasi -->
-<div class="row mb-5">
-    <div class="col-md-4 mb-3">
-        <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="fas fa-id-card fa-2x text-primary mb-3"></i>
-                <h5 class="card-title text-dark font-weight-bold">Surat Keterangan</h5>
-                <p class="card-text text-muted">Ajukan surat keterangan domisili, usaha, belum menikah, dan lainnya secara online.</p>
-            </div>
+    <div class="text-center mt-4">
+        <img src="<?= base_url() ?>/uploads/dokumen/logo.png"
+            alt="Logo Kecamatan"
+            class="mb-3"
+            style="max-width: 150px; height:auto;">
+        <h3 class="font-weight-bold text-white mb-2">PEMERINTAH KABUPATEN MUSI BANYUASIN</h3>
+        <h2 class="font-weight-bold text-white">KECAMATAN LAIS</h2>
+    </div>
+</section>
+
+<section style="background: linear-gradient(#FDFAF6); padding: 60px 20px; color: black;">
+    <div class="container text-center">
+        <h2 class="font-weight-bold mb-3">Selamat Datang di <span class="text-warning">E-LAIS</span></h2>
+        <p class="lead mb-4">
+            Layanan Administrasi Surat Online <br>
+            <strong>Kecamatan Lais, Kabupaten Musi Banyuasin</strong>
+        </p>
+    </div>
+</section>
+
+<section class="py-5" style="background-color: #FAF6E9;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="font-weight-bold text-dark mb-0">
+                <span style="border-left: 5px solid #007bff; padding-left: 10px;">Pelayanan Online</span>
+            </h3>
+            <a href="<?= base_url('formpengajuan') ?>" class="text-primary font-weight-bold">
+                Selengkapnya →
+            </a>
+        </div>
+        <div class="row">
+            <?php if (!empty($layanan)): ?>
+                <?php foreach ($layanan as $item): ?>
+                    <div class="col-md-3 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="text-center p-3">
+                                <img src="<?= base_url('home/surat.png') ?>"
+                                    class="card-img-top"
+                                    alt="<?= esc($item['surat']) ?>"
+                                    style="max-width: 120px; height: auto;">
+                                <div class="card-body text-center">
+                                    <p class="card-text font-weight-bold"><?= esc($item['surat']) ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-center text-muted">Layanan tidak tersedia.</p>
+            <?php endif; ?>
         </div>
     </div>
-    <div class="col-md-4 mb-3">
-        <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="fas fa-user-check fa-2x text-success mb-3"></i>
-                <h5 class="card-title text-dark font-weight-bold">Mudah & Cepat</h5>
-                <p class="card-text text-muted">Tanpa antrean panjang, cukup dari rumah, surat akan diproses oleh petugas desa.</p>
-            </div>
+</section>
+
+
+<section class="py-5" style="background-color: #f8fafc;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="font-weight-bold text-dark mb-0">
+                <span style="border-left: 5px solid #007bff; padding-left: 10px;">Berita Terbaru</span>
+            </h3>
+            <a href="<?= base_url('berita') ?>" class="text-primary font-weight-bold">Lihat Lainnya →</a>
+        </div>
+        <div class="row g-4">
+            <?php if (!empty($berita) && is_array($berita)): ?>
+                <?php foreach (array_slice($berita, 0, 3) as $item): ?>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100 position-relative overflow-hidden">
+                            <?php
+                            $images = !empty($item['gambar']) ? json_decode($item['gambar'], true) : [];
+                            $firstImage = isset($images[0]) ? base_url('uploads/berita/' . $images[0]) : base_url('home/banner.jpg');
+                            ?>
+                            <a href="<?= base_url('detail-berita/' . $item['slug']) ?>" class="stretched-link"></a>
+                            <img src="<?= $firstImage ?>" alt="<?= esc($item['judul']) ?>" class="card-img h-100 object-fit-cover">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
+                                style="background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">
+                                <h6 class="fw-bold text-white mb-1"><?= esc($item['judul']) ?></h6>
+                                <small class="text-light"><?= date('d M Y', strtotime($item['created_at'])) ?></small>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-12">
+                    <p class="text-center text-muted">Belum ada berita terbaru.</p>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
-    <div class="col-md-4 mb-3">
-        <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="fas fa-shield-alt fa-2x text-warning mb-3"></i>
-                <h5 class="card-title text-dark font-weight-bold">Aman & Terverifikasi</h5>
-                <p class="card-text text-muted">Data Anda aman dan surat akan diterbitkan dengan QR Code sebagai bukti keabsahan.</p>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
+
+
+
+
+
+
+
+
 
 <?= $this->endSection() ?>

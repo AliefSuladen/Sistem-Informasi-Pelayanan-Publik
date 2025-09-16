@@ -12,7 +12,7 @@
         <?php
         $statusLabels = [
             'Pending' => 'warning',
-            'Diverifikasi Pihak Desa' => 'info',
+            'Diverifikasi Admin Desa' => 'info',
             'Selesai' => 'success',
             'Ditolak' => 'danger'
         ];

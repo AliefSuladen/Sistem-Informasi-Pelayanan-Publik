@@ -14,7 +14,7 @@ class Modeldesa extends Model
     {
         return $this->db->table('desa')
             ->select('*')
-            ->orderBy('nama_desa', 'ASC')
+            ->orderBy('id_desa', 'DESC')
             ->get()->getResultArray();
     }
     public function getDesaById($id_desa)
@@ -28,7 +28,7 @@ class Modeldesa extends Model
             ->select('desa.id_desa, desa.nama_desa, COUNT(user.id_user) as jumlah_warga')
             ->join('user', 'user.id_desa = desa.id_desa AND user.role = 3', 'left')
             ->groupBy('desa.id_desa')
-            ->orderBy('desa.id_desa', 'ASC')
+            ->orderBy('desa.id_desa', 'DESC')
             ->get()
             ->getResultArray();
     }

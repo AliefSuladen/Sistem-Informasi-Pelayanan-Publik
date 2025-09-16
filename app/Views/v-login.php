@@ -87,7 +87,6 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg text-muted">Silakan login untuk melanjutkan</p>
-
                 <?php if (session()->getFlashdata('errors')) : ?>
                     <div class="alert alert-danger">
                         <ul>
@@ -97,7 +96,6 @@
                         </ul>
                     </div>
                 <?php endif ?>
-
                 <?php if (session()->getFlashdata('pesan')) : ?>
                     <div class="alert alert-danger"><?= session()->getFlashdata('pesan') ?></div>
                 <?php endif ?>
@@ -126,7 +124,6 @@
                     </div>
                 </div>
                 <?= form_close() ?>
-
                 <hr>
                 <p class="mb-0 text-center">
                     <a href="<?= base_url('register') ?>" class="text-center">Belum punya akun? Daftar di sini</a>

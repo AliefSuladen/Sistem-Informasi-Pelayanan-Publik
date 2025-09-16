@@ -23,7 +23,6 @@
         </div>
     </div>
 
-
     <div class="card mb-4">
         <div class="card-body">
             <h5>Dokumen Pendukung</h5>
@@ -47,22 +46,17 @@
         Pastikan semua dokumen pendukung telah lengkap sebelum melakukan validasi!
     </div>
     <div class="d-flex justify-content-between align-items-start mb-3">
-        <!-- Tombol Kembali -->
         <a href="<?= base_url('daftar-pengajuan-surat'); ?>" class="btn btn-secondary me-2">← Kembali</a>
-
-        <!-- Tombol Terima & Preview -->
         <form action="<?= base_url('kecamatan-terima-preview') ?>" method="post" target="_blank">
             <input type="hidden" name="id_permohonan" value="<?= $permohonan['id_permohonan'] ?>">
-            <button type="submit" class="btn btn-success">✅ Terima & Preview</button>
+            <button type="submit" class="btn btn-success"> Terima & Preview</button>
         </form>
 
         <form action="<?= base_url('kecamatan-terbitkan-surat') ?>" method="post">
-            <button type="submit" class="btn btn-primary">🖨️ Terbitkan Surat</button>
+            <button type="submit" class="btn btn-primary"> Terbitkan Surat</button>
         </form>
 
     </div>
-
-    <!-- Form Tolak Berkas -->
     <form action="<?= base_url('kecamatan-tolak-berkas/' . $permohonan['id_permohonan']) ?>" method="post">
         <?= csrf_field() ?>
         <input type="hidden" name="id_permohonan" value="<?= $permohonan['id_permohonan'] ?>">
@@ -72,7 +66,7 @@
             <textarea name="alasan_penolakan" class="form-control" rows="3" placeholder="Masukkan alasan penolakan" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-danger w-100">❌ Tolak Permohonan</button>
+        <button type="submit" class="btn btn-danger w-100"> Tolak Permohonan</button>
     </form>
 
 

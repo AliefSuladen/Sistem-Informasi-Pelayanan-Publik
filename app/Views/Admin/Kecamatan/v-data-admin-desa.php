@@ -10,7 +10,6 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <!-- Tombol untuk membuka modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahAdmin">
                 <i class="fas fa-plus-circle"></i> Tambah Admin
             </button>

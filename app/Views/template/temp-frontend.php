@@ -12,6 +12,27 @@
   <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE/plugins/fontawesome-free/css/all.min.css">
   <!-- AdminLTE Theme -->
   <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE/dist/css/adminlte.min.css">
+  <style>
+    /* Desktop */
+    .banner-img {
+      height: 450px;
+      object-fit: cover;
+    }
+
+    /* Tablet */
+    @media (max-width: 992px) {
+      .banner-img {
+        height: 300px;
+      }
+    }
+
+    /* HP */
+    @media (max-width: 576px) {
+      .banner-img {
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 
 <body class="hold-transition layout-top-nav">
@@ -49,6 +70,9 @@
               <a href="<?= base_url('formpengajuan') ?>" class="nav-link text-dark font-weight-normal">Pelayanan</a>
             </li>
             <li class="nav-item">
+              <a href="<?= base_url('berita') ?>" class="nav-link text-dark font-weight-normal">Berita</a>
+            </li>
+            <li class="nav-item">
               <a href="<?= base_url('tentang') ?>" class="nav-link text-dark font-weight-normal">Tentang</a>
             </li>
           </ul>
@@ -80,9 +104,8 @@
       <div class="content">
         <div class="content-wrapper" style="margin-top: 50px;">
 
-          <div class="container">
-            <?= $this->renderSection('content') ?>
-          </div>
+          <?= $this->renderSection('content') ?>
+
         </div>
       </div>
     </div>

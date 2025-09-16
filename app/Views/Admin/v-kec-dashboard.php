@@ -9,33 +9,6 @@
 
 <div class="col-md-12">
     <div class="row">
-
-        <!-- Box Jumlah Admin Desa -->
-        <div class="col-md-3">
-            <div class="small-box bg-primary">
-                <div class="inner">
-                    <h3><?= esc($jml_admin_desa) ?></h3>
-                    <p>Admin Desa</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-users-cog"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Box Total Permohonan -->
-        <div class="col-md-3">
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3><?= esc($total_permohonan) ?></h3>
-                    <p>Total Permohonan</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-envelope-open-text"></i>
-                </div>
-            </div>
-        </div>
-
         <?php
         $statusLabels = [
             'Pending' => 'warning',

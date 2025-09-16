@@ -110,6 +110,16 @@ class Desa extends BaseController
         return view('Admin/Desa/v-data-warga', $data);
     }
 
+    public function delete($id_user)
+    {
+        if ($this->Modeluser->deleteUser($id_user)) {
+            return redirect()->back()->with('success', 'Data warga berhasil dihapus.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menghapus data warga.');
+        }
+    }
+
+
     public function laporan_permohonan()
     {
         $id_desa = session()->get('id_desa');

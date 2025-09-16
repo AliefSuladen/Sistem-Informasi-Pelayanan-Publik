@@ -16,6 +16,10 @@ $routes->get('logout', 'Auth::logout');
 $routes->get('formpengajuan', 'Home::formPengajuan');
 $routes->get('tentang', 'Home::tentang');
 $routes->post('postpengajuan', 'Home::ajukanSurat');
+$routes->get('berita', 'Home::berita');
+$routes->get('detail-berita/(:segment)', 'Home::detail_berita/$1');
+
+
 
 $routes->get('profil', 'Admin::profil');
 $routes->post('update-profil', 'Admin::update_profil');
@@ -35,6 +39,7 @@ $routes->get('desa_cek-dokumen/(:num)', 'Desa::cek_dokumen_permohonan/$1');
 $routes->post('desa/terima-berkas/(:num)', 'Desa::terima_berkas_permohonan/$1');
 $routes->post('desa/tolak-berkas/(:num)', 'Desa::tolak_berkas_permohonan/$1');
 $routes->get('data-warga', 'Desa::data_warga');
+$routes->post('hapus-user/(:num)', 'Desa::delete/$1');
 $routes->get('desa-laporan', 'Desa::laporan_permohonan');
 
 $routes->get('kades', 'Kades::dashboard');
@@ -56,3 +61,10 @@ $routes->get('kecamatan-jenis-surat', 'Kecamatan::data_jenis_surat');
 $routes->post('kecamatan-add-jenis-surat', 'Kecamatan::create_jenis_surat');
 $routes->post('kecamatan-delete-jenis/(:num)', 'Kecamatan::hapus_jenis_surat/$1');
 $routes->get('kecamatan-laporan', 'Kecamatan::laporan');
+
+$routes->get('data-berita', 'Berita::data_berita');
+$routes->get('create-berita', 'Berita::tambah_berita');
+$routes->post('post-berita', 'Berita::simpan_berita');
+$routes->get('edit-berita/(:segment)', 'Berita::edit/$1');
+$routes->post('update-berita/(:num)', 'Berita::update/$1');
+$routes->post('delete-berita/(:num)', 'Berita::delete/$1');

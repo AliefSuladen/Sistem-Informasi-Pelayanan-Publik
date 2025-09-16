@@ -44,7 +44,6 @@
         </div>
     </div>
 
-    <!-- Tabel Laporan -->
     <div class="card">
         <div class="card-header bg-secondary text-white">
             <h5 class="mb-0">Data Laporan</h5>
@@ -57,6 +56,7 @@
                             <th>No</th>
                             <th>Nama Pengaju</th>
                             <th>Jenis Surat</th>
+                            <th>Nomor Surat</th>
                             <th>Tanggal Pengajuan</th>
                             <th>Status</th>
                             <th>File Surat</th>
@@ -70,27 +70,9 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= esc($item['nama_user']) ?></td>
                                     <td><?= esc($item['surat']) ?></td>
+                                    <td><?= esc($item['nomor_surat']) ?></td>
                                     <td><?= date('d-m-Y', strtotime($item['created_at'])) ?></td>
-                                    <td>
-                                        <span class="badge 
-                                            <?php
-                                            switch ($item['status']) {
-                                                case 'Pending':
-                                                    echo 'badge-warning';
-                                                    break;
-                                                case 'Diverifikasi':
-                                                    echo 'badge-primary';
-                                                    break;
-                                                case 'Selesai':
-                                                    echo 'badge-success';
-                                                    break;
-                                                default:
-                                                    echo 'badge-secondary';
-                                            }
-                                            ?>">
-                                            <?= esc($item['status']) ?>
-                                        </span>
-                                    </td>
+                                    <td><?= esc($item['status']) ?></td>
                                     <td>
                                         <a href="<?= base_url('uploads/dokumen/' . $item['file_surat']) ?>" target="_blank" class="btn btn-sm btn-info">Lihat PDF</a>
                                     </td>

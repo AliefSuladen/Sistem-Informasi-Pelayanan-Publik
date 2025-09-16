@@ -44,9 +44,8 @@
                                     </td>
                                     <td><?= esc($item['status']) ?></td>
                                     <td>
-                                        <!-- Tombol Aksi Cek Dokumen -->
                                         <a href="<?= base_url('kades-cek-dokumen/' . $item['id_permohonan']) ?>"
-                                            class="btn btn-sm <?= ($item['status'] === 'Pending') ? 'btn-success' : 'btn-primary' ?>">
+                                            class="btn btn-sm <?= ($item['status'] === 'Diverifikasi Admin Desa') ? 'btn-primary' : 'btn-success' ?>">
                                             Cek Dokumen
                                         </a>
                                     </td>
@@ -61,7 +60,6 @@
                 </table>
             </div>
         </div>
-        <!-- /.card-body -->
     </div>
     <!-- /.card -->
 </div>

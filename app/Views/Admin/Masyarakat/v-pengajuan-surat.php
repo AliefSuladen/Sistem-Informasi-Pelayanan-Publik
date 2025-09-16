@@ -2,14 +2,12 @@
 <?= $this->section('content') ?>
 <section class="content-header">
     <div class="container-fluid">
-
-    </div><!-- /.container-fluid -->
+    </div>
 </section>
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Silahkan Ajukan Permohonan Surat</h3>
-
         </div>
         <div class="card-body">
             <?php if (session()->getFlashdata('error')): ?>
@@ -28,11 +26,7 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
-
-                <!-- Tempat field tambahan -->
                 <div id="extra-fields"></div>
-
-                <!-- Input file dokumen pendukung -->
                 <div class="mb-3" id="file-upload-area">
                     <label for="dokumen" class="form-label">Unggah Dokumen Pendukung (KTP, KK, Pas Foto)</label>
                     <div class="input-group mb-2">

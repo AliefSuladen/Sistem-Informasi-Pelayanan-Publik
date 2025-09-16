@@ -25,4 +25,8 @@ class Modeluser extends Model
     {
         return $this->where('role', '2')->countAllResults();
     }
+    public function deleteUser($id_user)
+    {
+        return $this->where('id_user', $id_user)->delete();
+    }
 }

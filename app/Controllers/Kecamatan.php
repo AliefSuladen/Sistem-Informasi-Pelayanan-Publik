@@ -28,7 +28,6 @@ class Kecamatan extends BaseController
     {
 
         $data = [
-            'jml_admin_desa' => $this->Modeluser->countAdminDesa(),
             'total_permohonan'   => count($this->Modelpermohonan->findAll()),
             'statistik_status'   => $this->Modelpermohonan->getStatistikGlobal(),
             'statistik_jenis'    => $this->Modelpermohonan->getJumlahJenisSuratGlobal(),
@@ -164,7 +163,7 @@ class Kecamatan extends BaseController
 
         $this->Modelpermohonan->update($id_permohonan, [
             'file_surat' => $filename,
-            'id_status'  => 5 
+            'id_status'  => 5
         ]);
 
         session()->remove(['filename', 'id_permohonan']);

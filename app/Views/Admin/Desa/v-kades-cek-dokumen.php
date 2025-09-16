@@ -42,13 +42,10 @@
             <?php endif; ?>
         </div>
     </div>
-    <!-- Tombol review surat & Cetak -->
     <form action="<?= base_url('kades-preview-surat') ?>" method="post" target="_blank">
         <input type="hidden" name="id_permohonan" value="<?= $permohonan['id_permohonan'] ?>">
         <button type="submit" class="btn btn-primary">Preview & Cetak</button>
     </form>
-
-    <!-- Tombol Simpan Surat Setelah Preview -->
     <form action="<?= base_url('kades-terbitkan-surat') ?>" method="post">
         <button type="submit" class="btn btn-success mt-2">Terbitkan Surat</button>
     </form>

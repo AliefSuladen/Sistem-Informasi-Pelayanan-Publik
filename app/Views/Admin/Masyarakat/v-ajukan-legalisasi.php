@@ -3,7 +3,7 @@
 
 <section class="content-header">
     <div class="container-fluid">
-        <h4>Ajukan Permohonan Surat</h4>
+        <h4>Ajukan Permohonan Legalisasi</h4>
     </div>
 </section>
 

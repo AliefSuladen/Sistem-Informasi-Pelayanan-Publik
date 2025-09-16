@@ -58,7 +58,6 @@
                                             <a href="<?= base_url('masyarakat-download/' . $item['id_permohonan']) ?>" class="btn btn-success btn-sm" target="_blank">
                                                 <i class="fas fa-download"></i> Unduh Dokumen
                                             </a>
-                                            <!-- Tombol Ajukan Legalisasi Camat -->
                                             <a href="<?= base_url('masyarakat-ajukan-legalisasi/' . $item['id_permohonan']) ?>" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-file-signature"></i> Ajukan Legalisasi Camat
                                             </a>

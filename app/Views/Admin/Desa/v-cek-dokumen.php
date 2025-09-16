@@ -27,7 +27,6 @@
             </table>
         </div>
     </div>
-
     <div class="card mb-4">
         <div class="card-body">
             <h5>Dokumen Pendukung</h5>
@@ -57,23 +56,16 @@
             <?php endif; ?>
         </div>
     </div>
-
-
     <div class="d-flex justify-content-between align-items-start mb-3">
-        <!-- Tombol Kembali -->
-        <a href="<?= base_url('daftar-pengajuan'); ?>" class="btn btn-secondary me-2">← Kembali</a>
-
-        <!-- Tombol Terima Berkas -->
+        <a href="<?= base_url('daftar-pengajuan'); ?>" class="btn btn-secondary me-2">Kembali</a>
         <?php if ($permohonan['id_status'] != 2): ?>
             <form action="<?= base_url('desa/terima-berkas/' . $permohonan['id_permohonan']) ?>" method="post">
                 <?= csrf_field() ?>
-                <button type="submit" class="btn btn-success">✅ Terima Berkas</button>
+                <button type="submit" class="btn btn-success">Terima Berkas</button>
             </form>
         <?php endif; ?>
     </div>
-
     <?php if ($permohonan['id_status'] != 2): ?>
-        <!-- Form Tolak Berkas -->
         <form action="<?= base_url('desa/tolak-berkas/' . $permohonan['id_permohonan']) ?>" method="post">
             <?= csrf_field() ?>
             <input type="hidden" name="id_permohonan" value="<?= $permohonan['id_permohonan'] ?>">
@@ -83,10 +75,10 @@
                 <textarea name="alasan_penolakan" class="form-control" rows="3" placeholder="Masukkan alasan penolakan" required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-danger w-100">❌ Tolak Permohonan</button>
+            <button type="submit" class="btn btn-danger w-100">Tolak Permohonan</button>
         </form>
     <?php else: ?>
-        <p class="text-success mt-3">✔️ Permohonan sudah diverifikasi.</p>
+        <p class="text-success mt-3">Permohonan sudah diverifikasi.</p>
     <?php endif; ?>
 
 

@@ -30,6 +30,7 @@
                             <th>Jenis Kelamin</th>
                             <th>Agama</th>
                             <th>Pekerjaan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,11 +44,19 @@
                                     <td><?= esc($item['kelamin']) ?></td>
                                     <td><?= esc($item['agama']) ?></td>
                                     <td><?= esc($item['pekerjaan']) ?></td>
+                                    <td>
+                                        <form action="<?= base_url('hapus-user/' . $item['id_user']) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus warga ini?');">
+                                            <?= csrf_field() ?>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash"></i> Hapus
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="8">Tidak ada data warga.</td>
+                                <td colspan="7">Tidak ada data warga.</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>
@@ -77,7 +86,6 @@
                     title: 'Data Warga Desa',
                     exportOptions: {
                         columns: [0, 1, 2, 3, 4, 5]
-
                     }
                 },
                 {
@@ -85,7 +93,6 @@
                     title: 'Data Warga Desa',
                     exportOptions: {
                         columns: [0, 1, 2, 3, 4, 5]
-
                     }
                 }
             ],

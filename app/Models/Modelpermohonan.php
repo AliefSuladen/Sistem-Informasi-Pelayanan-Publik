@@ -123,7 +123,6 @@ class Modelpermohonan extends Model
             ->join('desa', 'desa.id_desa = user.id_desa', 'left')
             ->where('user.id_desa', $id_desa);
 
-        // Jika id_status diberikan, tambahkan kondisi
         if ($id_status !== null) {
             $builder->where('permohonan_surat.id_status', $id_status);
         }
@@ -267,18 +266,6 @@ class Modelpermohonan extends Model
             ->get()->getRowArray();
     }
 
-    public function getPermohonanByDesaa($id_desa)
-    {
-        return $this->db->table($this->table)
-            ->select('permohonan_surat.*, user.nama_user, jenis_surat.surat, status_surat.status, desa.nama_desa')
-            ->join('user', 'user.id_user = permohonan_surat.id_user', 'left')
-            ->join('jenis_surat', 'jenis_surat.id_jenis = permohonan_surat.id_jenis', 'left')
-            ->join('status_surat', 'status_surat.id_status = permohonan_surat.id_status', 'left')
-            ->join('desa', 'desa.id_desa = user.id_desa', 'left')
-            ->where('user.id_desa', $id_desa)
-            ->orderBy('permohonan_surat.created_at', 'DESC')
-            ->get()->getResultArray();
-    }
 
     public function getLaporanSurat($id_desa, $bulan = null, $tahun = null)
     {
