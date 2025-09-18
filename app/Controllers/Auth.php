@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Modelauth;
@@ -12,7 +13,6 @@ class Auth extends BaseController
         $this->Modelauth = new Modelauth();
         helper('form');
     }
-    public function index() {}
 
     public function login()
     {
@@ -50,7 +50,7 @@ class Auth extends BaseController
                 session()->set('id_desa', $cek_login['id_desa']);
                 session()->set('role', $cek_login['role']);
                 session()->set('foto', $cek_login['foto']);
-
+                log_activity('Login ke sistem');
                 switch ($cek_login['role']) {
                     case 'Admin Kecamatan':
                         return redirect()->to('admin-kecamatan');
@@ -80,6 +80,7 @@ class Auth extends BaseController
     }
     public function logout()
     {
+        log_activity('Berhasil Logout');
         session()->remove('id_user');
         session()->remove('nama_user');
         session()->remove('email');
@@ -87,7 +88,6 @@ class Auth extends BaseController
         session()->remove('role');
         session()->remove('foto');
         session()->setFlashdata('pesan', 'Logout sukses!');
-
         return redirect()->to('login');
     }
 }

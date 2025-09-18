@@ -44,7 +44,7 @@ class Masyarakat extends BaseController
         $permohonanData = [
             'id_user'    => $id_user,
             'id_jenis'   => $id_jenis,
-            'id_status'  => 1, 
+            'id_status'  => 1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
@@ -124,6 +124,7 @@ class Masyarakat extends BaseController
         }
 
         session()->setFlashdata('success', 'Pengajuan surat berhasil diajukan.');
+        log_activity('Mengajukan Permohonan Surat Dengan ID :' . $id_permohonan);
         return redirect()->to('masyarakat');
     }
 
@@ -197,7 +198,7 @@ class Masyarakat extends BaseController
         $this->Modelpermohonan->update($id_permohonan, [
             'id_status' => 4
         ]);
-
+        log_activity('Mengajukan Permohonan Legalisasi Dengan ID :' . $id_permohonan);
         return redirect()->to(base_url('masyarakat'))->with('success', 'Permohonan legalisasi berhasil diajukan.');
     }
 
@@ -210,6 +211,7 @@ class Masyarakat extends BaseController
         if (!file_exists(FCPATH . $filePath)) {
             return redirect()->back()->with('error', 'File tidak ditemukan.');
         }
+        log_activity('Mendownload Surat Dengan ID :' . $id_permohonan);
         return redirect()->to(base_url($filePath));
     }
 }

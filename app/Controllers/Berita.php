@@ -31,7 +31,6 @@ class Berita extends BaseController
         $data = [
             'title' => 'Tambah Berita'
         ];
-
         return view('Admin/Berita/v-create-berita', $data);
     }
 
@@ -40,7 +39,7 @@ class Berita extends BaseController
         $id_user = session()->get('id_user');
         $judul   = $this->request->getPost('judul');
         $isi     = $this->request->getPost('isi');
-
+        log_activity('Membuat Berita');
         if (empty($judul) || empty($isi)) {
             return redirect()->back()->withInput()->with('error', 'Judul dan isi berita wajib diisi!');
         }
@@ -164,7 +163,7 @@ class Berita extends BaseController
         }
 
         $this->Modelberita->update($id, $data);
-
+        log_activity('Mengedit Berita' . $id);
         return redirect()->to(base_url('data-berita'))->with('success', 'Berita berhasil diupdate');
     }
 
@@ -172,7 +171,7 @@ class Berita extends BaseController
     public function delete($id)
     {
         $berita = $this->Modelberita->find($id);
-
+        log_activity('Menghapus Berita' . $id);
         if (!$berita) {
             return redirect()->back()->with('error', 'Berita tidak ditemukan');
         }
@@ -192,7 +191,6 @@ class Berita extends BaseController
 
         // Hapus data dari database
         $this->Modelberita->delete($id);
-
         return redirect()->to(base_url('data-berita'))->with('success', 'Berita berhasil dihapus');
     }
 }

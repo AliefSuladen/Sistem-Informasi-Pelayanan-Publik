@@ -74,6 +74,7 @@ class Desa extends BaseController
         }
         $this->Modelpermohonan->updateStatus($id_permohonan, 2);
         session()->setFlashdata('success', 'Permohonan berhasil diverifikasi.');
+        log_activity('Memverifikasi Permohonan Dengan ID :' . $id_permohonan);
         return redirect()->to(base_url('daftar-pengajuan'));
     }
 
@@ -90,6 +91,7 @@ class Desa extends BaseController
             'alasan_penolakan' => $alasan_penolakan,
             'updated_at' => date('Y-m-d H:i:s')
         ]);
+        log_activity('Menolak Permohonan Dengan ID :' . $id_permohonan);
         session()->setFlashdata('success', 'Permohonan berhasil Ditolak!.');
         return redirect()->to(base_url('daftar-pengajuan'));
     }

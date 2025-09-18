@@ -118,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Daftar Permohonan</p>
                 </a>
               </li>
-              <li class="nav-item has-treeview <?= in_array($current_url, ['kecamatan-data-desa', 'kecamatan-data-admin', 'data-berita', 'kecamatan-jenis-surat', 'kecamatan-laporan']) ? 'menu-open' : '' ?>">
+              <li class="nav-item has-treeview <?= in_array($current_url, ['kecamatan-data-desa', 'kecamatan-data-admin', 'data-berita', 'kecamatan-jenis-surat', 'kecamatan-laporan', 'log-aktivitas']) ? 'menu-open' : '' ?>">
                 <a href="#" class="nav-link ">
                   <i class="nav-icon fas fa-database"></i>
                   <p>
@@ -151,6 +151,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <p>Laporan</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('log-aktivitas') ?>" class="nav-link <?= $current_url == 'log-aktivitas' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Log Activity</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             <?php endif; ?>
@@ -172,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('data-warga') ?>" class="nav-link">
+                <a href="<?= base_url('cek-data-warga') ?>" class="nav-link">
                   <i class="nav-icon fas fa-users"></i>
                   <p>Data Warga</p>
                 </a>

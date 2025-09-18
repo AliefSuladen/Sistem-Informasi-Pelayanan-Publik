@@ -159,7 +159,7 @@ class Kades extends BaseController
         ]);
 
         session()->remove(['filename', 'id_permohonan']);
-
+        log_activity('Menerbitkan Surat Dengan ID :' . $id_permohonan);
         return redirect()->to('/daftar-pengajuan-warga')->with('success', 'Surat berhasil dicetak dan disimpan.');
     }
 }

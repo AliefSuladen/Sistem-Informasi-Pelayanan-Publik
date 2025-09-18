@@ -45,7 +45,13 @@
                                     <td><?= esc($item['agama']) ?></td>
                                     <td><?= esc($item['pekerjaan']) ?></td>
                                     <td>
-                                        <form action="<?= base_url('hapus-user/' . $item['id_user']) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus warga ini?');">
+                                        <form action="<?= base_url(
+                                                            session()->get('role') == 'Kepala Desa'
+                                                                ? 'kades-hapus-user/' . $item['id_user']
+                                                                : 'hapus-user/' . $item['id_user']
+                                                        ) ?>"
+                                            method="post"
+                                            onsubmit="return confirm('Yakin ingin menghapus warga ini?');">
                                             <?= csrf_field() ?>
                                             <button type="submit" class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash"></i> Hapus

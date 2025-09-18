@@ -9,6 +9,7 @@ use App\Models\Modeldesa;
 use App\Models\Modeluser;
 use App\Models\Modeldokumen;
 use App\Models\Modeljenissurat;
+use App\Models\Modelactivity;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Endroid\QrCode\Builder\Builder;
@@ -23,6 +24,7 @@ class Kecamatan extends BaseController
         $this->Modeluser = new Modeluser();
         $this->Modeljenissurat = new Modeljenissurat();
         $this->Modeldokumen = new Modeldokumen();
+        $this->Modelactivity = new Modelactivity();
     }
     public function dashboard()
     {
@@ -72,6 +74,7 @@ class Kecamatan extends BaseController
             'alasan_penolakan' => $alasan_penolakan,
             'updated_at' => date('Y-m-d H:i:s')
         ]);
+        log_activity('Menolak Legalisasi Surat Dengan ID :' . $id_permohonan);
         session()->setFlashdata('success', 'Permohonan berhasil Ditolak!.');
         return redirect()->to(base_url('daftar-pengajuan-surat'));
     }
@@ -165,7 +168,7 @@ class Kecamatan extends BaseController
             'file_surat' => $filename,
             'id_status'  => 5
         ]);
-
+        log_activity('Menerbitkan Legalisasi Surat Dengan ID :' . $id_permohonan);
         session()->remove(['filename', 'id_permohonan']);
         return redirect()->to('/daftar-pengajuan-surat')->with('success', 'Surat berhasil diterbitkan dan dapat diunduh masyarakat.');
     }
@@ -211,7 +214,7 @@ class Kecamatan extends BaseController
             'role' => 2,
             'foto' => $namaFoto,
         ]);
-
+        log_activity('Menerbitkan Legalisasi Surat Dengan ID :' . $id_permohonan);
         session()->setFlashdata('success', 'Admin desa berhasil ditambahkan.');
         return redirect()->to('kecamatan-data-admin');
     }
@@ -266,5 +269,13 @@ class Kecamatan extends BaseController
         ];
 
         return view('Admin/Kecamatan/v-laporan', $data);
+    }
+
+    public function log()
+    {
+        $logs = $this->Modelactivity->getLog();
+        return view('Admin/Kecamatan/log', [
+            'logs' => $logs
+        ]);
     }
 }
